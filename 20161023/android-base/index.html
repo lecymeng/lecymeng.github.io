@@ -1,0 +1,1154 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Android Base, Weicools">
+    <meta name="description" content="基础
+Android四大组件
+Activity：Android程序与用户交互的窗口，Android构造块中最基本的一种，它需要为保持各界面状态做许多持久化的事情
+Service：后台服务于Activity，封装有完整的功能逻辑实现，接受上层">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Android Base | Weicools</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Weicools</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Weicools</div>
+        <div class="logo-desc">
+            
+            降りしきる強い雨, 描いた夢の果て
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Android Base
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Android/" target="_blank">
+                                <span class="chip bg-color">Android</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2016-10-23
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        4.1k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        15 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><ol>
+<li>Android四大组件<ul>
+<li>Activity：Android程序与用户交互的窗口，Android构造块中最基本的一种，它需要为保持各界面状态做许多持久化的事情</li>
+<li>Service：后台服务于Activity，封装有完整的功能逻辑实现，接受上层指令，完成相关事物，定义好需要接受的Intent，提供同步和异步的接口</li>
+<li>Content Provider：Android提供的第三方应用数据的访问方案，可以派生Content Provider类，对外提供数据</li>
+<li>Broadcast Receiver：接受一种或者多种Intent作触发事件，接受相关消息，做一些简单处理，转换成一条Notification<a id="more"></a></li>
+</ul>
+</li>
+<li>Android五种布局<ul>
+<li>FrameLayout：所有控件一次放在右上角，可重叠</li>
+<li>LinearLayout：可设置垂直布局（android:orientation=”vertical”）和水平布局（android:orientation=”horizontal” ）</li>
+<li>AbsoluteLayout：使用X,Y坐标制定元素位置（旋转屏幕时容易出现问题，多个元素计算麻烦）</li>
+<li>RelativeLayout：以某个元素作为参照物，来定位控件位置</li>
+<li>TableLayout：包含TableRow，TableRow里面可以定义具体元素</li>
+</ul>
+</li>
+<li><p>Activity生命周期<br>生命周期方法：onCreate(),onStart(),onResume(),onRestart(),onPause(),onStop(),onDestroy()</p>
+<ul>
+<li>启动Activity：onCreate()-&gt;onStart()-&gt;onResume()</li>
+<li>Activity进入后台（当前Activity转到新的Activity界面或者按Home键返回主屏）：onPause()-&gt;onStop()</li>
+<li>Activity返回前台：onRestart()-&gt;onStart()-&gt;onResume()</li>
+<li>Activity进入后台且系统内存不足，系统会杀死后台的Activity（此时这个Activity引用仍然处在任务栈中，只是这个时候引用指向的对象已经为null）若再次回到这个Activity,则会走onCreate()–&gt;onStart()—&gt;onResume()(将重新走一次Activity的初始化生命周期)</li>
+<li>锁屏：onPause()-&gt;onStop()</li>
+<li>解锁：onStart()-&gt;onResume()<br><img src="http://ob9ev3u0o.bkt.clouddn.com/2016-10-23-Activity%20life.png" alt="activity"></li>
+</ul>
+</li>
+<li><p>Activity启动模式<br>使用android:launchMode=”standard|singleInstance|singleTask|singleTop”来控制Activity任务栈</p>
+<ul>
+<li>任务栈属于后进先出的结构，位于栈顶的Activity处于焦点状态，当按下back按钮时，栈内的Activity会分别出栈并且调用onDestroy()方法，如果栈内没有Activity那么系统就会回收这个栈，每个APP默认只有一个栈</li>
+<li>standard：标准模式，每次启动Activity都会创建一个新的Activity实例，并且压入任务栈栈顶，而不管这个Activity是否已经存在Activity的启动过程onCreate()-&gt;onStart()-&gt;onResume()都会执行</li>
+<li>singleTop：栈顶复用模式，如果新的Activity已经位于栈顶位置那么就不在创建这个Activity，同时Activity的onNewIntent()方法会被回调。例如A-B-C-D和A-B-D-C在创建D时分别变成A-B-C-D和A-B-D-C-D</li>
+<li>singleTask：栈内复用模式，创建Activity时，系统会先确认它所需的任务栈是否已经创建，否则先创建任务栈然后放入Activity，如果栈内已经有这个Activity实例，那么这个Activity会被调到栈顶，onNewIntent()方法会被回调，并且singleTask会清理在当前Activity上面的所有Activity.(clear top)</li>
+<li>singleInstance：加强版singleTask模式，Activity只能单独存在一个任务栈内，由于栈内复用特性，后续请求都不会创建新的Activity除非这个任务栈被销毁</li>
+</ul>
+</li>
+<li><p>Activity缓存方法<br>问题描述：有a和b两个Activity，当从a进入b一段时间后，可能系统把a回收，这时按back执行的不是a的onRestart()而是onCreate()，a会被重新创建一次，原来a中的临时数据就可能丢失了</p>
+<ul>
+<li>这时可以使用Activity中的onSaveInstanceState()回调方法保持临时数据和状态，这个方法一定会在活动被回收前调用，方法中有一个Bundle参数，putString()，putInt()需要传入两个参数，一个键和一个值。数据保存后会在onCreate()中恢复</li>
+<li><p>onSaveInstanceState的调用遵循一个重要原则，即当系统“未经你许可”时销毁了你的activity，则onSaveInstanceState会被系统调用，这是系统的责任，因为它必须要提供一个机会让你保存你的数据</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
+<span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">onCreate</span><span class="token punctuation">(</span>Bundle savedInstanceState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onCreate</span><span class="token punctuation">(</span>savedInstanceState<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token function">setContentView</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>layout<span class="token punctuation">.</span>activity_main<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token comment" spellcheck="true">//这里，当Acivity第一次被创建的时候为空</span>
+ <span class="token comment" spellcheck="true">//所以我们需要判断一下</span>
+ <span class="token keyword">if</span><span class="token punctuation">(</span> savedInstanceState <span class="token operator">!=</span> null <span class="token punctuation">)</span><span class="token punctuation">{</span>
+     savedInstanceState<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"anAnt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token annotation punctuation">@Override</span>
+<span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">onSaveInstanceState</span><span class="token punctuation">(</span>Bundle outState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onSaveInstanceState</span><span class="token punctuation">(</span>outState<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ outState<span class="token punctuation">.</span><span class="token function">putString</span><span class="token punctuation">(</span><span class="token string">"anAnt"</span><span class="token punctuation">,</span><span class="token string">"Android"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>Fragment生命周期和Activity生命周期关系<br><img src="http://ob9ev3u0o.bkt.clouddn.com/2016-10-23-FragmentFlowchartDiagram.jpg" alt="FragmentActivity"></p>
+</li>
+<li><p>为什么在Service创建子线程而不是在Activity</p>
+<ul>
+<li>Activity很难对Thread进行控制，当Activity被销毁后，就没有办法可以在获取之前创建的子线程实例，而且在一个Activity中创建的子线程，另一个Activity无法对其进行任何操作</li>
+<li>但是Service不同，所以得Activity都可以与Service关联，可以很方便的操作其中的方法，即使Activity被销毁之后只要重新与Service建立关联就又可以获取到原有Service中的Bundle实例</li>
+</ul>
+</li>
+<li>Intent使用方法<ul>
+<li>通过Intent/Bundle的API文档，可知Intent/Bundle支持传递基本数据类型的数据和基本类型的数组数据以及String/CharSequence类型数据和String/CharSequence类型的数组数据；另外还可以传递Parcelabe(包裹化，邮包)和Serializable序列化类型数据以及他们的数组/列表数据</li>
+</ul>
+</li>
+<li><p>Fragment生命周期<br><img src="http://ob9ev3u0o.bkt.clouddn.com/2016-10-23-FragmentLife.png" alt="Fragmentlife"></p>
+</li>
+<li><p>Service两种启动方法</p>
+<ul>
+<li>1）在Context中通过public boolean bindService(Intent service, ServiceConnection conn, int flags)方法来进行Service与Context的关联启动，并且Service的生命周期依附于Context</li>
+<li>2）通过public ComponentName startService(Intent service)方法去启动一个Service，此时Service生命周期与Context无关</li>
+<li><blockquote>
+<p>要注意，无论何时都需要在xml里注册Service</p>
+</blockquote>
+</li>
+</ul>
+<pre><code>&lt;service
+        android:name=&quot;.packnameName.youServiceName&quot;
+        android:enabled=&quot;true&quot; /&gt;
+</code></pre></li>
+<li><p>广播注册方式&amp;区别</p>
+<ul>
+<li>在android中，我们如果想接收到广播信息，必须自定义我们的广播接收者。要写一个类来继承BroadcastReceiver，并且重写其onReceive()方法，实现接收到特定广播所要做的事情</li>
+</ul>
+<pre><code>public class MyBroadCastReceiver extends BroadcastReceiver   
+{  
+   @Override  
+   public void onReceive(Context context, Intent intent)   
+   {   
+       //在这里可以写相应的逻辑来实现一些功能
+       //可以从Intent中获取数据、还可以调用BroadcastReceiver的getResultData()获取数据
+   }   
+}
+</code></pre><ul>
+<li>1）静态注册：在AndroidManifest.xml文件的<application>节点中进行注册，当APP退出后Receiver仍然可以接受广播并进行相应处理</application></li>
+</ul>
+<pre><code> &lt;receiver android:name=&quot;.MyBroadCastReceiver&quot;&gt;  
+    &lt;!-- android:priority属性是设置此接收者的优先级（从-1000到1000） --&gt;
+    &lt;intent-filter android:priority=&quot;20&quot;&gt;
+        &lt;actionandroid:name=&quot;android.provider.Telephony.SMS_RECEIVED&quot;/&gt;  
+    &lt;/intent-filter&gt;  
+&lt;/receiver&gt;
+</code></pre><ul>
+<li>2）动态注册：在代码中动态注册，APP退出就无法接收广播</li>
+</ul>
+<pre><code>// new出上边定义好的BroadcastReceiver
+MyBroadCastReceiver yBroadCastReceiver = new MyBroadCastReceiver();
+// 实例化过滤器并设置要过滤的广播
+IntentFilter intentFilter = new IntentFilter(&quot;android.provider.Telephony.SMS_RECEIVED&quot;);
+// 注册广播   
+myContext.registerReceiver(smsBroadCastReceiver,intentFilter, 
+             &quot;android.permission.RECEIVE_SMS&quot;, null);
+</code></pre><ul>
+<li>3）发送广播两种方式：通过mContext.sendBroadcast(Intent)或mContext.sendBroadcast(Intent, String)发送的是无序广播(后者加了权限)；通过mContext.sendOrderedBroadcast(Intent, String, BroadCastReceiver, Handler, int, String, Bundle)发送的是有序广播</li>
+</ul>
+</li>
+<li><p>Android数据存储方式</p>
+<ul>
+<li>1）SQLite：轻量级数据库，支持基本SQL语法，是常用的数据存储方式，Android提供了SQLiteDatabase的类封装了一些操作数据库的API</li>
+<li>2）SharedPreference：存储比较简单的参数设置</li>
+<li>3）File：文件（I/O）存储方式，常用于存储大量数据，缺点是更新数据很麻烦</li>
+<li>4）ContentProvider：Android系统能实现所有应用程序共享数据的方式，由于数据通常在各个应用中是相互私密的，所有这种方式使用较少，一般用在音频，视频，图片和通讯录；每个Content Provider都会对外提供一个公共的URI（包装成Uri对象），如果应用程序有数据需要共享时，就需要使用Content Provider为这些数据定义一个URI，然后其他的应用程序就通过Content Provider传入这个URI来对数据进行操作</li>
+</ul>
+</li>
+<li><p>Android动画分类</p>
+<ul>
+<li>tween补间动画，通过指定View的初始状态和变化时间、方式，对View的内容完成一系列的图形变换来实现动画效果，这种实现方式可以使视图组件移动、放大、缩小以及产生透明度的变化</li>
+<li>frame帧动画，AnimationDrawable控制animation-list.xml布局，通过顺序的播放排列好的图片来实现</li>
+</ul>
+</li>
+<li><p>Android解析XML的类</p>
+<ul>
+<li>1）SAX：读取是单向的，优点是不占内存空间、解析属性方便；缺点是对于嵌套多个分支处理不方便</li>
+<li>2）DOM：把整个XML放到内存中</li>
+<li>3）PUU：常用在J2ME对于节点处理比较好，类似SAX同样很节省内存，在J2ME中常使用KXML库来解析</li>
+</ul>
+</li>
+<li>Android如何加速启动Activity<ul>
+<li>启动应用：Application的构造方法，onCreate方法中不要进行耗时的操作，数据预读取/初始化数据放在异步中进行操作</li>
+<li>普通Activity启动应用：A启动B时不要在A的onPause方法中进行耗时操作，因为B的onResume方法必须等待A的onPause方法执行完成才可以运行</li>
+</ul>
+</li>
+<li>Android内存优化方法<ul>
+<li>ListView优化</li>
+<li>及时关闭资源</li>
+<li>图片缓存</li>
+</ul>
+</li>
+<li>ListView优化方案<ul>
+<li>1）如果自定义适配器，那么在getView中需要考虑方法传进来的参数contentView是否为null，若为null则创建contentView并返回，否则直接使用（尽可能减少创建view）</li>
+<li>2）给contentView设置tag（setTag()）传入一个viewHolder对象用于缓存需要显示的数据，可以达到图像数据异步加载的效果</li>
+<li>3）如果ListView需要显示很多item时则需要考虑分页加载</li>
+</ul>
+</li>
+<li>Activity在屏幕旋转时的生命周期<ul>
+<li>不设置Activity的android:configChanges时，切屏会重新调用各个生命周期，切横屏执行一次，切竖屏执行2次</li>
+<li>设置Activity的android:configChanges = “orientation”时，切屏还是会重新调用各个生命，横屏竖屏各一次</li>
+<li>设置Activity的android:configChanges=”orientation|keyboardHidden”时，切屏不会调用各个生命周期，只会调用onConfigurationChanged()方法</li>
+</ul>
+</li>
+<li>如何启用&amp;停用Service<ul>
+<li>1）继承Service类<code>public class SMSService extends Service{}</code></li>
+<li>2）在AndroidManifest.xml文件中的<application>节点中对服务进行配置<service android:name=".SMSService"></service></application></li>
+<li>3）若采用Context.startService()方法启动服务，在服务未被创建时，系统会先调用服务的onCreate()方法，接着调用onStart()方法。如果调用startService()方法前服务已经被创建，多次调用startService()方法并不会导致多次创建服务，但会导致多次调用onStart()方法。采用startService()方法启动的服务，只能调用Context.stopService()方法结束服务，服务结束时会调用onDestroy()方法</li>
+<li>4）采用Context.bindService()方法启动服务，在服务未被创建时，系统会先调用服务的onCreate()方法，接着调用onBind()方法。这个时候调用者和服务绑定在一起，调用者退出了，系统就会先调用服务的onUnbind()方法，接着调用onDestroy()方法。如果调用bindService()方法前服务已经被绑定，多次调用bindService()方法并不会导致多次创建服务及绑定(也就是说onCreate()和onBind()方法并不会被多次调用)。如果调用者希望与正在绑定的服务解除绑定，可以调用unbindService()方法，调用该方法也会导致系统调用服务的onUnbind()–&gt;onDestroy()方法</li>
+<li>服务常用生命周期回调方法如下： <ul>
+<li>onCreate() 该方法在服务被创建时调用，该方法只会被调用一次，无论调用多少次startService()或bindService()方法，服务也只被创建一次。</li>
+<li>onDestroy()该方法在服务被终止时调用。</li>
+<li>与采用Context.startService()方法启动服务有关的生命周期方法</li>
+<li>onStart() 只有采用Context.startService()方法启动服务时才会回调该方法。该方法在服务开始运行时被调用。多次调用startService()方法尽管不会多次创建服务，但onStart() 方法会被多次调用。</li>
+<li>与采用Context.bindService()方法启动服务有关的生命周期方法</li>
+<li>onBind()只有采用Context.bindService()方法启动服务时才会回调该方法。该方法在调用者与服务绑定时被调用，当调用者与服务已经绑定，多次调用Context.bindService()方法并不会导致该方法被多次调用。</li>
+<li>onUnbind()只有采用Context.bindService()方法启动服务时才会回调该方法。该方法在调用者与服务解除绑定时被调用</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>单线程模型中Message、Handler、Message Queue、Looper之间的关系<ul>
+<li>Handler获取当前线程中的looper对象，looper用来存放Message，MessageQueue可取出Message，由Handler对Message进行分发和处理</li>
+<li>Message Queue消息队列：用来存放通过Handler发布的消息，通常附属于某个创建它的线程，可以通过looper.myQueue()得到当前线程的消息队列</li>
+<li>Handler：可以发布或者处理一个消息或者操作一个Runnable，通过Handler发布消息，消息将只会发送到与它相关联的消息队列，也只能处理该消息队列的消息</li>
+<li>Looper：是Handler和消息队列之间通信的桥梁，程序组件首先通过Handler将消息传递给Looper，Looper把消息放入队列；Looper也可以把消息广播给所有的Handler,Handler接受到消息后调用handleMessage进行处理</li>
+<li>Message：消息的类型，在Handler类中的handleMessage方法得到单个消息进行处理</li>
+</ul>
+</li>
+<li>在单线程模型下，为了线程通信问题，Android设计了一个Message Queue(消息队列)， 线程间可以通过该Message Queue并结合Handler和Looper组件进行信息交换。下面将对它们进行分别介绍：<ul>
+<li>1）Message消息：理解为线程之间交流的信息，处理数据后台线程需要更新UI，则发送Message内含一些数据给UI线程</li>
+<li>2）Handler处理者：是Message的主要处理者，负责Message的发送。Message内容的执行处理，后台线程就是通过传进来的Handler对象引用来sendMessage(Message)；使用Handler需要实现该类的handleMessage(Message)方法，它是处理这些Message的操作</li>
+<li>3）Message Queue消息队列，用来存放Handler发布的消息，按照先进先出执行；每个Message Queue都会有一个对应的Handler，Handler会通过两种方式向message queue发生消息：sendMessage/post这两种消息都会插在message queue队尾并按先进先出执行。但通过这两种方法发送的消息执行的方式略有不同：通过sendMessage发送的是一个message对象,会被 Handler的handleMessage()函数处理；而通过post方法发送的是一个runnable对象，则会自己执行</li>
+<li>4）Looper: Looper是每条线程里的Message Queue的管家。Android没有Global的Message Queue，而Android会自动替主线程(UI线程)建立Message Queue，但在子线程里并没有建立Message Queue。所以调用Looper.getMainLooper()得到的主线程的Looper不为NULL，但调用Looper.myLooper() 得到当前线程的Looper就有可能为NULL</li>
+</ul>
+</li>
+<li><p>Activity、Intent、IntentFilter、Service、Broadcast、BroadcastReceiver</p>
+<ul>
+<li>一个activity呈现了一个用户可以操作的可视化界面</li>
+<li>一个service不包含可视化界面而是后台运行，可与一个activity绑定，通过绑定暴露出来的接口并与其通信</li>
+<li>一个broadcastreceiver是一个接收广播消息并作出回应的component，没有界面</li>
+<li>一个intent是一个intent对象，保存了消息的内容，对activity和service来说，它指定了请求的操作名称和待操作数据URIIntent对象可以显式的指定一个目标component。如果这样的话，android会找到这个component(基于manifest文件中的声明)并激活它。但如果一个目标不是显式指定的，android必须找到响应intent的最佳component。它是通过将Intent对象和目标的intent filter相比较来完成这一工作的；</li>
+<li>一个component的intent filter告诉android该component能处理的intent。intent filter也是在manifest文件中声明的。</li>
+</ul>
+</li>
+<li><p>MVC模式原理</p>
+<ul>
+<li>模型model对象：是应用程序主体部分，负责所有业务逻辑都写在这里</li>
+<li>视图view对象：是应用程序中负责界面的部分，也是MVC中唯一可见的一层，接受用户输入，显示处理结果</li>
+<li>控制器control对象：根据用户输入，控制用户界面数据显示及更新model对象</li>
+</ul>
+</li>
+<li><p>Android系统架构</p>
+<ul>
+<li>Linux内核、运行库、应用框架层、应用层</li>
+</ul>
+</li>
+<li><p>ContentProvider是如何实现数据共享</p>
+</li>
+</ol>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt="" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png">
+                </a>
+            </div>
+            <br>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
+                    《Android Base》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/20161023/android-base/" property="cc:attributionName" rel="cc:attributionURL">
+                Weicools
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/20161117/rx470-macsierra10.12-driver-method/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="RX470在macSierra10.12.2Beta3下的驱动方法">
+                        
+                        <span class="card-title">RX470在macSierra10.12.2Beta3下的驱动方法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            剁手开题双十一凌晨在狗东买下的讯景RX470 4GB黑狼版1179块大洋，没赶上11.01凌晨的1099-100神价表示很蓝瘦…………香菇 =-=
+关键硬件信息讯景RX470是2016双十一京东购入，BCM943602CS是2016.09.
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2016-11-17
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Weicools
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/macSierra/" target="_blank">
+                        <span class="chip bg-color">macSierra</span>
+                    </a>
+                    
+                    <a href="/tags/10-12-2/" target="_blank">
+                        <span class="chip bg-color">10.12.2</span>
+                    </a>
+                    
+                    <a href="/tags/Hackintosh/" target="_blank">
+                        <span class="chip bg-color">Hackintosh</span>
+                    </a>
+                    
+                    <a href="/tags/Clover/" target="_blank">
+                        <span class="chip bg-color">Clover</span>
+                    </a>
+                    
+                    <a href="/tags/RX470/" target="_blank">
+                        <span class="chip bg-color">RX470</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/20161018/simple-factory-pattern/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="设计模式之简单工程模式">
+                        
+                        <span class="card-title">设计模式之简单工程模式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1.问题考虑一个简单的软件应用场景，一个软件系统可以提供多个外观不同的按钮（如圆形按钮、矩形按钮、菱形按钮等）， 这些按钮都源自同一个基类，不过在继承基类后不同的子类修改了部分属性从而使得它们可以呈现不同的外观，如果我们希望在使用这些按钮时
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2016-10-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Weicools
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/Design-Pattern/" target="_blank">
+                        <span class="chip bg-color">Design Pattern</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">66.3k</span>
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:xxx@xx.xx" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=123123123" class="tooltipped" data-tooltip="QQ联系我: 123123123" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
