@@ -1,7 +1,7 @@
 ---
 title: EventBus 源码解析
 date: 2018-09-13 23:18:12
-tags:
+tags: [Android, SourceCode analysis]
 ---
 
 ## EventBus简介
