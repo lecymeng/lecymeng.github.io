@@ -4,22 +4,22 @@ dist: xenial
 node_js: stable
 branches:
   only:
-  - hexo
+    - hexo
 before_install:
-- export TZ='Asia/Shanghai'
-- npm install hexo-cli
+  - export TZ='Asia/Shanghai'
+  - npm install hexo-cli
 install:
-- npm install
+  - npm install
 script:
-- hexo clean
-- hexo generate
+  - hexo clean
+  - hexo generate
 deploy:
   provider: pages
   skip_cleanup: true
   local_dir: public
   name: lecymeng
   email: 1570682285@qq.com
-  github_token: ZcJLLX/QFvv2puXJ4RlUmOheF5GPpGD4O+sEQztlcbpdVe5mYtAXktOxA/NDuCLYQQlH/VDFa9ldGN8fOuSZCsEG+WagMVwHUL95gum6r1C4m7X8RZYpB58Kn7nHy9RQEMFhPR+Gj5uTvScisHRnlQ/icd5OaRrRCc3CJGjBzeX5NM8hkkWq98fPZf09gzthvcSVEQISLoYQMhYpIRCeU71Vm5RPOi5JY4I3VsZxYlvI/pMwKdTdqD43RWM9oR6zeWdApzHuo+vTgcMOJx3c2t7FQaSK9nzB1OLf6/EQKK0N7XwmV3LCBvb4cK/XvGwawhwsmTS4+xkPONz7VSQzRA56FzbkVDRGRrIX4OaZyJ3ELO3SoUHaeOg4yyskvenhd6uxedmGdXqiZY0LwQYY98zOr/2Sa4L9mDigUh8xZycFLZ9hxv17tvWuVXq38bbkyXk5Aiop5fA1LHcZF7qkqvcKvBp9ZBfid3Sn0udjTqKeFxZMWpSIS2S0kt9h2jPNk0sXnJU96w4g72YLdkK6paesk5OYXX7EEjSmKs5Tv82sU8VE6XyfgXNDX5Co9BKliT7WmRd6ogK66dsSBjw0Yf3PTWQZ4ztCYoWyi+fycinqQBOJuMr6EwoweTAcyc/VDdz2foz9qgRX31IEIfFv0fuN8BhmHQwYvdfPRlomwaA=
+  github_token: 9ff972748a1381064031752ada3fa3271f037ae0
   keep-history: true
   target-branch: master
   on:
