@@ -25,7 +25,7 @@ menu:
 
 # Website start time.
 # 站点运行开始时间.
-time: 11/24/2015 00:00:00 # 格式为:月/日/年 时:分:秒. format: month/day/year hour:minute:second.
+time: 06/28/2019 00:00:00 # 格式为:月/日/年 时:分:秒. format: month/day/year hour:minute:second.
 
 # Index cover carousel configuration.
 # 首页封面轮播图的相关配置.
@@ -93,17 +93,17 @@ indexbtn:
   enable: true
   name: Github
   icon: fa-github-alt
-  url: https://github.com/lecymeng
+  url: https://github.com/blinkfox/hexo-theme-matery
 
 # The configurations of the second line of home banner
 # icon/button will not show up if you leave the corresponding socialLink empty
 # 首页 banner 中的第二行个人信息配置，留空即不启用
 socialLink:
-  github: https://github.com/lecymeng
-  email: lecymeng@outlook.com
+  github: 
+  email: 
   facebook: 
   twitter: 
-  qq: 1570682285
+  qq: 
   weibo: 
   zhihu: 
 
@@ -125,15 +125,15 @@ code:
 reward:
   enable: true
   title: 你的赏识是我前进的动力
-  wechat: /medias/reward/wechat.jpg
+  wechat: /medias/reward/wechat.png
   alipay: /medias/reward/alipay.jpg
 
 # Whether to activate the copyright information of the blog and author when copying the post content.
 # minCharNumber: Approve copyright information by copying at least how many characters.
 # 是否激活复制文章时追加博客和作者的版权信息.
 copyright:
-  enable: true
-  minCharNumber: 240 # 至少复制多少个字符就追加版权信息.
+  enable: false
+  minCharNumber: 120 # 至少复制多少个字符就追加版权信息.
   description: 本文章著作权归作者所有，任何形式的转载都请注明出处。
 
 # Whether to activate the mathjax, this is a global configuration, but the post still does not open the mathjax rendering.
@@ -151,7 +151,7 @@ mathjax:
 # 文章字数统计、阅读时长、总字数统计
 # 激活前请确认你已经安装了 hexo-wordcount 插件，安装命令: `npm i --save hexo-wordcount`
 wordCount:
-  enable: true
+  enable: false
   postWordCount: true
   min2read: true
   totalCount: true
@@ -164,15 +164,15 @@ clicklove:
 # profile in about page, including avatars, career, and personal introductions.
 # 在”关于”页面中配置个人信息，包括头像、职业和个人介绍.
 profile:
-  avatar: /medias/avatar.png
-  career: Android Developer
+  avatar: /medias/avatar.jpg
+  career: Software Engineer
   introduction: If you wish to succeed, you should use persistence as your good friend, experience as your reference, prudence as your brother and hope as your sentry.
 
 # config my projects informations in about page.
 # If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.
 # 在“关于”页面配置"我的项目"信息，如果你不需要这些信息则可以将其设置为不激活或者将其删除.
 myProjects:
-  enable: false
+  enable: true
   data:
     hexo-theme-matery:
       icon: fa-meetup
@@ -199,10 +199,10 @@ mySkills:
     Java:
       background: 'linear-gradient(to right, #FF0066 0%, #FF00CC 100%)'
       percent: 85%
-    Android:
+    JavaScript:
       background: 'linear-gradient(to right, #9900FF 0%, #CC66FF 100%)'
       percent: 80%
-    Python:
+    HTML5:
       background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
       percent: 80%
     CSS:
@@ -266,9 +266,9 @@ livere:
 # To use it, activate the configuration item and set appId and appKey.
 # Valine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
 valine:
-  enable: true
-  appId: orsSeN9tLirrMORe4CklaXEN-gzGzoHsz
-  appKey: wOCnGVsLjb2wsCTDhhMvAPCr
+  enable: false
+  appId:
+  appKey:
   notify: false
   verify: false
   visitor: true
@@ -279,8 +279,8 @@ valine:
 # Whether to display fork me on github icon and link, default true, You can change it to your repo address
 # 配置是否在 header 中显示 fork me on github 的图标，默认为true，你可以修改为你的仓库地址.
 githubLink:
-  enable: false
-  url: https://github.com/lecymeng
+  enable: true
+  url: https://github.com/blinkfox/hexo-theme-matery
   title: Fork Me
 
 # The password verification feature of read post. To use this feature,
@@ -304,8 +304,8 @@ busuanziStatistics:
 # Add google analytics configuration
 # 添加 Google Analytics 配置
 googleAnalytics:
-  enable: true
-  id: UA-85513822-1
+  enable: false
+  id:
 
 # The used front-end library can be replaced with the corresponding CDN address as needed,
 # If the specific version is not specified below, you can use the latest version.

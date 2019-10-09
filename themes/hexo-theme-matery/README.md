@@ -25,12 +25,14 @@
 - Comment module of [Gitalk](https://gitalk.github.io/), [Gitment](https://imsun.github.io/gitment/), [Valine](https://valine.js.org/) and [Disqus](https://disqus.com/).(Gitalk is recommended)
 - Integrated [Busuanzi Statistics](http://busuanzi.ibruce.info/), `Google Analytics` and post word count statistics.
 - Support music playback and video playback on the homepage
+- Support the `emoji` emoticon and use the `markdown emoji` grammar to directly generate the corresponding emoticon.
 
 ## Contributor
 
 Thanks to these contributors, without whom, hexo-theme-matery won't be this perfect.
 
 - [@HarborZeng](https://github.com/HarborZeng)
+- [@shw2018](https://github.com/shw2018)
 
 ## Download
 
@@ -111,6 +113,27 @@ layout: "about"
 ---
 ```
 
+### new contact page (Optional)
+
+`contact` page is to show contact information. If the `source` directory of your blog doesn't have `contact/index.md` file, you need to new one like this:
+
+```bash
+hexo new page "contact"
+```
+
+to edit your new page files`/source/contact/index.md`, you need somethings as follows:
+
+```yaml
+---
+title: contact
+date: 2018-09-30 17:25:30
+type: "contact"
+layout: "contact"
+---
+```
+
+> **Note**：The message board depends on a third-party comment system, please **activate** your comment system to be effective. And in the theme `_config.yml` file, the "**menu**" of the `19` to `21` line is configured, and the comment about the message board cloud be canceled.
+
 ### new friends link page (Optional)
 
 The `friends` page is a page for displaying **Friendly Links** information. If you don't have a `friends/index.md` file in your blog's `source` directory, then you need to create a new one. The command is as follows:
@@ -149,10 +172,32 @@ Also, create a new `_data` directory in your blog's `source` directory and a new
     "avatar": "http://image.luokangyuan.com/avatar.jpg",
     "name": "ja_rome",
     "introduction": "Ordinary steps can also go out of the great journey.",
-    "url": "ttps://me.csdn.net/jlh912008548",
+    "url": "https://me.csdn.net/jlh912008548",
     "title": "Read More"
 }]
 ```
+
+### Add emoji support (Optional)
+
+This theme adds support for the `emoji` emoticon, using the Hexo plugin for [hexo-filter-github-emojis] (https://npm.taobao.org/package/hexo-filter-github-emojis) to support The generation of the `emoji` expression, the corresponding `markdown emoji` syntax (`::`, for example: `:smile:`) is converted into a `emoji` expression that jumps. The installation command is as follows:
+
+```bash
+npm install hexo-filter-github-emojis --save
+```
+
+Add configuration of `_config.yml` file in Hexo root folder as follows：
+
+```yaml
+githubEmojis:
+  enable: true
+  className: github-emoji
+  inject: true
+  styles:
+  customEmojis:
+```
+
+Execute `hexo clean && hexo g` to regenerate the blog file, and then  you can see the expression you wrote in the `emoji` grammar in the corresponding position in the article.
+
 
 ### Code highlight
 
@@ -211,7 +256,7 @@ permalink_pinyin:
 
 > **Note*:[hexo-abbrlink](https://github.com/rozbo/hexo-abbrlink) can genarate non-Chinese link in addtion to this plugin.
 
-### Post word count statistics plugin（Optional）
+### Post word count statistics plugin (Optional)
 
 If you want to display the post word count and reading time information in the post detail page, you can install the [hexo-wordcount](https://github.com/willin/hexo-wordcount) plugin.
 
@@ -257,7 +302,7 @@ Execute `hexo clean && hexo g` to regenerate the blog file, and then you can see
 
 ### Modify website footer
 
-Website footer may need to be customized, and it is not convenient to make configuration information, So need to modify and process it by yourself. The changes are in the `/layout/_partial/footer.ejs` file, including the site, the theme used, the amount of traffic, and so on.
+Website footer may need to be customized, and it is not convenient to make configuration information, So need to modify and process it by yourself. The changes are in the `/layout/_partial/footer.ejs` file, including the site, the theme used, the amount of traffic and so on.
 
 ### Modify social links
 
@@ -462,6 +507,13 @@ There are 24 featured pictures in `/source/medias/featureimages`,you can add or 
 
 ## Changelog
 
+- v1.1.0
+  - Added support for `emoji`;
+  - Added site run time statistics and configuration;
+  - Added the function of message board, it is not enabled by default;
+  - Added `Twitter`, `Facebook`, and `zhihu` social links;
+  - Updated the version of `Valine` to the latest version;
+  - modification of other minor details;
 - v1.0.4
   - Added the ability to customize the reprint rules for each post;
   - Fix the problem that the custom summary of the previous page and the next page does not display;
