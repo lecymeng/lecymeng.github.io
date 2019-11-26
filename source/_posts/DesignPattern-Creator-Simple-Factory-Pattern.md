@@ -17,10 +17,10 @@ tags: [Java, Design Pattern]
     - ConcreteProduct：具体产品角色 - 具体产品角色是创建目标，所有创建的对象都充当这个角色的某个具体类的实例
 
 2. UML类图
-![SimpleFactory](http://ob9ev3u0o.bkt.clouddn.com/2016-10-18-SimpleFactory.jpg)
+![SimpleFactory](https://blog-bak-1251678165.cos.ap-beijing.myqcloud.com/2016-10-18-SimpleFactory.jpg)
 
 ### 4.时序图
-![seq_SimpleFactory](http://ob9ev3u0o.bkt.clouddn.com/2016-10-18-seq_SimpleFactory.jpg)
+![seq_SimpleFactory](https://blog-bak-1251678165.cos.ap-beijing.myqcloud.com/2016-10-18-seq_SimpleFactory.jpg)
 
 ### 5.实现方式
 

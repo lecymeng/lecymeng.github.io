@@ -25,7 +25,7 @@ tags: [Android]
     - Activity进入后台且系统内存不足，系统会杀死后台的Activity（此时这个Activity引用仍然处在任务栈中，只是这个时候引用指向的对象已经为null）若再次回到这个Activity,则会走onCreate()–>onStart()—>onResume()(将重新走一次Activity的初始化生命周期)
     - 锁屏：onPause()->onStop()
     - 解锁：onStart()->onResume()
-    ![activity](http://ob9ev3u0o.bkt.clouddn.com/2016-10-23-Activity%20life.png)
+    ![activity](https://blog-bak-1251678165.cos.ap-beijing.myqcloud.com/2016-10-23-Activity%20life.png)
 
 4. Activity启动模式
 使用android:launchMode="standard|singleInstance|singleTask|singleTop"来控制Activity任务栈
@@ -60,7 +60,7 @@ tags: [Android]
     }
     ```
 6. Fragment生命周期和Activity生命周期关系
-![FragmentActivity](http://ob9ev3u0o.bkt.clouddn.com/2016-10-23-FragmentFlowchartDiagram.jpg)
+![FragmentActivity](https://blog-bak-1251678165.cos.ap-beijing.myqcloud.com/2016-10-23-FragmentFlowchartDiagram.jpg)
 
 7. 为什么在Service创建子线程而不是在Activity
     - Activity很难对Thread进行控制，当Activity被销毁后，就没有办法可以在获取之前创建的子线程实例，而且在一个Activity中创建的子线程，另一个Activity无法对其进行任何操作
@@ -68,7 +68,7 @@ tags: [Android]
 8. Intent使用方法
     - 通过Intent/Bundle的API文档，可知Intent/Bundle支持传递基本数据类型的数据和基本类型的数组数据以及String/CharSequence类型数据和String/CharSequence类型的数组数据；另外还可以传递Parcelabe(包裹化，邮包)和Serializable序列化类型数据以及他们的数组/列表数据
 9. Fragment生命周期
-![Fragmentlife](http://ob9ev3u0o.bkt.clouddn.com/2016-10-23-FragmentLife.png)
+![Fragmentlife](https://blog-bak-1251678165.cos.ap-beijing.myqcloud.com/2016-10-23-FragmentLife.png)
 
 10. Service两种启动方法
     - 1）在Context中通过public boolean bindService(Intent service, ServiceConnection conn, int flags)方法来进行Service与Context的关联启动，并且Service的生命周期依附于Context

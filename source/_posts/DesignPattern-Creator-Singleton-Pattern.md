@@ -18,10 +18,10 @@ tags: [Java, Design Pattern]
 
 ### 3.模式结构
 UML类图：
-![Singleton](http://ob9ev3u0o.bkt.clouddn.com/2016-10-18-Singleton.jpg)
+![Singleton](https://blog-bak-1251678165.cos.ap-beijing.myqcloud.com/2016-10-18-Singleton.jpg)
 
 ### 4.时序图
-![seq_Singleton](http://ob9ev3u0o.bkt.clouddn.com/2016-10-18-seq_Singleton.jpg)
+![seq_Singleton](https://blog-bak-1251678165.cos.ap-beijing.myqcloud.com/2016-10-18-seq_Singleton.jpg)
 
 ### 5.七种实现方式
 #### 懒汉式,线程不安全
