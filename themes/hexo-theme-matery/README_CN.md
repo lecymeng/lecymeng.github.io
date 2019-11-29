@@ -2,7 +2,7 @@
 
 [![HitCount](http://hits.dwyl.io/blinkfox/hexo-theme-matery.svg)](http://hits.dwyl.io/blinkfox/hexo-theme-matery) [![Gitter](https://img.shields.io/gitter/room/blinkfox/hexo-theme-matery.svg)](https://gitter.im/hexo-theme-matery/Lobby?utm_source=badge) [![GitHub issues](https://img.shields.io/github/issues/blinkfox/hexo-theme-matery.svg)](https://github.com/blinkfox/hexo-theme-matery/issues) [![GitHub license](https://img.shields.io/github/license/blinkfox/hexo-theme-matery.svg)](https://github.com/blinkfox/hexo-theme-matery/blob/master/LICENSE) [![Download](https://img.shields.io/badge/downloads-master-green.svg)](https://codeload.github.com/blinkfox/hexo-theme-matery/zip/master) [![Hexo Version](https://img.shields.io/badge/hexo-%3E%3D%203.0-blue.svg)](http://hexo.io) [![GitHub forks](https://img.shields.io/github/forks/blinkfox/hexo-theme-matery.svg)](https://github.com/blinkfox/hexo-theme-matery/network) [![GitHub stars](https://img.shields.io/github/stars/blinkfox/hexo-theme-matery.svg)](https://github.com/blinkfox/hexo-theme-matery/stargazers)
 
-[English Document](README.md) | [演示示例](https://blinkfox.github.io/) | QQ 交流群: `926552981`
+[🇺🇸English Document](README.md) | [演示示例](https://blinkfox.github.io/) | QQ 交流群: [`926552981`](https://jq.qq.com/?_wv=1027&k=5zMDYHT)
 
 > 这是一个采用 `Material Design` 和响应式设计的 Hexo 博客主题。
 
@@ -26,6 +26,7 @@
 - 集成了[不蒜子统计](http://busuanzi.ibruce.info/)、谷歌分析（`Google Analytics`）和文章字数统计等功能
 - 支持在首页的音乐播放和视频播放功能
 - 支持`emoji`表情，用`markdown emoji`语法书写直接生成对应的能**跳跃**的表情。
+- 支持 [DaoVoice](http://www.daovoice.io/)、[Tidio](https://www.tidio.com/) 在线聊天功能。
 
 ## 贡献者
 
@@ -33,6 +34,8 @@
 
 - [@HarborZeng](https://github.com/HarborZeng)
 - [@shw2018](https://github.com/shw2018)
+- [@L1cardo](https://github.com/L1cardo)
+- [@Five-great](https://github.com/Five-great)
 
 ## 下载
 
@@ -179,6 +182,79 @@ layout: "friends"
 }]
 ```
 
+### 菜单导航配置
+
+#### 配置基本菜单导航的名称、路径url和图标icon.
+
+1.菜单导航名称可以是中文也可以是英文(如：`Index`或`主页`) 
+2.图标icon 可以在[Font Awesome](https://fontawesome.com/icons) 中查找   
+
+```yaml
+menu:
+  Index:
+    url: /
+    icon: fas fa-home
+  Tags:
+    url: /tags
+    icon: fas fa-tags
+  Categories:
+    url: /categories
+    icon: fas fa-bookmark
+  Archives:
+    url: /archives
+    icon: fas fa-archive
+  About:
+    url: /about
+    icon: fas fa-user-circle
+  Friends:
+    url: /friends
+    icon: fas fa-address-book
+```
+
+#### 二级菜单配置方法
+如果你需要二级菜单则可以在原基本菜单导航的基础上如下操作     
+1.在需要添加二级菜单的一级菜单下添加`children`关键字(如:`About`菜单下添加`children`)     
+2.在`children`下创建二级菜单的 名称name,路径url和图标icon.      
+3.注意每个二级菜单模块前要加 `-`.     
+4.注意缩进格式  
+
+```yaml
+menu:
+  Index:
+    url: /
+    icon: fas fa-home
+  Tags:
+    url: /tags
+    icon: fas fa-tags
+  Categories:
+    url: /categories
+    icon: fas fa-bookmark
+  Archives:
+    url: /archives
+    icon: fas fa-archive
+  About:
+    url: /about
+    icon: fas fa-user-circle-o
+  Friends:
+    url: /friends
+    icon: fas fa-address-book
+  Medias:
+    icon: fas fa-list
+    children:
+      - name: Musics
+        url: /musics
+        icon: fas fa-music
+      - name: Movies
+        url: /movies
+        icon: fas fa-film
+      - name: Books
+        url: /books
+        icon: fas fa-book
+      - name: Galleries
+        url: /galleries
+        icon: fas fa-image
+```
+
 ### 添加emoji表情支持（可选的）
 
 本主题新增了对`emoji`表情的支持，使用到了 [hexo-filter-github-emojis](https://npm.taobao.org/package/hexo-filter-github-emojis) 的 Hexo 插件来支持 `emoji`表情的生成，把对应的`markdown emoji`语法（`::`,例如：`:smile:`）转变成会跳跃的`emoji`表情，安装命令如下：
@@ -301,34 +377,45 @@ feed:
 
 执行 `hexo clean && hexo g` 重新生成博客文件，然后在 `public` 文件夹中即可看到 `atom.xml` 文件，说明你已经安装成功了。
 
+### 添加 [DaoVoice](http://www.daovoice.io/) 在线聊天功能（可选的）
+
+前往 [DaoVoice](http://www.daovoice.io/) 官网注册并且获取 `app_id`，并将 `app_id` 填入主题的 `_config.yml` 文件中。
+
+### 添加 [Tidio](https://www.tidio.com/) 在线聊天功能（可选的）
+
+前往 [Tidio](https://www.tidio.com/) 官网注册并且获取 `Public Key`，并将 `Public Key` 填入主题的 `_config.yml` 文件中。
+
 ### 修改页脚
 
 页脚信息可能需要做定制化修改，而且它不便于做成配置信息，所以可能需要你自己去再修改和加工。修改的地方在主题文件的 `/layout/_partial/footer.ejs` 文件中，包括站点、使用的主题、访问量等。
 
 ### 修改社交链接
 
-在主题的 `_config.yml` 文件中，默认支持 `QQ`、`GitHub` 和邮箱的配置，你可以在主题文件的 `/layout/_partial/social-link.ejs` 文件中，新增、修改你需要的社交链接地址，增加链接可参考如下代码：
+在主题的 `_config.yml` 文件中，默认支持 `QQ`、`GitHub` 和邮箱等的配置，你可以在主题文件的 `/layout/_partial/social-link.ejs` 文件中，新增、修改你需要的社交链接地址，增加链接可参考如下代码：
 
 ```html
-<a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
+<% if (theme.socialLink.github) { %>
+    <a href="<%= theme.socialLink.github %>" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+<% } %>
 ```
 
 其中，社交图标（如：`fa-github`）你可以在 [Font Awesome](https://fontawesome.com/icons) 中搜索找到。以下是常用社交图标的标识，供你参考：
 
-- Facebook: `fa-facebook`
-- Twitter: `fa-twitter`
-- Google-plus: `fa-google-plus`
-- Linkedin: `fa-linkedin`
-- Tumblr: `fa-tumblr`
-- Medium: `fa-medium`
-- Slack: `fa-slack`
-- 新浪微博: `fa-weibo`
-- 微信: `fa-wechat`
-- QQ: `fa-qq`
+- Facebook: `fab fa-facebook`
+- Twitter: `fab fa-twitter`
+- Google-plus: `fab fa-google-plus`
+- Linkedin: `fab fa-linkedin`
+- Tumblr: `fab fa-tumblr`
+- Medium: `fab fa-medium`
+- Slack: `fab fa-slack`
+- Sina Weibo: `fab fa-weibo`
+- Wechat: `fab fa-weixin`
+- QQ: `fab fa-qq`
+- Zhihu: `fab fa-zhihu`
 
-> **注意**: 本主题中使用的 `Font Awesome` 版本为 `4.7.0`。
+> **注意**: 本主题中使用的 `Font Awesome` 版本为 `5.11.0`。
 
 ### 修改打赏的二维码图片
 
@@ -510,6 +597,21 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
 ## 版本记录
 
+- v1.2.0
+  - 新增了 [DaoVoice](http://www.daovoice.io/)、[Tidio](https://www.tidio.com/) 的在线聊天功能；
+  - 新增了两级菜单的功能；
+  - 新增了打字效果的副标题；
+  - 新增了网页内容预加载的功能；
+  - 新增了首页 banner 是否每日切换的配置功能；
+  - 新增了显示 ICP 备案信息的功能，默认未开启；
+  - 新增了百度分析的配置；
+  - 新增了代码块的语言显示、一键复制、显示行号等功能；
+  - 新增了首页轮播图和推荐文章可自定义配置的功能；
+  - 新增了文章页面显示更新日期；
+  - 新增了转载规则的图标；
+  - 修改了分享的布局和显示方式；
+  - 升级更新了部分依赖库的版本；
+  - 其他细节修改和优化；
 - v1.1.0
   - 新增了 `emoji` 的支持；
   - 新增了站点运行时间统计及配置；
