@@ -1,7 +1,7 @@
 ---
 title: Java常考面试题
 date: 2016-08-28 09:28:00
-tags: [Java, 笔试, 面试]
+tags: [Java, Interview]
 ---
 
 ### 2016.09.20

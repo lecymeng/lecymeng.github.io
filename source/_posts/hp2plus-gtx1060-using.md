@@ -1,8 +1,9 @@
 ---
 title: 暗影精灵2Plus GTX1060独显亮度调节实现
 date: 2017-08-26 01:47:53
-tags: [macSierra, Hackintosh, DSDT]
+tags: [macOS, Hackintosh]
 ---
+
 # 暗影精灵2Plus GTX1060独显亮度调节实现
 > Foreword：本来打算毕业工作了再换本的，但是实在受不了之前那个低压U本Yoga13了，开个IDE和模拟器就快炸了，玩个LOL一打团就变PPT玩个蛇皮；然后然后看到**`暗影精灵2Plus`**七代U版本比首发价还低1000就忍不住剁手了🤣，总体体验：性能不用说，i7+GTX1060甜品显卡基本都可以玩，72％色域IPS屏幕也是很棒，缺点17.3寸比较重、台达电源230W好大一块砖、键盘方向键反人类🙃
 ![Order](https://blog-bak-1251678165.cos.ap-beijing.myqcloud.com/2017-08-27-023638.jpg)

@@ -1,7 +1,7 @@
 ---
 title: 设计模式
 date: 2017-02-18 09:37:48
-tags: [Java, Design Pattern]
+tags: [Java, DesignPattern]
 ---
 
 ![](http://blog-1251678165.coscd.myqcloud.com/2018-03-17-Design-Pattern.png)

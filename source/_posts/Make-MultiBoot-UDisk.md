@@ -1,7 +1,7 @@
 ---
 title: 制作多功能启动U盘, 轻松完成系统安装和维护
 date: 2017-12-02 11:16:27
-tags: [macSierra, Linux, Winodws, PE]
+tags: [macOS, Linux, Winodws]
 ---
 
 > 本教程仅适用于EFI引导的电脑，安装的系统也需要支持EFI引导。

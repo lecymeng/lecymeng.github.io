@@ -1,7 +1,7 @@
 ---
 title: Android TextViews
 date: 2018-12-10 11:28:27
-tags: [Widget, Android]
+tags: [Android, Widget]
 ---
 
 ## Autosizing TextViews

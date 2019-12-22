@@ -2,7 +2,7 @@
 title: Git使用手册
 date: 2018-01-12 14:16:27
 updated: 2019-11-25 16:40:00
-tags: [Git, Github, 填坑]
+tags: [Git, Github]
 ---
 
 <!--BlogArticle SyncInfo-->

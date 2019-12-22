@@ -1,7 +1,7 @@
 ---
 title: 《Android 源码设计模式解析与实战》读书笔记 - 适配器模式
 date: 2017-12-10 11:18:27
-tags: [Java, 设计模式, Android]
+tags: [Java, Android, DesignPattern]
 ---
 
 > 适配器模式把一个类的接口变换成客户端所期待的另外一个接口，从而使原本因接口不匹配而无法一起工作的两个类能够在一起工作

@@ -1,7 +1,7 @@
 ---
 title: Telegram SS代理设置
 date: 2018-05-14 15:12:27
-tags: [Java, 设计模式, Android]
+tags: [Application, Proxy]
 ---
 
 本次测试的是Mac ShadowsocksX-NG + Telegram

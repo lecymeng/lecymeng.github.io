@@ -1,7 +1,7 @@
 ---
 title: Android Base
 date: 2016-10-23 10:48:27
-tags: [Android]
+tags: [Android, Interview]
 ---
 
 ### 基础

@@ -1,7 +1,7 @@
 ---
 title: Java基础知识
 date: 2016-10-12 12:24:37
-tags: [Java]
+tags: [Java, Interview]
 ---
 
 ## 4.1 基本概念

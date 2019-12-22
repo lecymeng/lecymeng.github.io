@@ -1,7 +1,7 @@
 ---
 title: 《Android 源码设计模式解析与实战》读书笔记 - 观察者模式
 date: 2017-03-12 10:16:27
-tags: [Java, 设计模式, Android]
+tags: [Java, Android, DesignPattern]
 ---
 
 > 观察者模式是一个使用率非常高的模式，它最常用在GUI系统、订阅–发布系统。因为这个模式的一个重要作用就是解耦，将被观察者和观察者解耦，使得它们之间的依赖性更小，甚至做到毫无依赖。比如安卓的开源项目EventBus、Otto、AndroidEventBus等事件总线类的和RxJava响应式编程其核心都是使用观察者模式。

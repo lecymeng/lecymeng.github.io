@@ -1,7 +1,7 @@
 ---
 title: 《Android 源码设计模式解析与实战》读书笔记 - 策略模式
 date: 2017-03-18 12:16:27
-tags: [Java, 设计模式, Android]
+tags: [Java, Android, DesignPattern]
 ---
 
 > 通常如果一个问题有多个解决方案时，最简单的就是利用if-else或者switch-case方式根据不同的情景选择不同的解决方案，但是这样耦合性太高 、代码臃肿、难以维护等。这时就可以使用策略模式来解决。

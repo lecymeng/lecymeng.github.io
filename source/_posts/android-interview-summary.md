@@ -1,7 +1,7 @@
 ---
 title: Android面试要点总结
 date: 2016-07-15 09:28:13
-tags: [Android, Java, 笔试, 面试]
+tags: [Android, Java, Interview]
 ---
 
 ### 1.Java技术

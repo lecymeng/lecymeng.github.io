@@ -1,7 +1,7 @@
 ---
 title: 注入EDID
 date: 2017-08-18 14:16:27
-tags: [macSierra, EDID]
+tags: [macOS, Hackintosh]
 ---
 
 1. 打开DarwinDumper.app，只选择EDID然后点击run，默认会在`/Applications/DarwinDumperReports/`目录下生成，比如：`/Applications/DarwinDumperReports/000_2017-08-23_10-44-07_MacBookPro14,3/DarwinDumper_2.8.8_INSYDE_Corp._X64_Unknown_weicools/EDID`

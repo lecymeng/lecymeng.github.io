@@ -1,7 +1,7 @@
 ---
 title: 设计模式之简单工程模式
 date: 2016-10-18 09:50:48
-tags: [Java, Design Pattern]
+tags: [Java, Android, DesignPattern]
 ---
 
 ### 1.问题

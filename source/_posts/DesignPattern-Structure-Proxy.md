@@ -1,7 +1,7 @@
 ---
 title: 《Android 源码设计模式解析与实战》读书笔记 - 代理模式
 date: 2017-03-17 10:16:27
-tags: [Java, 设计模式, Android]
+tags: [Java, Android, DesignPattern]
 ---
 
 > 代理模式也称委托模式，是结构型设计模式之一。是应用广泛的模式之一。
