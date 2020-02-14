@@ -1,4 +1,9 @@
 ## 主题更新Changelog
+### 2019.02.14
+更新 [hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery/) 1.2.0 --> 1.2.2
+- 压缩media相关资源
+- 修改config
+
 ### 2019.11.29
 更新 [hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery/) 1.1.0 --> 1.2.0
 - 替换media相关资源
