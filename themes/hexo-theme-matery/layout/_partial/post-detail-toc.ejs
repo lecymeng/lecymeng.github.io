@@ -23,6 +23,7 @@
     }
 
     .toc-widget {
+        width: 345px;
         padding-left: 20px;
     }
 
@@ -37,6 +38,11 @@
     .toc-widget ol {
         padding: 0;
         list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
     }
 
     #toc-content ol {
@@ -113,7 +119,7 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
+            collapseDepth: Number('<%- theme.toc.collapseDepth %>'),
             headingSelector: '<%- theme.toc.heading %>'
         });
 
