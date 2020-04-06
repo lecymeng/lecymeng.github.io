@@ -311,6 +311,3 @@ nohup /mnt/user/moedata/frp/frpc -c /mnt/user/moedata/frp/frpc.ini &
 ```bash
 ps -aux|grep frp| grep -v grep
 ```
-
-
-

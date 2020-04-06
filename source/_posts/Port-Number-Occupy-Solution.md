@@ -1,9 +1,10 @@
 ---
-title: Linux和Windows端口号占用解决方法
+title: 端口号占用解决方法
 date: 2020-03-06 22:25:00
 tags: [Linux, Network]
 ---
 
+# 端口号占用解决方法
 ## Linux端口号占用解决方法
 ### 查询端口号
 1. 使用`netstat`命令
@@ -29,7 +30,7 @@ ps -ef | grep 进程号
 kill -9 PID号
 ```
 
-## windows端口被占用解决办法
+## windows端口占用解决方法
 查看所有的端口占用情况
 
 ```bash
