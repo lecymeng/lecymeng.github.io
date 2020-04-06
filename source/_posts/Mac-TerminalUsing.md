@@ -2,12 +2,10 @@
 title: Mac OS X 终端命令学习
 date: 2015-12-29 12:18:09
 updated: 2019-12-22 09:02:00
-tags: [macOS, shell]
+tags: [macOS]
 ---
 
-<!--BlogArticle SyncInfo-->
-
-### Mac OS X 终端命令学习
+# Mac OS X 终端命令学习
 1. 显示当前目录的路径
   - pwd
 <!--more-->

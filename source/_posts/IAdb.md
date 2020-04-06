@@ -2,7 +2,7 @@
 title: IADB 扩展
 date: 2020-01-06 21:20:00
 password: bcac371b54f59945a14aa49e2e408e5d6e4dbc59387f5d8cfc6b015d40d5bb02
-tags: [Java, Interview]
+tags: [Android, Script]
 ---
 
 # IADB 工具

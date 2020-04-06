@@ -4,16 +4,17 @@ date: 2017-03-18 12:16:27
 tags: [Java, Android, DesignPattern]
 ---
 
+# 《Android 源码设计模式解析与实战》读书笔记 - 组合模式
 > 组合模式也称为部分-整体模式，结构型设计模式之一。组合模式比较简单，它将一组相似的对象当作一个对象处理，并根据树状结构来组合对象
 > 定义：将对象组合成树形结构以表示“部分-整体”的层次结构，使得用户对单个对象和组合对象的使用具有一致性。
-
 <!--more-->
-### 使用场景
+
+## 使用场景
 1. 表示对象的部分-整体层次结构时。
 2. 从一个整体中能够独立出部分模块或功能的场景。
 
-### UML类图
-#### 安全组合模式
+## UML类图
+### 安全组合模式
 ![Composite](http://blog-1251678165.coscd.myqcloud.com/2018-03-18-composite.png)
 
 * （1）`Component`：抽象根节点，为组合中的对象声明接口。在适当的情况下，实现所有类共有接口的缺省行为。声明一个接口用于访问和管理Component的子节点。可在递归结构中定义一个接口，用于访问一个父节点，并在合适的情况下实现它。
@@ -142,7 +143,7 @@ public class Client {
 }
 ```
 
-#### 透明组合模式
+### 透明组合模式
 上面安全组合模式与依赖倒置原则相违背，所定义的抽象Component在这里的作用不大，既然是面向接口编程，那么更多的应该是完善接口设计，对上面的接口做一些修改：
 ![](http://blog-1251678165.coscd.myqcloud.com/2018-03-18-composite-transparent.png)
 
@@ -290,12 +291,10 @@ public class Client {
 }
 ```
 
-### 简单实现
-
+## 简单实现
 > 以文件系统为例，文件系统包含文件和文件夹，而文件夹也可以包含文件。
 
-#### 文件和文件夹的抽象类：（Component）
-
+### 文件和文件夹的抽象类：（Component）
 ```java
 /**
  * Created by Weicools on 2017/3/18.
@@ -350,7 +349,7 @@ public abstract class Dir {
 }
 ```
 
-#### 表示文件夹的类：（Composite）
+### 表示文件夹的类：（Composite）
 ```java
 /**
  * Created by Weicools on 2017/3/18.
@@ -398,7 +397,7 @@ public class Folder extends Dir {
 }
 ```
 
-#### 表示文件夹的类：（Leaf）
+### 表示文件夹的类：（Leaf）
 ```java
 /**
  * Created by Weicools on 2017/3/18.
@@ -437,7 +436,7 @@ public class File extends Dir {
 }
 ```
 
-#### 客户测试类：
+### 客户测试类：
 ```java
 /**
  * Created by Weicools on 2017/3/18.
@@ -470,18 +469,17 @@ public class Client {
 }
 ```
 
-#### 输出结果：
-
+### 输出结果：
 ```
 Storage(设计模式.pdf, ADM(google.html), Android(cache.txt), Books(跳槽指南.md))
 ```
 
-### Android源码中的模式实现
+## Android源码中的模式实现
 - View和ViewGroup的嵌套组合
 
 View和ViewGroup的结构很像上面的UML类图，不过View的视图层级使用的是安全的组合模式。ViewGroup有对View的addView、removeView、getChildAt等方法，想必大家也很熟悉。
 
-### 总结
+## 总结
 1. 优点
     * （1）组合模式可以清楚地定义分层次的复杂对象，表示对象的全部或部分层次，他让高层模块忽略了层次的差异，方便对整个层次结构进行控制。
     * （2）简化了高层模块的代码。

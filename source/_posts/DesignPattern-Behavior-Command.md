@@ -4,24 +4,25 @@ date: 2017-03-18 12:16:27
 tags: [Java, Android, DesignPattern]
 ---
 
+# 《Android 源码设计模式解析与实战》读书笔记 - 命令模式
 > 命令模式是行为型模式之一。总体来说并不难理解，只是比较繁琐，他会将简单的调用关系解耦成多个部分，增加类的复杂度，但是即便如此，命令模式的结构依然清晰。
 > 定义: 将一个请求封装成一个对象，从而让用户使用不同的请求把客户端参数化；对请求排队或者记录请求日志，以及支持可撤销的操作。
-
 <!--more-->
-### 使用场景
+
+## 使用场景
 * （1）需要抽出待执行的动作，然后以参数的形式提供出来。
 * （2）在不同的时刻指定、排列和执行请求。一个命令对象可以有与初始请求无关的生存期。
 * （3）需要支持操作取消。
 * （4）支持修改日志功能，这样当系统崩溃时，这些修改可以被重做一遍。
 * （5）需要支持事务操作。
 
-### UML类图
+## UML类图
 ![](http://blog-1251678165.coscd.myqcloud.com/2018-03-18-Command.png)
 
-### 简单实现
+## 简单实现
 > 以推箱子游戏为例，一般游戏中会有五个按钮，分别是左移、右移、下移、上移和撤销。那么玩游戏的人就是客户端，五个按钮就是调用者，执行具体按钮命令的方法是命令角色。
 
-#### 接收者角色：推箱子游戏
+### 接收者角色：推箱子游戏
 ```java
 public class PushBox {
     /**
@@ -61,7 +62,7 @@ public class PushBox {
 }
 ```
 
-#### 命令者抽象
+### 命令者抽象
 ```java
 public interface Command {
     /**
@@ -76,7 +77,7 @@ public interface Command {
 }
 ```
 
-#### 具体命令者，左移命令类
+### 具体命令者，左移命令类
 ```java
 public class LeftCommand implements Command{
 
@@ -100,7 +101,7 @@ public class LeftCommand implements Command{
 }
 ```
 
-#### 具体命令者，右移命令类
+### 具体命令者，右移命令类
 ```java
 public class RightCommand implements Command{
 
@@ -124,7 +125,7 @@ public class RightCommand implements Command{
 }
 ```
 
-#### 具体命令者，上移命令类
+### 具体命令者，上移命令类
 ```java
 public class UpCommand implements Command{
 
@@ -148,7 +149,7 @@ public class UpCommand implements Command{
 }
 ```
 
-#### 具体命令者，下移命令类
+### 具体命令者，下移命令类
 ```java
 public class DownCommand implements Command{
 
@@ -172,7 +173,7 @@ public class DownCommand implements Command{
 }
 ```
 
-#### 具体命令者，撤销命令类
+### 具体命令者，撤销命令类
 ```java
 public class RevokeCommand implements Command{
 
@@ -194,7 +195,7 @@ public class RevokeCommand implements Command{
 }
 ```
 
-#### 请求者类，命令由按钮发起
+### 请求者类，命令由按钮发起
 ```java
 public class Buttons {
     private LeftCommand leftCommand; //向左移动的命令对象引用
@@ -302,7 +303,7 @@ public class Buttons {
 }
 ```
 
-#### 客户端调用
+### 客户端调用
 ```java
 public class Client {
 
@@ -341,7 +342,7 @@ public class Client {
 }
 ```
 
-#### 执行结果
+### 执行结果
 ```
 向左
 向下
@@ -376,7 +377,7 @@ public class Client {
 
 > 设计模式的使用之前也有提到，主要是要看当前场景的复杂度和以后的需求进行扩展、维护等方面，完全使用设计模式也是不提倡的，这就需要设计者权衡利弊了。
 
-### Android源码中的命令模式实现
+## Android源码中的命令模式实现
 1. PackageHandler
 
 PackageManagerService中，其对包的相关消息处理右其内部类PackageHandler承担，其将需要处理的请求作为对象通过消息传递给相关的方法，而对于包的安装、移动以及包大小的测量则分别封装为**HandlerParams**的具体子类**InstallParams**、**MoveParams**和**MeasureParams**。源码如下：
@@ -428,7 +429,7 @@ private abstract class HandlerParams {
 
 可以看出**HandlerParams**也是一个抽象命令者。
 
-### 总结
+## 总结
 1. 优点
     * 命令模式的封装性很好，更弱的耦合性，更灵活的控制性以及更好的扩展性。
 2. 缺点

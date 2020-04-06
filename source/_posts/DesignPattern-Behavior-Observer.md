@@ -4,17 +4,17 @@ date: 2017-03-12 10:16:27
 tags: [Java, Android, DesignPattern]
 ---
 
+# 《Android 源码设计模式解析与实战》读书笔记 - 观察者模式
 > 观察者模式是一个使用率非常高的模式，它最常用在GUI系统、订阅–发布系统。因为这个模式的一个重要作用就是解耦，将被观察者和观察者解耦，使得它们之间的依赖性更小，甚至做到毫无依赖。比如安卓的开源项目EventBus、Otto、AndroidEventBus等事件总线类的和RxJava响应式编程其核心都是使用观察者模式。
-
 > 观察者模式是定义对象间一对多的依赖关系，使得每当一个对象状态改变时可以通知 依赖于它的所有对象进行更新。
-
 <!--more-->
-### 1.使用场景
+
+## 1.使用场景
 1. 关联行为场景，需要注意的是，关联行为是可拆分的，而不是“组合”关系。
 2. 事件多级触发场景。
 3. 跨系统的消息交换场景，如消息队列、事件总线的处理机制。
 
-### 2.UML类图
+## 2.UML类图
 ![](http://blog-1251678165.coscd.myqcloud.com/2018-03-16-Observer.jpg)
 UML类图介绍：
 
@@ -23,7 +23,7 @@ UML类图介绍：
 3. Observer：抽象观察者，它定义了一个更新接口，使得在得到被观察者的更改通知时更新自身状态。
 4. ConcreteObserver：具体观察者，实现抽象观察者角色所定义的更新接口，在被观察者的状态发生变化时更新自身状态。
 
-### 3.实现示例
+## 3.实现示例
 * **实现用户追番**
 
 ```java
@@ -129,8 +129,8 @@ ZZZ: 订阅的境界的彼方更新了
 
 由上面的代码可以看出实现了一对多的消息推送，推送消息都是依赖Observer和Observable这些抽象类，而User和Teleplay完全没有耦合，保证了订阅系统的灵活性和可扩展性。
 
-### 4.Android源码中的观察者模式
-#### BaseAdapter
+## 4.Android源码中的观察者模式
+### BaseAdapter
 在ListView的适配器中我们都是继承BaseAdapter。下面来简单分析分析。BaseAdapter 部分代码：
 
 ```Java
@@ -283,7 +283,7 @@ class AdapterDataSetObserver extends DataSetObserver {
 
 当ListView的数据发生变化时，调用Adapter的notifyDataSetChanged函数，这个函数又会调用DataSetObservable的notifyChanged函数，这个函数会调用所有观察者 (AdapterDataSetObserver) 的onChanged方法，这就是一个观察者模式！
 
-### 5.Summary
+## 5.Summary
 1. 优点
     * 观察者和被观察者之间是抽象耦合，将观察者与被观察者完全隔离，只依赖于Observer和Observable抽象，应对业务变化。
     * 增强系统的灵活性和可扩展性。

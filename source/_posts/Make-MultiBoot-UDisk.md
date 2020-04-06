@@ -1,9 +1,10 @@
 ---
 title: 制作多功能启动U盘, 轻松完成系统安装和维护
 date: 2017-12-02 11:16:27
-tags: [macOS, Linux, Winodws]
+tags: [macOS, Linux, Windows]
 ---
 
+# 制作多功能启动U盘, 轻松完成系统安装和维护
 > 本教程仅适用于EFI引导的电脑，安装的系统也需要支持EFI引导。
 
 平时给自己或者别人重装系统的频率还算挺高的，因为有时候要装 macOS 有时候要装 Windows，每次都要重新把安装包刷到我的 U 盘里，不但非常折腾，而且对寿命也不好。于是整理了一下把安装盘都塞到一个 U 盘里，这个 U 盘不仅可以选择启动多个系统，而且当某一个系统的安装盘需要更新的时候，并不需要抹掉整个盘，只要单独处理对应的分区就好，非常方便。启动的时候效果是这样的：
@@ -17,7 +18,7 @@ tags: [macOS, Linux, Winodws]
 
 这个 U 盘包括了一个 macOS 安装器、一个 Ubuntu 16.04.3 、一个 Windows10 安装器 和一个 WinPE。接下来的教程就是教大家怎样制作一个这样的启动 U 盘并应对一些启动问题。
 
-## Ⅰ.材料准备
+## 材料准备
 1. 至少16GB的 U 盘, 32GB 最佳
 2. [macOS安装程序](https://itunes.apple.com/cn/app/macos-high-sierra/id1246284741?mt=12) (7GB++, 根据安装程序大小决定)
 3. [Linux安装镜像](http://releases.ubuntu.com/16.04/) (2GB++, 根据安装镜像大小决定)
@@ -33,7 +34,7 @@ tags: [macOS, Linux, Winodws]
 
     ![](http://blog-1251678165.coscd.myqcloud.com/2017-12-02-162348.png)
 
-## Ⅱ.制作 macOS 安装盘
+## 制作 macOS 安装盘
 1. 打开磁盘工具，首先在左边选中你的 U 盘，**注意是选中 U 盘而不是其中的分区**，之后点击抹掉按钮，这会把整个磁盘抹成 GPT。⚠️**该操作会清空 U 盘的全部内容，注意备份。**⚠️（虽然一些软件可以直接转换 MBR 和 GPT，不过我还是觉得直接都抹掉比较干净）
 
     按照下面的做法，将分区格式选为 Mac OS 扩展（日志式），方案选择 GUID 分区图。点击抹掉。有一定概率出现第一次抹掉不成功的情况，是由于系统没有正确卸载磁盘导致的，这个 Bug 很常见。如果第一次失败了，就再试一次基本上就没问题了。
@@ -63,7 +64,7 @@ tags: [macOS, Linux, Winodws]
 5. 拷贝常用软件
     可以往Install macOS High Sierra安装盘放些驱动/常用App/工具之类的，安装完系统可以从U盘里面拷贝使用.
 
-## Ⅲ.写入 Linux/Windows/WeiPE 镜像
+## 写入 Linux/Windows/PE 镜像
 1. 进入Windows系统(也可以使用虚拟机，系统可能会提示分区损坏，取消掉不要格式化，这是因为 Windows 读不了 HFS+ 的分区), 准备好工具: [DiskGenius](http://www.zdfans.com/6959.html), [Unetbootin](http://unetbootin.github.io/), 镜像：[Linux安装镜像](http://releases.ubuntu.com/16.04/), [Windows安装镜像](https://msdn.itellyou.cn/), [WeiPE生成的镜像](http://www.wepe.com.cn/download.html)
 2. 打开DiskGenius, 删除在macOS上分出来的区`Others`, 然后未分区的位置新建分区如下图：按照镜像大小new出三个FAT32分区，分别是LINUX, WIN10, WEIPE。(卷标自己命名，新建分区时以GB为单位只能新建出整数大小，可以在新建完这个分区后对其调整)
     ![](http://blog-1251678165.coscd.myqcloud.com/2017-12-03-u-disk-1-delete.png)
@@ -85,7 +86,7 @@ tags: [macOS, Linux, Winodws]
     ![引导画面](http://blog-1251678165.coscd.myqcloud.com/2017-12-03-MiPro%20Boot.jpg)
 
 
-## Ⅳ.Q & A
+## Q & A
 1. 安装盘有了新版本怎么办？
     * 只要抹掉该分区，重新按照之前的步骤刷入即可。Windows 也是同理，不过要在 Windows 中就格式化对应分区重新写入。
 2. 有安装盘的那些分区可以自己存文件么？
@@ -95,7 +96,7 @@ tags: [macOS, Linux, Winodws]
 3. 推出 U 盘的时候总是无法推出怎么办？
     * 因为四个区的关系，在较慢的 U 盘上推出的时候会非常的卡，这是正常现象，多等一会就好了。
 
-## Ⅴ.参考资料
+## 参考资料
 > - [制作一个四合一维护 U 盘，重装系统还能有多方便？](https://sspai.com/post/41960)
 > - [计算机是如何启动的 - 阮一峰](http://www.ruanyifeng.com/blog/2013/02/booting.html)
 > - [UEFI 和 BIOS 引导有什么不同 - 知乎](https://www.zhihu.com/question/21672895)

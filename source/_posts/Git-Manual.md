@@ -5,10 +5,7 @@ updated: 2019-11-25 16:40:00
 tags: [Git, Github]
 ---
 
-<!--BlogArticle SyncInfo-->
-<!--SyncTime：2019.11.25 16:38-->
-<!--SyncSourcePath：/DailyStudy/DevConfig/Git使用手册.md-->
-<!--SyncTargetPath：/_post/Git-Manual.md-->
+# Git使用手册
 
 ## Git配置
 ### 配置Git Config

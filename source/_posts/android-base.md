@@ -4,7 +4,8 @@ date: 2016-10-23 10:48:27
 tags: [Android, Interview]
 ---
 
-### 基础
+# Android Base
+## 基础
 1. Android四大组件
     - Activity：Android程序与用户交互的窗口，Android构造块中最基本的一种，它需要为保持各界面状态做许多持久化的事情
     - Service：后台服务于Activity，封装有完整的功能逻辑实现，接受上层指令，完成相关事物，定义好需要接受的Intent，提供同步和异步的接口

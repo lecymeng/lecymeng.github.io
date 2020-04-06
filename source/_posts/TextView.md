@@ -1,16 +1,18 @@
 ---
-title: Android TextViews
+title: Android TextView
 date: 2018-12-10 11:28:27
 tags: [Android, Widget]
 ---
 
-## Autosizing TextViews
+# Android TextView
 
+## Autosizing TextView
 使用Android 8.0（API级别26）及更高版本，可以让 `TextView`文本大小自动扩展或收缩，以根据其`TextView`特征和边界填充其布局 。此设置可以更轻松地使用动态内容优化不同屏幕上的文本大小。
 
 Support Library 26.0完全支持 `TextView`在Android 8.0（API级别26）之前运行Android版本的设备上的自动调整功能。该库提供对Android 4.0（API级别14）及更高版本的支持。该`android.support.v4.widget` 软件包含`TextViewCompat`以向后兼容方式访问功能的类
 
 <!--more-->
+
 ### 设置TextView自动调整大小
 可以使用框架或支持库以 `TextView`编程方式或以XML格式设置自动调整大小。要设置XML属性，还可以使用 Android Studio中的“ **属性”**窗口。
 

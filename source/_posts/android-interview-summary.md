@@ -4,7 +4,8 @@ date: 2016-07-15 09:28:13
 tags: [Android, Java, Interview]
 ---
 
-### 1.Java技术
+# Android面试要点总结
+## 1.Java技术
 *   1.1 Java基础
     *   对象、继承、多态理解
     *   泛型作用及使用场景
@@ -30,7 +31,7 @@ tags: [Android, Java, Interview]
     *   注解的级别及意义
     *   如何自定义注解
 
-### 2.Android技术
+## 2.Android技术
 *   2.1 Android基础
     *   四大组件的意义及使用，生命周期回调及意义
     *   AsynTask、Handle的使用
@@ -78,7 +79,7 @@ tags: [Android, Java, Interview]
     *   图片加载过程中，一般会使用缓存，这个缓存的主要作用是什么
     *   谈谈自己熟悉的图片加载框架
 
-### 3.项目经验
+## 3.项目经验
 *   3.1 开发工具
     *   代码管理工具：SVN、Git
     *   常用调试工具：Hierarchy Viewer、 DDMS等

@@ -4,17 +4,18 @@ date: 2017-12-10 11:18:27
 tags: [Java, Android, DesignPattern]
 ---
 
+# 《Android 源码设计模式解析与实战》读书笔记 - 适配器模式
 > 适配器模式把一个类的接口变换成客户端所期待的另外一个接口，从而使原本因接口不匹配而无法一起工作的两个类能够在一起工作
 > 适配器分为类适配器和对象适配器两张
-
 <!--more-->
-### 使用场景
+
+## 使用场景
 1. 系统需要使用现有的类，而此类的接口不符合系统的需要，即接口不兼容
 2. 想要建立一个可重复利用的类，用于与一些彼此之间没有太大关联的类一起工作
 3. 需要一个统一的输出接口，而输入端的类型不可预知
 
-### 类适配器
-#### UML类图
+## 类适配器
+## UML类图
 ![类适配器](http://blog-1251678165.coscd.myqcloud.com/2018-03-14-Adapter-of-class.uml.png)
 类适配器是通过实现Target接口以及继承Adaptee类来实现接口转换，如目标接口需要operator2(), 但是Adaptee对象只有operator3()，因此就出现了不兼容情况。此时可以通过Adapter实现一个operator2()将Adaptee的operator3()转换为Target需要的operator2()
 
@@ -24,8 +25,7 @@ tags: [Java, Android, DesignPattern]
 * Adaptee: 现在需要适配的接口
 * Adapter: 适配器角色，核心类，把不兼容的接口转换成目标所需接口，这一角色必须是具体类
 
-#### 示例
-
+### 示例
 ```java
 /**
  * Created by Weicools on 2017/12/10.
@@ -75,8 +75,8 @@ public class VoltAdapter extends Volt220 implements FiveVolt {
 }
 ```
 
-### 对象适配器
-#### UML类图
+## 对象适配器
+### UML类图
 ![](http://blog-1251678165.coscd.myqcloud.com/2018-03-14-Adapter-of-object.uml.png)
 与类适配器一样，对象适配器模式把被适配类的API转为目标类的API，与类适配器模式不同的是：对象适配器模式不是使用继承关系连接到Adaptee，而是使用代理关系，UML类图如下:
 
@@ -120,7 +120,7 @@ public class Test {
 }
 ```
 
-### Summary
+## Summary
 1. 对象适配器直接将要适配的对象传到Adapter中，使用组合的形式实现接口兼容的效果，比类适配器更加灵活
 2. 对象适配器还不会将被适配对象的方法暴露出来，而类适配器是继承被适配的类，不够灵活。
 3. 实际开发中Adapter常用预进行不兼容类型的转换场景，还有一种就是输入有多种情况，而输出只有一种的时候，可以通过 Adapter统一进行输出。

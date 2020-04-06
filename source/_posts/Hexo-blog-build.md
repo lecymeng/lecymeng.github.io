@@ -5,8 +5,7 @@ updated: 2019-12-22 09:10:00
 tags: [Hexo, Node.js]
 ---
 
-<!--BlogArticle SyncInfo-->
-
+# HexoBlog搭建
 更详细教程参考：https://easyhexo.com/
 
 ## 一.环境搭建

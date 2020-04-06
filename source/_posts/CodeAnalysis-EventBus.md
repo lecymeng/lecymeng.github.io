@@ -1,9 +1,10 @@
 ---
 title: EventBus 源码解析
 date: 2018-09-13 23:18:12
-tags: [Android, SourceCode analysis]
+tags: [Android, SourceCode Analysis]
 ---
 
+# EventBus 源码解析
 ## EventBus简介
 [](http://a.codekk.com/detail/Android/Trinea/EventBus%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90)
 
@@ -11,10 +12,10 @@ EventBus是Android端优化的publish/subscribe消息总线，简化了应用程
 * 事件Event: 可以是任意对象，通过事件的发布者将事件进行传递
 * 事件订阅者Subscriber: 接收特定事件
 * 事件发布者Publisher: 用于通知Subscriber有事件发生，可以在任意线程任意位置发送事件
-  
-
 <!--more-->
+
   ![](https://blog-1251678165.cos.ap-chengdu.myqcloud.com/2018-11-13-142814.jpg)
+  
   上图解释了整个EventBus的大概工作流程：`发布者Publisher`将事件Event通过`post()方法`发送；EventBus内部进行处理，找到订阅了该`事件Event`的`订阅者Subscriber`；然后该事件Event的订阅者Subscriber通过`onEvent()方法`接收事件进行相关处理（关于onEvent()在EventBus 3.0中有改动，下面详细说明）
 
 ## EventBus简单使用

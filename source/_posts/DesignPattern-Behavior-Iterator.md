@@ -4,22 +4,23 @@ date: 2017-03-18 12:16:27
 tags: [Java, Android, DesignPattern]
 ---
 
+# 《Android 源码设计模式解析与实战》读书笔记 - 迭代器模式
 > 迭代器模式，又叫做游标模式，是行为型设计模式之一。我们知道对容器对象的访问必然会涉及遍历算法，我们可以将遍历的方法封装在容器中，或者不提供遍历方法，让使用容器的人自己去实现去吧。这两种情况好像都能够解决问题。
 > 然而在前一种情况，容器承受了过多的功能，它不仅要负责自己“容器”内的元素维护（添加、删除等等），而且还要提供遍历自身的接口；而且由于遍历状态保存的问题，不能对同一个容器对象同时进行多个遍历。第二种方式倒是省事，却又将容器的内部细节暴露无遗。
 > 正因于此，迭代器模式应运而生，在客户访问类与容器体之间插入一个第三者–迭代器，很好的解决了上述弊端。
 > 定义：提供一种方法顺序访问一个容器对象中的各个元素，而又不需要暴露该对象的内部表示。
-
 <!--more-->
-### 使用场景
+
+## 使用场景
 遍历一个容器对象时。
 
-### UML类图
+## UML类图
 ![](http://blog-1251678165.coscd.myqcloud.com/2018-03-18-Iterator.png)
 
-### 简单实现
+## 简单实现
 > 用书中的例子：小民和小辉分别在公司两个事业部，某天老板安排任务让他们俩统计一下各自部门的员工数据。
 
-#### 员工实体类：
+### 员工实体类：
 ```java
 public class Employee {
 
@@ -46,7 +47,7 @@ public class Employee {
 }
 ```
 
-#### 小辉部门：
+### 小辉部门：
 ```java
 public class CompanyHui {
 
@@ -64,7 +65,7 @@ private Employee[] array = new Employee[3];
 }
 ```
 
-#### 小民部门：
+### 小民部门：
 ```java
 public class CompanyMin {
 
@@ -84,7 +85,7 @@ public class CompanyMin {
 }
 ```
 
-#### Boss查看：
+### Boss查看：
 ```java
 public class Boss {
     public static void main(String[] args) {
@@ -103,7 +104,7 @@ public class Boss {
 }
 ```
 
-#### 结果：
+### 结果：
 ```
 Employee{name='辉哥', age=28, sex=男, position='程序猿'}
 Employee{name='小红', age=23, sex=男, position='程序猿'}
@@ -274,13 +275,11 @@ public class Boss {
 
 结果不变，就不重复写了。
 
-### Android源码中的模式实现
-#### Cursor
-
+## Android源码中的模式实现
+### Cursor
 当我们使用SQLiteDatabase的query方法查询数据库时，会返回一个Cursor游标对象，该游标的实质就是一个具体的迭代器，我们可以使用它来遍历数据库查询所得的结果集。
 
-### 总结
-
+## 总结
 > 迭代器模式发展至今，几乎所有的高级语言都有相应的内置实现，对于开发者而言，已经极少会自己去实现迭代器了，所以本章内容更多的是了解而非应用。
 
 1. 优点
@@ -292,7 +291,7 @@ public class Boss {
     * 会出现ConcurrentModificationException异常。
     * 遍历过程是一个单向且不可逆的遍历。
 
-### 参考
-● [深入浅出Java设计模式之迭代器模式](http://dev.yesky.com/474/2168474.shtml)
-● [ConcurrentModificationException异常](http://blog.csdn.net/lirunfa/article/details/7353857)
+## 参考
+- [深入浅出Java设计模式之迭代器模式](http://dev.yesky.com/474/2168474.shtml)
+- [ConcurrentModificationException异常](http://blog.csdn.net/lirunfa/article/details/7353857)
 
