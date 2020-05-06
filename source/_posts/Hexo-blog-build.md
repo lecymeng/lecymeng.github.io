@@ -2,7 +2,7 @@
 title: HexoBlog搭建
 date: 2015-11-24 12:18:46
 updated: 2019-12-22 09:10:00
-tags: [Hexo, Node.js]
+tags: [Hexo]
 ---
 
 # HexoBlog搭建

@@ -1,7 +1,7 @@
 ---
 title: 比较合适的Hexo多设备同步方法
 date: 2018-11-11 13:30:10
-tags: [Hexo, Node.js, GitHub]
+tags: [Hexo, GitHub]
 ---
 
 # 比较合适的Hexo多设备同步方法
