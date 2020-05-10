@@ -1,7 +1,7 @@
 ---
 title: Android TabLayout
 date: 2020-02-25 12:27:20
-updated: 2020-02-25 12:27:20
+updated: 2020-05-10 13:20:20
 tags: [Android, Widget]
 ---
 

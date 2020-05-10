@@ -1,6 +1,7 @@
 ---
 title: Android TextView
 date: 2018-12-10 11:28:27
+updated: 2020-05-10 13:20:20
 tags: [Android, Widget]
 ---
 
