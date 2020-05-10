@@ -1,48 +1,37 @@
 # 指定构建环境是Node.js，当前版本是稳定版
 language: node_js
 node_js: stable
-
-env:
- global:
-   - URL_REPO: github.com/lecymeng/lecymeng.github.io.git
-
-# 设置钩子只检测blog-source分支的push变动
-branches:
-  only:
-    - hexo
+# 指定需要sudo权限
+sudo: required
 
 # 设置缓存文件
 cache:
   directories:
     - node_modules
 
-#在构建之前安装hexo环境
+# 设置钩子只检测hexo分支的push变动
+branches:
+  only:
+    - hexo
+
+# 在构建之前安装hexo环境
 before_install:
   - npm install -g hexo-cli
 
-#安装git插件和搜索功能插件
+# 安装git插件和搜索功能插件
 install:
   - npm install
-
-# 设置git提交名，邮箱；替换真实token到_config.yml文件
-before_script:
-  - git config user.name "lecymeng"
-  - git config user.email "1570682285@qq.com"
-  # 替换同目录下的 `_config.yml` 文件中 `github_token` 字符串为travis后台刚才配置的变量，注意>此处sed命令用了双引号，单引号无效
-  - sed -i "s/github_token/${GITHUB_TOKEN}/g" _config.yml || exit 1
+  - npm install hexo-deployer-git --save
 
 # 执行清缓存，生成网页操作
 script:
   - hexo clean
   - hexo generate
-  - echo ${ENV_TEST}
-  - hexo deploy
 
-# configure notifications (email, IRC, campfire etc)
-# please update this section to your needs!
-# https://docs.travis-ci.com/user/notifications/
-notifications:
-  email:
-    - 1570682285@qq.com
-  on_success: change
-  on_failure: always
+# 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
+after_script:
+  - git config user.name "lecymeng"
+  - git config user.email "1570682285@qq.com"
+  # 替换同目录下的 `_config.yml` 文件中 `github_token` 字符串为travis后台刚才配置的变量，注意>此处sed命令用了双引号，单引号无效
+  - sed -i "s/github_token/${GITHUB_TOKEN}/g" ./_config.yml
+  - hexo deploy
