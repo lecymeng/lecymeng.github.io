@@ -101,8 +101,11 @@ feed:
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+- type: git
   # github_token 会被 .travis.yml 中sed命令替换
   # repo: git@github.com:lecymeng/lecymeng.github.io.git
   repo: https://github_token@github.com/lecymeng/lecymeng.github.io.git
+  branch: master
+- type: git
+  repo: https://weicools:coding_token@e.coding.net/weicools/Weicools.git
   branch: master
