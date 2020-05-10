@@ -103,7 +103,7 @@ feed:
 deploy:
   type: git
   repo:
-    github: git@github.com:lecymeng/lecymeng.github.io.git
-    #https://lecymeng:zhang157068@github.com/lecymeng/lecymeng.github.io.git
-    #coding: git@git.coding.net:KecyWeico/KecyWeico.git
+    # github: git@github.com:lecymeng/lecymeng.github.io.git
+    # 下方的github_token会被.travis.yml中sed命令替换
+    github: https://github_token@github.com/lecymeng/lecymeng.github.io.git
   branch: master
