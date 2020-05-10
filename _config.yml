@@ -107,5 +107,5 @@ deploy:
   repo: https://github_token@github.com/lecymeng/lecymeng.github.io.git
   branch: master
 - type: git
-  repo: https://weicools:coding_token@e.coding.net/weicools/Weicools.git
+  repo: https://weicools:coding_pw@e.coding.net/weicools/Weicools.git
   branch: master
