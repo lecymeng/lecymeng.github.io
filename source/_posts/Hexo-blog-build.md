@@ -179,6 +179,129 @@ GitHub或者在官网可以找到很多很漂亮的主题，安装对应的文�
 - 2）生成SSH key时，在那个目录下执行的ssh-keygen -t rsa -C “xxxx@xxxx.com”就会在那生成.pub文件，并不是在.ssh里面QAQ
 - 3）安装的时候最好加上sudo
 
+## Hexo自动构建 By Travis
+### 配置GitHub Token
+如果需要使用travis自动化构建你的博客，travis自然需要读写你的GitHub上的Repo。GitHub提供了token机制来供外部访问你的仓库。
+
+进入[github.com/settings/tokens](https://github.com/settings/tokens)，生成一个供travis读写你的GitHub用的token，至于token的权限，不会的直接全选了，但是不建议这样做，风险比较大，或者选择能够访问和提交仓库代码的权限即可，token注意保密，待会会用到。
+![-w1028](media/15892123178972.jpg)
+### 配置Travis-CI
+使用GitHub账号登陆travis，在travis进入仓库同步管理进入travis-ci.org/profile，打开刚才托管的hexo博客源码仓库同步开关
+![-w682](media/15892124687030.jpg)
+
+
+进入设置页，设置自动化编译时机，自动化编译过程中需要用到的变量。
+![-w1015](media/15892127916778.jpg)
+![-w1171](media/15892128991659.jpg)
+
+添加必要的Shell变量
+![-w1475](media/15892129715179.jpg)
+记住NAME 在配置travis.yml会用到
+
+### 编写.travis.yml文件
+.travis.yml是travis平台进行自动化构建的配置文件，travis会根据配置文件生成一个shell自动化脚本。
+
+进入hexo博客源码本地repo
+
+```bash
+cd hexo
+touch .travis.yml
+vim .travis.yml
+```
+
+```yaml
+# 指定构建环境是Node.js，当前版本是稳定版
+language: node_js
+# 指定版本，当前最新版14.x会导致hexo部署失败，改为12.16
+node_js:
+  - 12.16.3
+# 指定需要sudo权限
+sudo: required
+
+# 设置缓存文件
+cache:
+  directories:
+    - node_modules
+
+# 设置钩子只检测hexo分支的push变动
+branches:
+  only:
+    - hexo
+
+# 在构建之前安装hexo环境
+before_install:
+  - npm install -g hexo-cli
+
+# 安装git插件和搜索功能插件
+install:
+  - npm install
+  - npm install hexo-deployer-git --save
+
+# 执行清缓存，生成网页操作
+script:
+  - hexo clean
+  - hexo generate
+
+# 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
+after_script:
+  - git config user.name "lecymeng"
+  - git config user.email "1570682285@qq.com"
+  # 替换同目录下的 `_config.yml` 文件中 `github_token` 字符串为travis后台刚才配置的变量，注意>此处sed命令用了双引号，单引号无效
+  - sed -i "s/github_token/${GITHUB_TOKEN}/g" ./_config.yml
+  - sed -i "s/coding_token/${CODING_TOKEN}/g" ./_config.yml
+  - sed -i "s/phone_number/${CODING_NUMBER}/g" ./_config.yml
+  - hexo deploy
+```
+
+修改下_config.yml文件的deploy节点：
+```yaml
+# 修改前
+deploy:
+  - type: git
+    repo: git@github.com:xiong-it/xiong-it.github.io.git
+    branch: master
+```
+
+```yaml
+deploy:
+- type: git
+  # github_token 会被 .travis.yml 中sed命令替换
+  # repo: git@github.com:lecymeng/lecymeng.github.io.git
+  repo: https://github_token@github.com/lecymeng/lecymeng.github.io.git
+  branch: master
+- type: git
+  # 新的e.coding 只能用电话和邮箱，不能使用账户名，邮箱带@字符会导致Git链接识别错误
+  repo: https://phone_number:coding_token@e.coding.net/weicools/Weicools.git
+  branch: master
+```
+
+
+### 配置参考
+- https://michael728.github.io/2019/06/16/cicd-hexo-blog-travis/
+- http://duansm.top/2018/08/05/hexo-travis/
+- https://juejin.im/post/5a1fa30c6fb9a045263b5d2a
+- https://github.com/xiong-it/xiong-it.github.io/blob/hexo/.travis.yml
+- https://github.com/xiong-it/xiong-it.github.io/blob/hexo/_config.yml
+
+
+## 双线部署 GitHub+Coding
+hexo deploy 时需要使用https+TOKEN模式 实现更快部署
+GitHub格式：https://github_token@github.com/useName/RepoName.git
+Coding格式：https://[phone_number/email]:[coding_token/coding_password]@e.coding.net/useName/RepoName.git
+
+### 开启Coding Page
+打开仓库设置，打开持续集成和持续部署
+![-w1760](media/15892135165321.jpg)
+然后打开持续部署中的静态网站，点击立即部署，就会得到一个coding的博客网址
+![-w1893](media/15892136176032.jpg)
+然后点击设置，配置域名，配置之前需要先在域名解析中添加CNAME解析道 Coding的博客地址例如：https://xxxx.coding-pages.com，注意如果有GitHub的解析的话需要先删除，否则无法开启https。配置好域名解析之后，在Coding中绑定域名，然后强制开启https，开启成功后再去配置GitHub的解析
+![-w1578](media/15892138072661.jpg)
+
+### 部署参考
+- https://zhuanlan.zhihu.com/p/111608743?from_voters_page=true
+- https://www.cnblogs.com/sunhang32/p/11969964.html
+- https://huaien.co/technology/enable-https-on-coding-pages/
+
 ## 参考教程
 - https://easyhexo.com/
 
