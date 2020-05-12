@@ -1,7 +1,7 @@
 ---
 title: HexoBlog搭建
 date: 2015-11-24 12:18:46
-updated: 2019-12-22 09:10:00
+updated: 2020-05-12 10:25:00
 tags: [Hexo]
 ---
 
@@ -20,7 +20,7 @@ tags: [Hexo]
     ```bash
     $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)”
     ```
-- 2）使用Homebrew 安装 Node.js
+- 2）使用Homebrew 安装 Node.js (注意检查Node版本，截止2020.05.12 14.x版本 会导致hexo部署出错)
 
     ```bash
     $ brew update
@@ -48,6 +48,7 @@ tags: [Hexo]
     $ hexo g    #生成静态博客
     $ hexo s		#也可以指定端口$ hexo server -p 5000
     ```
+    
 ### 2. Hexo简单使用
 - 1）常用命令
     
@@ -76,6 +77,7 @@ tags: [Hexo]
     $ hexo s == hexo server
     $ hexo d == hexo deploy
     ```
+    
 ### 3. 部署到GitHub
 - 1）首先设置你的用户名密码
     
@@ -105,7 +107,7 @@ tags: [Hexo]
     deploy:
       type: git	#这里使用git，而不使用github
       repository: git@github.com:lecymeng/lecymeng.github.io.git	#这是我的Github账户
-      branch: master	#分支
+      branch: master	#部署分支
     ```
 
 ### 4. 插件安装
@@ -142,6 +144,7 @@ tags: [Hexo]
       path: atom.xml
       limit: 20
     ```
+    
 ### 5. 公益404页面
 - 腾讯公益404页面-在主题的source目录下创建404.html，内容如下
     
@@ -177,25 +180,26 @@ GitHub或者在官网可以找到很多很漂亮的主题，安装对应的文�
     ```
 
 - 2）生成SSH key时，在那个目录下执行的ssh-keygen -t rsa -C “xxxx@xxxx.com”就会在那生成.pub文件，并不是在.ssh里面QAQ
-- 3）安装的时候最好加上sudo
+- 3）SSH无法连接到GitHub时，尝试 ssh-add ~/.ssh/私钥文件名
+- 4）安装的时候最好加上sudo
 
 ## Hexo自动构建 By Travis
 ### 配置GitHub Token
 如果需要使用travis自动化构建你的博客，travis自然需要读写你的GitHub上的Repo。GitHub提供了token机制来供外部访问你的仓库。
 
 进入[github.com/settings/tokens](https://github.com/settings/tokens)，生成一个供travis读写你的GitHub用的token，至于token的权限，不会的直接全选了，但是不建议这样做，风险比较大，或者选择能够访问和提交仓库代码的权限即可，token注意保密，待会会用到。
-![-w1028](media/15892123178972.jpg)
+![-w1028](https://blog-1251678165.cos.ap-chengdu.myqcloud.com/2020-05-12/15892123178972.jpg)
+
 ### 配置Travis-CI
 使用GitHub账号登陆travis，在travis进入仓库同步管理进入travis-ci.org/profile，打开刚才托管的hexo博客源码仓库同步开关
-![-w682](media/15892124687030.jpg)
-
+![-w682](https://blog-1251678165.cos.ap-chengdu.myqcloud.com/2020-05-12/15892124687030.jpg)
 
 进入设置页，设置自动化编译时机，自动化编译过程中需要用到的变量。
-![-w1015](media/15892127916778.jpg)
-![-w1171](media/15892128991659.jpg)
+![-w1015](https://blog-1251678165.cos.ap-chengdu.myqcloud.com/2020-05-12/15892127916778.jpg)
+![-w1171](https://blog-1251678165.cos.ap-chengdu.myqcloud.com/2020-05-12/15892128991659.jpg)
 
 添加必要的Shell变量
-![-w1475](media/15892129715179.jpg)
+![-w1475](https://blog-1251678165.cos.ap-chengdu.myqcloud.com/2020-05-12/15892129715179.jpg)
 记住NAME 在配置travis.yml会用到
 
 ### 编写.travis.yml文件
@@ -210,7 +214,7 @@ vim .travis.yml
 ```
 
 ```yaml
-# 指定构建环境是Node.js，当前版本是稳定版
+# 指定构建环境是Node.js
 language: node_js
 # 指定版本，当前最新版14.x会导致hexo部署失败，改为12.16
 node_js:
@@ -258,7 +262,7 @@ after_script:
 # 修改前
 deploy:
   - type: git
-    repo: git@github.com:xiong-it/xiong-it.github.io.git
+    repo: git@github.com:userName/RepoName.git
     branch: master
 ```
 
@@ -266,7 +270,6 @@ deploy:
 deploy:
 - type: git
   # github_token 会被 .travis.yml 中sed命令替换
-  # repo: git@github.com:lecymeng/lecymeng.github.io.git
   repo: https://github_token@github.com/lecymeng/lecymeng.github.io.git
   branch: master
 - type: git
@@ -274,6 +277,8 @@ deploy:
   repo: https://phone_number:coding_token@e.coding.net/weicools/Weicools.git
   branch: master
 ```
+
+由于部署机器上没有配置SSH，所以只能使用https协议，
 
 
 ### 配置参考
@@ -287,15 +292,17 @@ deploy:
 ## 双线部署 GitHub+Coding
 hexo deploy 时需要使用https+TOKEN模式 实现更快部署
 GitHub格式：https://github_token@github.com/useName/RepoName.git
-Coding格式：https://[phone_number/email]:[coding_token/coding_password]@e.coding.net/useName/RepoName.git
+Coding格式：https://[phone_number]:[coding_token/coding_password]@e.coding.net/useName/RepoName.git
 
 ### 开启Coding Page
 打开仓库设置，打开持续集成和持续部署
-![-w1760](media/15892135165321.jpg)
+![-w1760](https://blog-1251678165.cos.ap-chengdu.myqcloud.com/2020-05-12/15892135165321.jpg)
 然后打开持续部署中的静态网站，点击立即部署，就会得到一个coding的博客网址
-![-w1893](media/15892136176032.jpg)
-然后点击设置，配置域名，配置之前需要先在域名解析中添加CNAME解析道 Coding的博客地址例如：https://xxxx.coding-pages.com，注意如果有GitHub的解析的话需要先删除，否则无法开启https。配置好域名解析之后，在Coding中绑定域名，然后强制开启https，开启成功后再去配置GitHub的解析
-![-w1578](media/15892138072661.jpg)
+![-w1893](https://blog-1251678165.cos.ap-chengdu.myqcloud.com/2020-05-12/15892136176032.jpg)
+然后点击设置，配置域名，配置之前需要先在域名解析中添加CNAME解析道 Coding的博客地址例如：[https://xxxx.coding-pages.com](https://030dsd.coding-pages.com)，注意如果有GitHub的解析的话需要先删除，否则无法开启https。
+![141psU](https://blog-1251678165.cos.ap-chengdu.myqcloud.com/141psU.png)
+配置好域名解析之后，在Coding中绑定域名，然后强制开启https，开启成功后再去配置GitHub的解析
+![-w1578](https://blog-1251678165.cos.ap-chengdu.myqcloud.com/2020-05-12/15892138072661.jpg)
 
 ### 部署参考
 - https://zhuanlan.zhihu.com/p/111608743?from_voters_page=true
