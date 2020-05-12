@@ -278,8 +278,6 @@ deploy:
   branch: master
 ```
 
-由于部署机器上没有配置SSH，所以只能使用https协议，
-
 
 ### 配置参考
 - https://michael728.github.io/2019/06/16/cicd-hexo-blog-travis/
@@ -290,24 +288,26 @@ deploy:
 
 
 ## 双线部署 GitHub+Coding
-hexo deploy 时需要使用https+TOKEN模式 实现更快部署
+hexo deploy 时(由于部署的环境上没有配置SSH)，所以需要使用https+TOKEN模式 实现更快部署
 GitHub格式：https://github_token@github.com/useName/RepoName.git
 Coding格式：https://[phone_number]:[coding_token/coding_password]@e.coding.net/useName/RepoName.git
+> coding_password不能带有@ 否则会导致GitUrl识别错误
 
 ### 开启Coding Page
 打开仓库设置，打开持续集成和持续部署
 ![-w1760](https://blog-1251678165.cos.ap-chengdu.myqcloud.com/2020-05-12/15892135165321.jpg)
 然后打开持续部署中的静态网站，点击立即部署，就会得到一个coding的博客网址
 ![-w1893](https://blog-1251678165.cos.ap-chengdu.myqcloud.com/2020-05-12/15892136176032.jpg)
-然后点击设置，配置域名，配置之前需要先在域名解析中添加CNAME解析道 Coding的博客地址例如：[https://xxxx.coding-pages.com](https://030dsd.coding-pages.com)，注意如果有GitHub的解析的话需要先删除，否则无法开启https。
+然后点击设置，配置域名，配置之前需要先在域名解析中添加CNAME解析道 Coding的博客地址例如：[https://xxxx.coding-pages.com](https://030dsd.coding-pages.com)，注意如果有GitHub的解析的话需要先删除，否则无法开启https。(Coding Pages 申请 SSL/TLS 安全证书出现以下错误：urn:acme:error:unauthorized: Invalid response from http://www.xxxx.cn/.well-known/acme-challenge/ysOz9wW3U_GFPP8kRP4w8uknBZ9UfiUT7t2xpu9pDCw [185.199.111.153]: ，因为这种情况下，在验证域名所有权时会定位到 Github Pages 的主机上导致 SSL 证书申请失败)
 ![141psU](https://blog-1251678165.cos.ap-chengdu.myqcloud.com/141psU.png)
 配置好域名解析之后，在Coding中绑定域名，然后强制开启https，开启成功后再去配置GitHub的解析
 ![-w1578](https://blog-1251678165.cos.ap-chengdu.myqcloud.com/2020-05-12/15892138072661.jpg)
 
-### 部署参考
-- https://zhuanlan.zhihu.com/p/111608743?from_voters_page=true
-- https://www.cnblogs.com/sunhang32/p/11969964.html
-- https://huaien.co/technology/enable-https-on-coding-pages/
+### 双线部署参考
+- [新版 coding-page 与 Gridea 免费搭建个人博客](https://zhuanlan.zhihu.com/p/111608743?from_voters_page=true)
+- [加速自己的hexo，使用GitHub+Coding实现国内外网站加速](https://www.cnblogs.com/sunhang32/p/11969964.html)
+- [给托管在Coding Pages上的博客开启HTTPS支持 申请失败的原因](https://huaien.co/technology/enable-https-on-coding-pages/)
+- [Coding Pages 申请 SSL 证书错误](https://www.cnblogs.com/TRHX/p/11699949.html)
 
 ## 参考教程
 - https://easyhexo.com/
