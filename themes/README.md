@@ -104,13 +104,6 @@ featureImages:
 highlight:
   enable: false
 
-# hexo-theme-matery add prism_plugin
-prism_plugin:
-  mode: 'preprocess'    # realtime/preprocess
-  theme: 'tomorrow'
-  line_number: false    # default false
-  custom_css:
-
 # hexo-theme-matery per_page: 10 --> 12
 index_generator:
   path: ''
@@ -121,6 +114,7 @@ index_generator:
 ## Set per_page to 0 to disable pagination
 per_page: 12
 
+# hexo-theme-matery config start
 # hexo-theme-matery add search
 search:
   path: search.xml
@@ -130,6 +124,13 @@ search:
 permalink_pinyin:
   enable: true
   separator: '-' # default: '-'
+
+# hexo-theme-matery add prism_plugin
+prism_plugin:
+  mode: 'preprocess'    # realtime/preprocess
+  theme: 'tomorrow'
+  line_number: false    # default false
+  custom_css:
 
 # hexo-theme-matery add feed
 feed:
@@ -149,6 +150,7 @@ githubEmojis:
   inject: true
   styles:
   customEmojis:
+# hexo-theme-matery config end
 ```
 
 ### dependence source
