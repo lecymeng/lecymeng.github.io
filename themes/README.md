@@ -1,5 +1,29 @@
 # 主题引用说明
 
+## Official 文章 Front-matter
+参考 https://hexo.io/zh-cn/docs/front-matter
+
+|              |                                                      |              |
+| :----------- | :--------------------------------------------------- | :----------- |
+| 参数         | 描述                                                 | 默认值       |
+| `layout`     | 布局                                                 |              |
+| `title`      | 标题                                                 | 文章的文件名 |
+| `date`       | 建立日期                                             | 文件建立日期 |
+| `updated`    | 更新日期                                             | 文件更新日期 |
+| `comments`   | 开启文章的评论功能                                   | true         |
+| `tags`       | 标签（不适用于分页）                                 |              |
+| `categories` | 分类（不适用于分页）                                 |              |
+| `permalink`  | 覆盖文章网址                                         |              |
+| `keywords`   | 仅用于 meta 标签和 Open Graph 的关键词（不推荐使用） |              |
+
+### Sample
+```
+---
+title: Hello World
+date: 2013/7/13 20:46:25
+---
+```
+
 ## hexo-theme-matery
 ### custom theme
 replace res
@@ -163,4 +187,46 @@ source/friends/index.md
 source/tags/index.md
 ```
 
+### 文章 Front-matter
+```
+---
+title: typora-vue-theme主题介绍
+date: 2018-09-07 09:25:00
+---
+```
+
+```
+---
+title: typora-vue-theme主题介绍
+date: 2018-09-07 09:25:00
+author: 赵奇
+img: /source/images/xxx.jpg
+top: true
+cover: true
+coverImg: /images/1.jpg
+password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
+toc: false
+mathjax: false
+summary: 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+categories: Markdown
+tags:
+  - Typora
+  - Markdown
+---
+```
+
+
 ## hexo-theme-fluid
+create source/_data/fluid_config.yml
+copy themes/hexo-theme-fluid/_config.yml --> source/_data/fluid_config.yml
+
+### custom theme
+```
+web_analytics:  # 网页访问统计
+  enable: false
+  baidu:  # 百度统计的Key，参见 https://tongji.baidu.com/sc-web/10000033910/home/site/getjs?siteId=13751376 代码获取中 hm.js? 后边的字符串
+  google: UA-85513822-1
+```
+
+### 文章 Front-matter
+参考 Official 文章 Front-matter

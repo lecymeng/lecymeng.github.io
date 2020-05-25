@@ -137,6 +137,10 @@ githubEmojis:
   customEmojis:
 # hexo-theme-matery config end
 
+# fluid config start
+
+# fluid config end
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
