@@ -1,5 +1,11 @@
 ## 主题更新Changelog
-### 2019.02.14
+### 2020.05.25
+更新 [hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery/) 1.2.2 --> 1.3.0
+- source/同步media
+- source/同步favicon.png
+- 同步_config.yml
+
+### 2020.02.14
 更新 [hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery/) 1.2.0 --> 1.2.2
 - 压缩media相关资源
 - 修改config
