@@ -302,8 +302,12 @@ exit
 至此，Windows客户端配置完成，之后就是你自己根据需要在frpc.ini后追加规则即可。
 
 客户端启动后台运行
+
 ```bash
 nohup ./frpc -c frpc.ini &
+```
+
+```bash
 nohup /mnt/user/moedata/frp/frpc -c /mnt/user/moedata/frp/frpc.ini &
 ```
 
