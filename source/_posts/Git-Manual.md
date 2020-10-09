@@ -43,20 +43,28 @@ $ git config user.name
 ```bash
 # 创建一个项目hello-world
 $ mkdir ~/hello-world    
+
 # 进入这个项目
 $ cd ~/hello-world      
+
 # 初始化Git
 $ git init
+
 # new README文件      
 $ touch README
+
 # add README文件
 $ git add README
+
 # 提交更新，并注释信息“first commit”
 $ git commit -m 'first commit'
+
 # 连接远程GitHub项目
 $ git remote add origin git@github.com:xxx/yyyy.git
+
 # 将本地项目更新到GitHub
 $ git push -u origin master
+
 # 后续提交 git push 即可
 $ git push
 ```
@@ -81,18 +89,13 @@ $ git remote add origin https://github.com/Xxx/Yxx
 
 ```bash
 $ ls -ah
-.      WeicoolsEnerjoy     WeicoolsGitHub      config
-..     WeicoolsEnerjoy.pub WeicoolsGitHub.pub  known_hosts
+.      WeicoolsGitHub  config WeicoolsGitHub.pub  known_hosts
 
 $ ssh-add ~/.ssh/WeicoolsGitHub
-Enter passphrase for /Users/weicools/.ssh/WeicoolsGitHub:
-Identity added: /Users/weicools/.ssh/WeicoolsGitHub (/Users/weicools/.ssh/WeicoolsGitHub)
 
 $ ssh -T git@github.com
 Hi lecymeng! You've successfully authenticated, but GitHub does not provide shell access.
 ```
-
-git config --global credential .helper store
 
 
 ### 恢复删除分支
@@ -393,16 +396,25 @@ Git 是目前最流行的源代码管理工具。 为规范开发，保持代码
 
 **Type的类别说明：**
 
-- feat: 添加新特性
+- feature: 添加新特性/新功能
+- upgrade: 功能升级或代码变更
 - fix: 修复bug
-- docs: 仅仅修改了文档
-- style: 仅仅修改了空格、格式缩进、都好等等，不改变代码逻辑
+- docs: 仅仅修改了文档或README
+- style: 仅仅修改了空格、格式缩进、或者主题UI变更 等等，不改变代码逻辑
 - refactor: 代码重构，没有加新功能或者修复bug
 - perf: 增加代码进行性能测试
 - test: 增加测试用例
 - chore: 改变构建流程、或者增加依赖库、工具等
 
 #### Commit messages格式要求
+对于Git Commit Message并明确的标准，但也有一些好的原则：
+
+* 使提交信息业务相关
+* 提交信息中写明类型
+* 必要时要写描述(Decription)
+* 提交主题尽量简短
+* 尽量使用英文
+
 
 ```
 # 标题行：50个字符以内，描述主要变更内容
@@ -414,5 +426,114 @@ Git 是目前最流行的源代码管理工具。 为规范开发，保持代码
 # * 是否存在副作用、风险? 
 #
 # 如果需要的化可以添加一个链接到issue地址或者其它文档
-复制代码
 ```
+
+#### 参考
+[Git 如何写出优雅的Commit Message](https://juejin.im/post/6847902225029660680)
+[利用emoji让的 git commit 生动清晰起来](https://juejin.im/post/6844903721244033038)
+[优雅的提交你的 Git Commit Message](https://juejin.im/post/6844903606815064077)
+
+### 利用emoji让的 git commit 生动清晰起来
+有一些多人合作的项目同事提了commit，你还需要花时间去看什么提交了什么，因为什么提交。
+有了emoji之后，例如看到有条虫🐛 就知道他这次版本就是改了bug了。
+非常方便快捷，话不多说，开始吧。
+
+如何食用：commit 时填写以下图标对应代码即可，例如：  `:bug:` 解决下单问题。
+
+🎨 :art:
+```
+改进代码结构或者格式。
+```
+
+⚡ :zap:
+```
+提高效率。
+```
+
+🔥 :fire:
+```
+删除代码或文件。
+```
+
+🐛 :bug:
+```
+修复bug。
+```
+
+🚑 :ambulance:
+```
+删除代码或文件。
+```
+
+🔥 :art:
+```
+删除代码或文件。
+```
+
+✨ :sparkles:
+```
+增加新功能。
+```
+
+📝 :memo:
+```
+书写文档，例如修改readme.md。
+```
+
+🚀 :rocket:
+```
+部署项目。
+```
+
+💄 :lipstick:
+```
+更新UI和样式文件，例如更新css（前端应该经常都要这个涂唇膏的）。
+```
+
+🎉 :tada:
+```
+首次提交 first commit。
+```
+
+✅ :white_check_mark:
+```
+添加测试。
+```
+
+🔒 :lock:
+```
+解决安全问题。
+```
+
+♻ :recycle:
+```
+重构代码。
+```
+
+➕ :heavy_plus_sign:
+```
+添加依赖。
+```
+
+➖ :heavy_minus_sign:
+```
+删除依赖。
+```
+
+🔧 :wrench:
+```
+更改配置文件。
+```
+
+💩 :hankey:
+```
+编写需要改进的错误代码（这个emoji也太真实了吧）。
+```
+
+➖ :heavy_minus_sign:
+```
+删除依赖。
+```
+
+http://emojihomepage.com/
+https://gitmoji.carloscuesta.me/
