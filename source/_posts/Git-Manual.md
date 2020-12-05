@@ -9,6 +9,8 @@ tags: [Git, GitHub]
 
 ## Git配置
 ### 配置Git Config
+可以直接使用https，方便代理，无需使用ssh
+
 ```bash
 # 配置UserName 和 Email
 $ git config --global user.name "lecymeng"
@@ -31,7 +33,6 @@ xxx...xxx 1570682285@qq.com
 ```
 
 复制WeicoolsGitHub.pub内容到Git上的SSH key配置中
-![](https://blog-1251678165.cos.ap-chengdu.myqcloud.com/vasIWL.png)
 
 ### 检查Git Config
 ```bash
@@ -69,18 +70,50 @@ $ git push -u origin master
 $ git push
 ```
 
+## 常用命令
+https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html
+
 
 ## Git配置 Q & A
-### set remote repository
+### 为仓库设置 Git用户名
+```zsh
+$ git config user.name "name"
+$ git config user.email "email"
+```
+
+### 绑定 Remote Repository
 ```bash
-$ git remote set-url origin https://github.com/Xxx/Yxx.git
+$ git remote set-url origin https://github.com/user/repository.git
 
 $ git branch --set-upstream-to origin/master master
 ```
 
-### add remote repository 
+### 添加 Remote Repository
 ```bash
-$ git remote add origin https://github.com/Xxx/Yxx
+$ git remote add origin https://github.com/user/repository.git
+```
+
+### git删除本地和远程文件
+
+```zsh
+# 删除文件：
+git rm 文件名
+
+# 删除文件夹：
+git rm -r 文件夹名
+
+# 注意
+# 要删除文件必须先添加到仓库才可以进行上述操作命令，因为git基于仓库进行操作
+# 删除文件夹时，文件夹不能为空，否则不能找到文件夹从而无法删除
+```
+
+工作过程中若误提交了文件到仓库上，比如`node_modules`,此时想只删除远程仓库文件，不删除本地文件，可使用下面命令
+
+```zsh
+# 只删除了仓库中的缓存，实际文件不会删除
+git rm --cached 文件(夹)
+git commit -m '备注'
+git push origin 分支
 ```
 
 ### Permission denied (手动add RSA密钥)
