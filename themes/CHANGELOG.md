@@ -1,4 +1,10 @@
 ## 主题更新Changelog
+
+### 2020.12.06
+更新 [hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery/) 1.3.0 --> 2.0.0
+- source/同步media, 移除部分feature images, 更新logo
+- 同步_config.yml
+
 ### 2020.05.25
 更新 [hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery/) 1.2.2 --> 1.3.0
 - source/同步media

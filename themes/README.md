@@ -230,3 +230,9 @@ web_analytics:  # 网页访问统计
 
 ### 文章 Front-matter
 参考 Official 文章 Front-matter
+
+## 主题升级
+
+### Matery
+
+下载当前版本主题源文件和部署的主题进行对比，再下载最新版本主题，同步不相同的修改地方
