@@ -5,21 +5,24 @@ tags: [Java, Android, DesignPattern]
 ---
 
 # 《Android 源码设计模式解析与实战》读书笔记 - 桥接模式
+
 > 桥接模式也称为桥梁模式，是结构型设计模式之一。桥接模式中体现了“单一职责原则”、“开闭原则”、“里氏替换原则”、“依赖倒置原则”等，同时它也是很实用的一种模式。
 > **定义**：将抽象部分 与 实现部分 分离，使它们都可以独立地进行变化。
 
 ## 使用场景
-* （1）如果一个系统需要在构建的抽象化角色和具体角色之间增加更多的灵活性，避免在两个层次之间建立静态的继承联系。
-* （2）对于那些不希望使用继承或因为多层次继承导致系统类的个数急剧增加的系统，也可以考虑使用桥接模式。
-* （3）一个类存在两个独立变化的维度，且这两个维度都需要扩展。
 
-## UML类图
+- （1）如果一个系统需要在构建的抽象化角色和具体角色之间增加更多的灵活性，避免在两个层次之间建立静态的继承联系。
+- （2）对于那些不希望使用继承或因为多层次继承导致系统类的个数急剧增加的系统，也可以考虑使用桥接模式。
+- （3）一个类存在两个独立变化的维度，且这两个维度都需要扩展。
+
+## UML 类图
+
 ![Bridge](http://blog-1251678165.coscd.myqcloud.com/2018-03-18-Bridge.png)
 
-* （1）`Abstraction`：抽象部分，该类保持一个对实现部分对象的引用，抽象部分中的方法需要调用实现部分的对象来实现，该类一般为抽象类。
-* （2）`RefinedAbstraction`：优化抽象部分，抽象部分的具体实现，该类一般是对抽象部分的方法进行完善和扩展。
-* （3）`Implementor`：实现部分。可以为接口或抽象类，其方法不一定要与抽象部分中的一致，一般情况下是由现实部分提供基本操作，而抽象部分定义的则是基于实现部分这些基本操作的业务方法。
-* （4）`ConcreteImplementorA`、`ConcreteImplementorB`：实现部分的具体实现。完善实现部分中的方法定义的具体逻辑。
+- （1）`Abstraction`：抽象部分，该类保持一个对实现部分对象的引用，抽象部分中的方法需要调用实现部分的对象来实现，该类一般为抽象类。
+- （2）`RefinedAbstraction`：优化抽象部分，抽象部分的具体实现，该类一般是对抽象部分的方法进行完善和扩展。
+- （3）`Implementor`：实现部分。可以为接口或抽象类，其方法不一定要与抽象部分中的一致，一般情况下是由现实部分提供基本操作，而抽象部分定义的则是基于实现部分这些基本操作的业务方法。
+- （4）`ConcreteImplementorA`、`ConcreteImplementorB`：实现部分的具体实现。完善实现部分中的方法定义的具体逻辑。
 
 ```Java
 /**
@@ -98,6 +101,7 @@ public class RefineAbstraction extends Abstraction {
 > 这四种实质上就是两种变化：一是大杯小杯，二是加糖不加糖
 
 ### 给咖啡添加东西的抽象类：（Implementor）
+
 ```java
 /**
  * Created by Weicools on 2017/3/18.
@@ -114,6 +118,7 @@ public abstract class CoffeeAdditives {
 ```
 
 ### 加糖类实现：（ConcreteImplementorA）
+
 ```java
 /**
  * Created by Weicools on 2017/3/18.
@@ -129,6 +134,7 @@ public class AddSugar extends CoffeeAdditives {
 ```
 
 ### 原味类实现：（ConcreteImplementorB）
+
 ```java
 /**
  * Created by Weicools on 2017/3/18.
@@ -144,6 +150,7 @@ public class Ordinary extends CoffeeAdditives {
 ```
 
 ### 咖啡类：（Abstraction）
+
 ```java
 /**
  * Created by Weicools on 2017/3/18.
@@ -165,6 +172,7 @@ public abstract class Coffee {
 ```
 
 ### 大杯咖啡：（RefinedAbstraction）
+
 ```java
 /**
  * Created by Weicools on 2017/3/18.
@@ -184,6 +192,7 @@ public class LargeCoffee extends Coffee {
 ```
 
 ### 小杯咖啡：（RefinedAbstraction）
+
 ```java
 /**
  * Created by Weicools on 2017/3/18.
@@ -203,6 +212,7 @@ public class SmallCoffee extends Coffee {
 ```
 
 ### 测试：
+
 ```java
 /**
  * Created by Weicools on 2017/3/18.
@@ -232,6 +242,7 @@ public class Test {
 ```
 
 ### 结果：
+
 ```
 大杯的加糖咖啡
 大杯的原味咖啡
@@ -239,10 +250,11 @@ public class Test {
 小杯的原味咖啡
 ```
 
-### Android源码中的桥接模式
-* 桥接模式在Android中应用广泛，比如：在View的视图顶层中，CheckBox、CompoundButton、Button、TextView和View之间构成一个继承关系的视图层级，每一层级都仅仅是对一种类型控件的实现，它们定义了该类控件所拥有的基本属性和行为，但是真正将他们绘制到屏幕的部分是由与View相关的功能实现类DisplayList、HardwareLayer、Canvas负责。
-* 另外还有比较典型的Window与WindowManager
-    ![](http://blog-1251678165.coscd.myqcloud.com/2018-03-18-Window%26WindowManager.png)
+### Android 源码中的桥接模式
+
+- 桥接模式在 Android 中应用广泛，比如：在 View 的视图顶层中，CheckBox、CompoundButton、Button、TextView 和 View 之间构成一个继承关系的视图层级，每一层级都仅仅是对一种类型控件的实现，它们定义了该类控件所拥有的基本属性和行为，但是真正将他们绘制到屏幕的部分是由与 View 相关的功能实现类 DisplayList、HardwareLayer、Canvas 负责。
+- 另外还有比较典型的 Window 与 WindowManager
+  ![](http://blog-1251678165.coscd.myqcloud.com/2018-03-18-Window%26WindowManager.png)
 
 主要代码如下：
 
@@ -287,9 +299,9 @@ public abstract class Window {
 > WindowManager：https://developer.android.com/reference/android/view/WindowManager.html
 
 ## 总结
-1. 优点
-    * （1）分离抽象与现实、灵活的扩展以及对客户来说透明的实现。
-    * （2）桥接模式可以取代多层继承，大大减少了子类的个数。
-2. 缺点
-    * 不容易设计，对开发者来说要有一定的经验要求。理解很容易，设计却不容易。
 
+1. 优点
+   - （1）分离抽象与现实、灵活的扩展以及对客户来说透明的实现。
+   - （2）桥接模式可以取代多层继承，大大减少了子类的个数。
+2. 缺点
+   - 不容易设计，对开发者来说要有一定的经验要求。理解很容易，设计却不容易。

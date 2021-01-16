@@ -80,6 +80,7 @@ vim frps.ini
 服务端配置文件内容根据需求自行配置，编辑完成后保存（vim保存如果不会请自行搜索）。
 
 #### 简洁版本
+
 ```
 [common]                                                                                                                   
 bind_port = 7000
@@ -87,6 +88,7 @@ token = 12345678
 ```
 
 #### 带Dashboard版本
+
 ```
 [common]
 bind_port = 7000
@@ -109,6 +111,7 @@ vhost_https_port = 10443
 
 ### 运行frps服务端
 配置完成服务端配置文件之后我们就可以运行frps的服务端了
+
 ```bash
 root@Weicools:/home/frp# 
 ./frps -c frps.ini
@@ -147,6 +150,7 @@ nohup: ignoring input and appending output to 'nohup.out'
 ```
 
 此时可先使用 `Ctrl+C` 关闭 nohup，frps依然会在后台运行，使用 `jobs` 命令查看后台运行的程序，在结果中我们可以看到frps正在后台正常运行
+
 ```bash
 root@Weicools:/home/frp# jobs
 [1]+  Running    nohup ./frps -c frps.ini &
@@ -156,12 +160,14 @@ root@Weicools:/home/frp# jobs
 
 #### 后台运行方法-systemctl
 ##### 运行服务创建
+
 ```bash
 root@Weicools:/home# 
 vim /lib/systemd/system/frps.service
 ```
 
 frps.service文件内容
+
 ```
 [Unit]
 Description=frps service
@@ -177,18 +183,21 @@ WantedBy=multi-user.target
 ```
 
 ##### 启动后台服务
+
 ```bash
 root@Weicools:/home# 
 systemctl start frps
 ```
 
 ##### 开启自启动
+
 ```bash
 root@Weicools:/home# 
 systemctl enable frps
 ```
 
 ### 停止frp服务端
+
 ```bash
 # 先找到这个进程
 root@Weicools:/home# 
@@ -244,6 +253,7 @@ frp实际使用时，会按照端口号进行对应的转发，原理如下图�
 ![gZRQkk](https://blog-1251678165.cos.ap-chengdu.myqcloud.com/gZRQkk.jpg)
 
 上面 `frpc.ini` 的 `Remote Desktop` `SMB` 字段都是自己定义的规则，自定义端口对应时格式如下
+
 ```
 [xxx]
 type = tcp
@@ -270,6 +280,7 @@ cd D:\frp`
 ```
 
 运行frpc程序，窗口中输出如下内容表示运行正常。
+
 ```
 2020/04/03 23:14:56 [I] [service.go:205] login to server success, get run id [2b65b4e58a5917ac], server udp port [0]
 2020/04/03 23:14:56 [I] [proxy_manager.go:136] [2b65b4e58a5917ac] proxy added: [rdp smb]
@@ -312,6 +323,7 @@ nohup /mnt/user/moedata/frp/frpc -c /mnt/user/moedata/frp/frpc.ini &
 ```
 
 客户端停止后台运行
+
 ```bash
 ps -aux|grep frp| grep -v grep
 ```

@@ -5,6 +5,7 @@ tags: [Java, Android, DesignPattern]
 ---
 
 # 《Android 源码设计模式解析与实战》读书笔记 - 代理模式
+
 > 代理模式也称委托模式，是结构型设计模式之一。是应用广泛的模式之一。
 > 定义：为其他对象提供一种代理以控制对这个对象的访问。
 
@@ -12,7 +13,7 @@ tags: [Java, Android, DesignPattern]
 
 当无法或不想直接访问某个对象或访问某个对象存在困难时可以通过一个代理对象来间接访问，为了保证客户端使用的透明性，委托对象与代理对象需要实现相同的接口。
 
-## 2.UML类图
+## 2.UML 类图
 
 ![Proxy](http://blog-1251678165.coscd.myqcloud.com/2018-03-17-Proxy-Pattern-1.png)
 各个角色介绍：
@@ -81,6 +82,7 @@ public class Client {
 > 书中例子：以小民诉讼的流程举例。那么需要代理律师代理，诉讼简单流程：提交申请–>进行举证–>开始辩护–>诉讼完成。
 
 ### 诉讼接口类：
+
 ```java
 /**
  * Created by Weicools on 2018/3/17.
@@ -110,7 +112,8 @@ public interface ILawsuit {
 }
 ```
 
-### 具体诉讼人Weicools：
+### 具体诉讼人 Weicools：
+
 ```java
 /**
  * Created by Weicools on 2017/3/17.
@@ -141,6 +144,7 @@ public class Weicools implements ILawsuit {
 ```
 
 ### 代理律师：
+
 ```java
 /**
  * Created by Weicools on 2017/3/17.
@@ -177,6 +181,7 @@ public class ProxyLayer implements ILawsuit {
 ```
 
 ### 开始仲裁：
+
 ```java
 /**
  * Created by Weicools on 2017/3/17.
@@ -205,10 +210,11 @@ public class Test {
 诉讼成功，判决老板七天内结算工资！
 ```
 
-同样我们也可以代理其他人，只需要实现ILawsuit即可。上面的代理模式也叫静态代理，也就是在代码运行前代理类的class文件就已经存在。那么相反，当然也会有动态代理，通过反射机制动态生成代理类，也就是在编码阶段不需要知道代理谁。
+同样我们也可以代理其他人，只需要实现 ILawsuit 即可。上面的代理模式也叫静态代理，也就是在代码运行前代理类的 class 文件就已经存在。那么相反，当然也会有动态代理，通过反射机制动态生成代理类，也就是在编码阶段不需要知道代理谁。
 
 ## 4.动态代理实现
-Java提供了一个便捷的动态代理接口InvocationHandler，我们来实现它：
+
+Java 提供了一个便捷的动态代理接口 InvocationHandler，我们来实现它：
 
 ```java
 /**
@@ -231,7 +237,7 @@ public class DynamicPorxy implements InvocationHandler {
 }
 ```
 
-这里我们通过invoke方法来调用具体的被代理方法，增加DynamicTest类测试：
+这里我们通过 invoke 方法来调用具体的被代理方法，增加 DynamicTest 类测试：
 
 ```java
 /**
@@ -273,19 +279,21 @@ public class DynamicTest {
 }
 ```
 
-结果不变，由此可以看出动态代理通过一个代理类来处理N多个被代理类，其实质是对代理者与被代理者解耦。相对而言静态代理则只能为给定接口下的实现类做代理，如果接口不同那么就需要重新定义不同的代理类，较为复杂，但是静态代理更符合面向对象原则。具体使用哪种方式，根据个人喜好。
+结果不变，由此可以看出动态代理通过一个代理类来处理 N 多个被代理类，其实质是对代理者与被代理者解耦。相对而言静态代理则只能为给定接口下的实现类做代理，如果接口不同那么就需要重新定义不同的代理类，较为复杂，但是静态代理更符合面向对象原则。具体使用哪种方式，根据个人喜好。
 
-## 5.Android源码中的代理模式实现
+## 5.Android 源码中的代理模式实现
 
-### ActivityManagerProxy代理类
-ActivityManager是Android中管理和维护Activity的相关信息的类，为了隔离它与ActivityManagerService，有效降低二者的耦合，在这中间使用了ActivityManagerProxy代理类，其抽象主题类是IActivityManager接口，所有对ActivityManagerService的访问都转换成对代理类的访问，这样ActivityManager就与ActivityManagerService解耦了。
+### ActivityManagerProxy 代理类
+
+ActivityManager 是 Android 中管理和维护 Activity 的相关信息的类，为了隔离它与 ActivityManagerService，有效降低二者的耦合，在这中间使用了 ActivityManagerProxy 代理类，其抽象主题类是 IActivityManager 接口，所有对 ActivityManagerService 的访问都转换成对代理类的访问，这样 ActivityManager 就与 ActivityManagerService 解耦了。
 ![](http://blog-1251678165.coscd.myqcloud.com/2018-03-17-Activity-Manaher.png)
 
 ## 6.总结
+
 1. 优点
-    * （1）对代理者与被代理者进行解耦。
-    * （2）代理对象在客户端和目标对象之间起到一个中介的作用，这样可以起到对目标对象的保护。
+
+   - （1）对代理者与被代理者进行解耦。
+   - （2）代理对象在客户端和目标对象之间起到一个中介的作用，这样可以起到对目标对象的保护。
 
 2. 缺点
-    * 基本没有缺点，真要说缺点就是设计模式的通病：对类的增加。
-
+   - 基本没有缺点，真要说缺点就是设计模式的通病：对类的增加。

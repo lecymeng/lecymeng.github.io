@@ -6,108 +6,117 @@ tags: [macOS]
 ---
 
 # Mac OS X 终端命令学习
+
 1. 显示当前目录的路径
-  - pwd
+
+- pwd
 <!--more-->
-  
+
 2. 列出文件
-  - ls 参数 目录名
-  - 参数: -w 显示中文，-l 详细信息， -a 包括隐藏文件，每一行开头是 “d” 则为文件夹，开头是 “-” 则为文件。
-  - 例: 看看驱动目录下有什么：
-          ls /System/Library/Extensions
+
+- ls 参数 目录名
+- 参数: -w 显示中文，-l 详细信息， -a 包括隐藏文件，每一行开头是 “d” 则为文件夹，开头是 “-” 则为文件。
+- 例: 看看驱动目录下有什么：
+  ls /System/Library/Extensions
 
 3. 打开目录
-  - cd 目录名
-  - cd .. ：返回上一级目录
-  - cd ../.. ：cd ../.. /..：返回上两级/三级目录
-  - cd . ：当前目录
-  - 例：想到驱动目录下溜达一圈：
-            cd /System/Library/Extensions
+
+- cd 目录名
+- cd .. ：返回上一级目录
+- cd ../.. ：cd ../.. /..：返回上两级/三级目录
+- cd . ：当前目录
+- 例：想到驱动目录下溜达一圈：
+  cd /System/Library/Extensions
 
 4. 建立新目录
-  - mkdir 目录名
-  - 例：在驱动目录下建一个备份目录
-          backup：mkdir/System/Library/Extensions/backup
+
+- mkdir 目录名
+- 例：在驱动目录下建一个备份目录
+  backup：mkdir/System/Library/Extensions/backup
 
 5. 新建文件
-  - touch 文件名
-  - 例：在当前目录下建一个备份文件 backup：
-          touch backup.txt
+
+- touch 文件名
+- 例：在当前目录下建一个备份文件 backup：
+  touch backup.txt
 
 6. 拷贝文件
-  - cp 参数 源文件 目标文件
-  - 例：想把桌面的 Natit.kext 拷贝到驱动目录中  
-            cp -R /User/用户名/Desktop/Natit.kext /System/Library/Extensions
-  - 参数 R 表示对目录进行递归操作，kext 在图形界面下看起来是个文件，实际上是个文件夹。
-  - 把驱动目录下的所有文件备份到桌面 backup：
-          cp -R /System/Library/Extensions/ /User/用户名/Desktop/backup
+
+- cp 参数 源文件 目标文件
+- 例：想把桌面的 Natit.kext 拷贝到驱动目录中  
+   cp -R /User/用户名/Desktop/Natit.kext /System/Library/Extensions
+- 参数 R 表示对目录进行递归操作，kext 在图形界面下看起来是个文件，实际上是个文件夹。
+- 把驱动目录下的所有文件备份到桌面 backup：
+  cp -R /System/Library/Extensions/ /User/用户名/Desktop/backup
 
 7. 删除文件
-  - rm 参数 文件
-  - 参数－rf 表示递归和强制，千万要小心使用，如果执行了 rm -rf / 你的系统就全没了
-  - 例：想删除驱动的缓存：`rm `-rf /System/Library/Extensions.kextcache`
-            rm -rf /System/Library/Extensions.mkext`
+
+- rm 参数 文件
+- 参数－rf 表示递归和强制，千万要小心使用，如果执行了 rm -rf / 你的系统就全没了
+- 例：想删除驱动的缓存：`rm `-rf /System/Library/Extensions.kextcache` rm -rf /System/Library/Extensions.mkext`
 
 8. 移动文件
-  - mv 源文件 目标文件
-  - 例：想把 AppleHDA.Kext 移到桌面：
-          mv /System/Library/Extensions/AppleHDA.kext /User/用户名/Desktop
+
+- mv 源文件 目标文件
+- 例：想把 AppleHDA.Kext 移到桌面：
+  mv /System/Library/Extensions/AppleHDA.kext /User/用户名/Desktop
 
 9. 文本编辑
-  - nano 文件名
-          例：编辑 Info.plist：nano /System/Library/Extensions/Natit.kext/Info.plist
+
+- nano 文件名
+  例：编辑 Info.plist：nano /System/Library/Extensions/Natit.kext/Info.plist
 
 10. 清屏
-  
+
 - clear
-  
+
 11. 目录操作：
 
-  | 命令名 | 功能描述             | 使用举例        |
-  | ------ | -------------------- | --------------- |
-  | mkdir  | 创建一个目录         | mkdir dirname   |
-  | rmdir  | 删除一个目录         | rmdir dirname   |
-  | mvdir  | 移动或重命名一个目录 | mvdir dir1 dir2 |
-  | cd     | 改变当前目录         | cd dirname      |
-  | pwd    | 显示当前目录的路径名 | pwd             |
-  | ls     | 显示当前目录的内容   | ls -la          |
-  
+| 命令名 | 功能描述             | 使用举例        |
+| ------ | -------------------- | --------------- |
+| mkdir  | 创建一个目录         | mkdir dirname   |
+| rmdir  | 删除一个目录         | rmdir dirname   |
+| mvdir  | 移动或重命名一个目录 | mvdir dir1 dir2 |
+| cd     | 改变当前目录         | cd dirname      |
+| pwd    | 显示当前目录的路径名 | pwd             |
+| ls     | 显示当前目录的内容   | ls -la          |
+
 12. 文件操作：
 
-  | 命令名 | 功能描述               | 使用举例                  |
-  | ------ | ---------------------- | ------------------------- |
-  | cat    | 显示或连接文件         | cat filename              |
-  | od     | 显示非文本文件的内容   | od -c filename            |
-  | cp     | 复制文件或目录         | cp file1 file2            |
-  | rm     | 删除文件或目录         | rm filename               |
-  | mv     | 改变文件名或所在目录   | mv file1 file2            |
-  | find   | 使用匹配表达式查找文件 | find . -name "*.c" -print |
-  | file   | 显示文件类型           | file filename             |
+| 命令名 | 功能描述               | 使用举例                   |
+| ------ | ---------------------- | -------------------------- |
+| cat    | 显示或连接文件         | cat filename               |
+| od     | 显示非文本文件的内容   | od -c filename             |
+| cp     | 复制文件或目录         | cp file1 file2             |
+| rm     | 删除文件或目录         | rm filename                |
+| mv     | 改变文件名或所在目录   | mv file1 file2             |
+| find   | 使用匹配表达式查找文件 | find . -name "\*.c" -print |
+| file   | 显示文件类型           | file filename              |
 
 13. 选择操作：
 
-   | 命令名 | 功能描述                       | 使用举例                  |
-   | ------ | ----------------------- | ------------------------- |
-   | head   | 显示文件的最初几行             | head -20 filename         |
-   | tail   | 显示文件的最后几行             | tail -15 filename         |
-   | cut    | 显示文件每行中的某些域         | cut -f1,7 -d: /etc/passwd |
-   | colrm  | 从标准输入中删除若干列         | colrm 8 20 file2          |
-   | diff   | 比较并显示两个文件的差异       | diff file1 file2          |
-   | sort   | 排序或归并文件                 | sort -d -f -u file1       |
-   | uniq   | 去掉文件中的重复行             | uniq file1 file2          |
-   | comm   | 显示两有序文件的公共和非公共行 | comm file1 file2          |
-   | wc     | 统计文件的字符数、词数和行数   | wc filename               |
-   | nl     | 给文件加上行号                 | nl file1 >file2           |
+| 命令名 | 功能描述                       | 使用举例                  |
+| ------ | ------------------------------ | ------------------------- |
+| head   | 显示文件的最初几行             | head -20 filename         |
+| tail   | 显示文件的最后几行             | tail -15 filename         |
+| cut    | 显示文件每行中的某些域         | cut -f1,7 -d: /etc/passwd |
+| colrm  | 从标准输入中删除若干列         | colrm 8 20 file2          |
+| diff   | 比较并显示两个文件的差异       | diff file1 file2          |
+| sort   | 排序或归并文件                 | sort -d -f -u file1       |
+| uniq   | 去掉文件中的重复行             | uniq file1 file2          |
+| comm   | 显示两有序文件的公共和非公共行 | comm file1 file2          |
+| wc     | 统计文件的字符数、词数和行数   | wc filename               |
+| nl     | 给文件加上行号                 | nl file1 >file2           |
 
 14. 进程操作：
- 
+
     | 命令名 | 功能描述         | 使用举例      |
     | ------ | ---------------- | ------------- |
     | ps     | 显示进程当前状态 | ps u          |
     | kill   | 终止进程         | kill -9 30142 |
 
 15. 时间操作：
-  
+
     | 命令名 | 功能描述                 | 使用举例   |
     | ------ | ------------------------ | ---------- |
     | date   | 显示系统的当前日期和时间 | date       |
@@ -129,7 +138,7 @@ tags: [macOS]
     | mesg   | 允许或拒绝接收报文                | mesg n                      |
 
 17. Korn Shell 命令：
- 
+
     | 命令名  | 功能描述                        | 使用举例        |
     | ------- | ------------------------------- | --------------- |
     | history | 列出最近执行过的 几条命令及编号 | history         |
@@ -138,7 +147,7 @@ tags: [macOS]
     | unalias | 取消对某个别名的定义            | unalias del     |
 
 18. 其它命令：
-  
+
     | 命令名 | 功能描述                       | 使用举例     |
     | ------ | ------------------------------ | ------------ |
     | uname  | 显示操作系统的有关信息         | uname -a     |
@@ -151,4 +160,3 @@ tags: [macOS]
     | du     | 查询磁盘使用情况               | du -k subdir |
     | df     | 显示文件系统的总空间和可用空间 | df           |
     | w      | 显示当前系统活动的总信息       | w            |
-

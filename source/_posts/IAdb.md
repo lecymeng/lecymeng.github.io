@@ -6,41 +6,46 @@ tags: [Android, Script]
 ---
 
 # IADB 工具
-ADB扩展工具
+
+ADB 扩展工具
 
 含义：i adb && IA Debug Bridge
 实现步骤：
-1. Shell脚本：iadb.sh（调用adb命令）
-2. 二进制程序：iadb（使用shc封装成可执行程序）
+
+1. Shell 脚本：iadb.sh（调用 adb 命令）
+2. 二进制程序：iadb（使用 shc 封装成可执行程序）
 <!--more-->
 
 ![](https://blog-1251678165.cos.ap-chengdu.myqcloud.com/Ns2t4O.png)
 
-## 参数1
+## 参数 1
 
-| Param     | AppName     | PackageName                       |
-|-----------|-------------|-----------------------------------|
-| sp        | SpaceK      | com.oneapp.max.cleaner.booster.cn |
-| op        | Optimizer-K | com.oneapp.max.cn                 |
-| pp        | PPP-K       | com.oneapp.max.security.pro.cn    |
-| wa        | Walk-K      | Com.walk.sports.cn                |
+| Param | AppName     | PackageName                       |
+| ----- | ----------- | --------------------------------- |
+| sp    | SpaceK      | com.oneapp.max.cleaner.booster.cn |
+| op    | Optimizer-K | com.oneapp.max.cn                 |
+| pp    | PPP-K       | com.oneapp.max.security.pro.cn    |
+| wa    | Walk-K      | Com.walk.sports.cn                |
 
-## 参数2
+## 参数 2
 
-| Param     | 说明                             | 使用 |
-|-----------|--------------------------------|----|
-| rp        | Revoke Permissions             |    |
-| rp-r      | Revoke Permissions and Restart |    |
-| uninstall | Uninstall App                  |    |
-| kill      | Kill App                       |    |
-| start     | Start App                      |    |
-| restart   | Restart App                    |    |
-| clear     | Clear App Data                 |    |
-| clear-r   | Clear App Data and Restart     |    |
+| Param     | 说明                           | 使用 |
+| --------- | ------------------------------ | ---- |
+| rp        | Revoke Permissions             |      |
+| rp-r      | Revoke Permissions and Restart |      |
+| uninstall | Uninstall App                  |      |
+| kill      | Kill App                       |      |
+| start     | Start App                      |      |
+| restart   | Restart App                    |      |
+| clear     | Clear App Data                 |      |
+| clear-r   | Clear App Data and Restart     |      |
 
 ### Revoke Permissions
+
 ### Revoke Permissions and Restart
+
 ### Uninstall App
+
 ```
 adb uninstall [-k] <packagename>
 ```
@@ -48,10 +53,13 @@ adb uninstall [-k] <packagename>
 <packagename> 表示应用的包名，-k 参数可选，表示卸载应用但保留数据和缓存目录
 
 ### Kill App
+
 ### Start App
+
 ### Restart App
 
 ### Clear App Data
+
 ```
 adb shell pm clear <packagename>
 ```
@@ -83,13 +91,12 @@ shellfile.sh.c
 
 `shellfile.sh.x`是脚本所对应的可执行程序
 
-`shellfile.sh.c`是`shellfile.sh.x`对应的c语言实现的源码
+`shellfile.sh.c`是`shellfile.sh.x`对应的 c 语言实现的源码
 
-shc根据脚本文件的第一行`#!/bin/bash`或其他shell将脚本翻译成相应的c源码并生成可执行程序。
+shc 根据脚本文件的第一行`#!/bin/bash`或其他 shell 将脚本翻译成相应的 c 源码并生成可执行程序。
 
-但shc似乎无法识别expect
+但 shc 似乎无法识别 expect
 
-封装后的脚本安全性会有所提高，但这也仅能防个君子，通过gdb或其他调试工具仍然能获得最初的源码
-
+封装后的脚本安全性会有所提高，但这也仅能防个君子，通过 gdb 或其他调试工具仍然能获得最初的源码
 
 test adb
