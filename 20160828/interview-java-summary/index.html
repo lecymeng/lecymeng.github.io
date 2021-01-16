@@ -1,0 +1,2354 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Java常考面试题, Weicools">
+    <meta name="description" content="降りしきる強い雨, 描いた夢の果て">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-85513822-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-85513822-1');
+</script>
+
+
+    <title>Java常考面试题 | Weicools</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Weicools" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Weicools</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Weicools</div>
+        <div class="logo-desc">
+            
+            降りしきる強い雨, 描いた夢の果て
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3367474_69218705.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Java常考面试题</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/Interview/">
+                                <span class="chip bg-color">Interview</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2016-08-28
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-01-16
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    13.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    47 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Java-常考面试题"><a href="#Java-常考面试题" class="headerlink" title="Java 常考面试题"></a>Java 常考面试题</h1><ol>
+<li>什么是 Java 虚拟机，为什么 Java 是平台无关性的语言？</li>
+</ol>
+<ul>
+<li>Java 虚拟机是一个可以执行 Java 字节码的虚拟机进程。Java 源文件被编译成能被 Java 虚拟机执行的字节码文件</li>
+<li>Java 被设计成允许应用程序可以运行在任意的平台，而不需要程序员为每一个平台单独重写或者是重新编译。Java 虚拟机让这个变为可能，因为它知道底层硬件平台的指令长度和其他特性； JVM 屏蔽了与具体操作系统平台相关的信息，使得 Java 程序只需生成在 Java 虚拟机上运行的目标代码（ 字节码 ），就可以在多种平台上不加修改地运行<a id="more"></a>
+</li>
+</ul>
+<ol start="2">
+<li>JDK 和 JRE 的区别</li>
+</ol>
+<ul>
+<li>Java 运行时环境(JRE)是将要执行 Java 程序的 Java 虚拟机。它同时也包含了执行 applet 需要的浏览器插件</li>
+<li>Java 开发工具包(JDK)是完整的 Java 软件开发包，包含了**JRE，编译器和其他的工具(比如：JavaDoc，Java 调试器)**，可以让开发者开发、编译、执行 Java 应用程序</li>
+</ul>
+<ol start="3">
+<li>”static”关键字？Java 中是否可以覆盖(override)一个 private 或者是 static 的方法？</li>
+</ol>
+<ul>
+<li>“static”关键字表示静态的意思，可用于修饰变量和成员函数，被 static 修饰的成员函数只能访问静态成员，静态是随着类加载而加载的，因此可以直接用类进行访问</li>
+<li>Java 中 static 方法不能被覆盖，因为覆盖是基于运行时动态绑定的，而 static 方法是编译时静态绑定的</li>
+<li><strong>重写是子类中的方法和子类继承的父类中的方法一样（函数名，参数，参数类型，反回值类型）</strong>，但是子类中的访问权限要不低于父类中的访问权限。重写的前提是必须要继承，private 修饰不支持继承，因此被私有的方法不可以被重写。静态方法形式上可以被重写，即子类中可以重写父类中静态的方法。但是实际上<strong>从内存的角度上静态方法不可以被重写</strong></li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">class Super{
+  static String getString(){
+    return "Good night"
+  }
+  String name(){
+    return "Weico"
+  }
+}
+class Sub extends Super{
+  static String getString(){
+    return "Hello"
+  }
+  String name(){
+    return "lecymeng"
+  }
+}
+class Test{
+  public static void main(String[] args){
+    Super s = new Sub();
+    System.out.println(s.getString() + "," + s.name());
+    // 输出结果：Good night,lecymeng
+    // 实例方法被覆盖，静态方法被隐藏
+  }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="4">
+<li>是否可以在 static 环境中访问非 static 变量？</li>
+</ol>
+<ul>
+<li>静态的成员属于类，随着类的加载而加载到静态方法区内存，当类加载时，此时不一定有实例创建，没有实例，就不可以访问非静态的成员</li>
+<li>当类被 Java 虚拟机载入的时候，会对 static 变量进行初始化。如果你的代码尝试不用实例来访问非 static 的变量，编译器会报错，因为这些变量还没有被创建出来，还没有跟任何实例关联上</li>
+</ul>
+<ol start="5">
+<li>Java 支持的数据类型有哪些？什么是自动拆装箱？</li>
+</ol>
+<ul>
+<li>Java 支持 8 中基本数据类型：byte/short/int/long/float/double/boolean/char</li>
+<li>自动装箱是 Java 编译器在基本数据类型和对应的对象包装类型之间的转化。byte-&gt;Byte;short-&gt;Short;int-&gt;Integer;long-&gt;Long;float-&gt;Float;double-&gt;Double;boolean-&gt;Boolean;char-&gt;Character.反之就是自动拆箱</li>
+</ul>
+<ol start="6">
+<li>Java 中的方法覆盖(Overriding)和方法重载(Overloading)是什么意思？</li>
+</ol>
+<ul>
+<li>Java 中的方法重载 Overloading 发生在<strong>同一个类</strong>里面两个或者是多个方法的<strong>方法名相同但是参数不同</strong>的情况</li>
+<li>方法覆盖 Overriding 是说子类重新定义了父类的方法。方法覆盖必须有相同的方法名，参数列表和返回类型。覆盖者可能不会限制它所覆盖的方法的访问</li>
+<li>访问权限&gt;=父类，抛出异常必须&lt;=父类（或者不抛异常）。（特殊点，如果子类重写的方法所抛异常小于父类，那么就不能调用父类的方法，因为子类的异常小，捕获不了 ）， private 修饰的父类方法不能被重写</li>
+</ul>
+<ol start="7">
+<li>Java 中，什么是构造函数？什么是构造函数重载？什么是复制构造函数？</li>
+</ol>
+<ul>
+<li>当新对象被创建的时候，构造函数会被调用。每一个类都有构造函数。在程序员没有给类提供构造函数的情况下，Java 编译器会为这个类创建一个默认的构造函数</li>
+<li>Java 中构造函数重载和方法重载很相似；可以为一个类创建多个构造函数。每一个构造函数必须有它自己唯一的参数列表</li>
+<li>Java 不支持像 C++中那样的复制构造函数，这个不同点是因为如果你不自己写构造函数的情况下，Java 不会创建默认的复制构造函数</li>
+</ul>
+<ol start="8">
+<li>Java 支持多继承么？</li>
+</ol>
+<ul>
+<li>Java 中<strong>类不支持多继承</strong>，只支持单继承（即一个类只有一个父类）</li>
+<li>但是 java 中的<strong>接口支持多继承</strong>，即一个子接口可以有多个父接口。（接口的作用是用来扩展对象的功能，一个子接口继承多个父接口，说明子接口扩展了多个功能，当类实现接口时，类就扩展了相应的功能）</li>
+</ul>
+<ol start="9">
+<li>接口和抽象类的区别是什么？</li>
+</ol>
+<ul>
+<li>Java 提供和支持创建抽象类和接口，它们的实现有共同点，也有不同之处：</li>
+<li>接口中所有的方法隐含的都是抽象方法 / 而抽象类则可以同时包含抽象和非抽象方法</li>
+<li>类可以实现多个接口 / 但是只能继承一个抽象类</li>
+<li>Java 接口中申明的变量默认都是 public static final / 抽象类可以包含非 final 的变量</li>
+<li>Java 接口中的成员函数默认是 public 的 / 抽象类的成员函数可以是 private，protected 或者是 public</li>
+<li>接口是绝对抽象的，不可以被实例化 / 抽象类也不可以被实例化，但是，如果它包含 main 方法的话是可以被调用的</li>
+<li>类可以不实现抽象类和接口声明的所有方法(在这种情况下，类也必须得声明成是抽象的)</li>
+<li>抽象类可以在不提供接口方法实现的情况下实现接口–？</li>
+</ul>
+<ol start="10">
+<li>什么是值传递和引用传递？</li>
+</ol>
+<ul>
+<li>值传递是对基本型变量而言的,传递的是该变量的一个副本,改变副本不影响原变量</li>
+<li>引用传递一般是对于对象型变量而言的,传递的是该对象地址的一个副本, 并不是原对象本身 。 所以对引用对象进行操作会同时改变原对象.</li>
+<li>一般认为,java 内的传递都是值传递</li>
+<li>问题来了：java 中对象作为参数传递给一个方法，到底是值传递，还是引用传递？<ul>
+<li>值传递！Java 中只有按值传递，没有按引用传递！</li>
+</ul>
+</li>
+</ul>
+<ol start="11">
+<li>进程和线程的区别是什么？</li>
+</ol>
+<ul>
+<li>进程是执行着的应用程序，而线程是进程内部的一个执行序列。一个进程可以有多个线程。线程又叫做轻量级进程</li>
+</ul>
+<ol start="12">
+<li>创建线程有几种不同的方式？你喜欢哪一种？为什么？</li>
+</ol>
+<ul>
+<li>继承 Thread 类</li>
+<li>实现 Runnable 接口</li>
+<li>应用程序可以使用 Executor 框架来创建线程池</li>
+<li>实现 Runnable 接口这种方式更受欢迎，因为这不需要继承 Thread 类。在应用设计中已经继承了别的对象的情况下，这需要多继承（而 Java 不支持多继承），只能实现接口。同时，线程池也是非常高效的，很容易实现和使用</li>
+</ul>
+<ol start="13">
+<li>概括的解释下线程的几种可用状态</li>
+</ol>
+<ul>
+<li>1.新建（new）：新创建了一个线程对象</li>
+<li>2.可运行（runnable）：线程对象创建后，其他线程（例如 main 线程）调用了该线程的 start()方法。该状态的线程位于可运行线程池中，等待被线程调度选中，获取 cpu 的使用权</li>
+<li>3.运行（running）：可运行状态的线程获得了 CPU 时间片（timeslice），执行程序代码</li>
+<li>4.阻塞（block）：阻塞状态是指线程因为某种原因放弃了 CPU 使用权，暂时停止运行。直到线程进入可运行( runnable )状态，才有 机会再次获得 cpu timeslice 转到运行( running )状态。阻塞的情况分三种：<ul>
+<li>(一). 等待阻塞：运行( running )的线程执行 o . wait ()方法， JVM 会把该线程放 入等待队列( waitting queue )中</li>
+<li>(二). 同步阻塞：运行( running )的线程在获取对象的同步锁时，若该同步锁 被别的线程占用，则 JVM 会把该线程放入锁池( lock pool )中</li>
+<li>(三). 其他阻塞: 运行( running )的线程执行 Thread . sleep ( long ms )或 t . join ()方法，或者发出了 I / O 请求时， JVM 会把该线程置为阻塞状态。当 sleep ()状态超时、 join ()等待线程终止或者超时、或者 I / O 处理完毕时，线程重新转入可运行( runnable )状态</li>
+</ul>
+</li>
+<li>5.死亡（dead）：线程 run ()、 main () 方法执行结束，或者因异常退出了 run ()方法，则该线程结束生命周期。死亡的线程不可再次复生<br><img src="http://uploadfiles.nowcoder.com/images/20151217/149974_1450349079825_4697A22AC611680A692472687DEC1CFD" alt="Thread state"></li>
+</ul>
+<ol start="14">
+<li>同步方法和同步代码块的区别？</li>
+</ol>
+<ul>
+<li>同步方法默认用 this 或者当前类 class 对象作为锁</li>
+<li>同步代码块可以选择以什么来加锁，比同步方法要更细颗粒度，我们可以选择只同步会发生同步问题的部分代码而不是整个方法</li>
+</ul>
+<ol start="15">
+<li>在监视器(Monitor)内部，是如何做线程同步的？程序应该做哪种级别的同步？</li>
+</ol>
+<ul>
+<li>监视器和锁是在 Java 虚拟机中一块使用的</li>
+<li>监视器监视一块同步代码块，确保只有一次只有一个线程执行同步代码块</li>
+<li>每一个监视器都和一个对象引用关联</li>
+<li>线程在获取锁之前不允许执行同步代码块</li>
+</ul>
+<ol start="16">
+<li>什么是死锁（deadlock）？</li>
+</ol>
+<ul>
+<li>两个或者两个以上的线程都在等待对方执行完毕才能继续往下执行的时候就发生了死锁，结果是这些线程都陷入了无线的等待</li>
+</ul>
+<ol start="17">
+<li>如何确保 N 个线程可以访问 N 个资源同时又不导致死锁？</li>
+</ol>
+<ul>
+<li>使用多线程的时候，简单避免死锁的方式就是：指定获取锁的顺序，并强制线程按照规定的熟悉怒获取锁；如果所有的线程都是以同样的顺序加锁和释放锁，就不会出现死锁了</li>
+<li>多线程产生死锁需要四个条件，分别是<strong>互斥性，保持和请求，不可剥夺性还有要形成闭环</strong>，这四个条件缺一不可，只要破坏了其中一个条件就可以破坏死锁，其中最简单的方法就是线程都是以同样的顺序加锁和释放锁，也就是破坏了第四个条件<ul>
+<li>1.互斥条件：一个资源每次只能被一个进程使用</li>
+<li>2.保持和请求条件：一个进程因请求资源而阻塞时，对已获得资源保持不放</li>
+<li>3.不可剥夺调教：进程已获得资源，在未使用完成前，不能被剥夺</li>
+<li>4.循环等待条件：若干进程之间形成一种头尾相接的循环等待资源关系</li>
+</ul>
+</li>
+</ul>
+<ol start="18">
+<li>Java 集合类框架的基本接口有哪些？</li>
+</ol>
+<ul>
+<li>集合类中指定了一组叫做元素的对象，集合类接口中的每一种具体实现类都可以选择以它的方式对元素进行保存和排序，有的集合类允许重复的键，有些不允许</li>
+<li>Java 集合类提供了一套设计良好的支持对一组对象进行操作的接口和类。Java 集合类里面最基本的接口有：</li>
+<li>Collection：代表一组对象，每一个对象都是它的子元素<ul>
+<li>List：有顺序的 Collection，可以包含重复元素<ul>
+<li>ArrayList：类似一个长度可变的数组 。适合查询，不适合增删</li>
+<li>LinkedList：底层是双向循环链表。适合增删，不适合查询</li>
+</ul>
+</li>
+<li>Set：不包含重复元素的 Collection<ul>
+<li>HashSet：根据对象的哈希值确定元素在集合中的位置</li>
+<li>TreeSet: 以二叉树的方式存储元素，实现了对集合中的元素排序</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Map：可以把键 key 映射到值 value 得对象，键不允许重复<ul>
+<li>HashMap：用于存储键值映射关系，不能出现重复的键 key</li>
+<li>TreeMap：用来存储键值映射关系，不能出现重复的键 key，所有的键按照二叉树的方式排列</li>
+</ul>
+</li>
+</ul>
+<ol start="19">
+<li>为什么集合类没有实现 Cloneable 和 Serializable 接口？</li>
+</ol>
+<ul>
+<li>克隆(cloning)或者是序列化(serialization)的语义和含义是跟具体的实现相关的。因此，应该由集合类的具体实现来决定如何被克隆或者是序列化</li>
+</ul>
+<ol start="20">
+<li>什么是迭代器(Iterator)？</li>
+</ol>
+<ul>
+<li>Iterator 接口提供了很多对集合元素进行迭代的方法。每一个集合类都包含了可以返回迭代器实例的迭代方法。迭代器可以在迭代的过程中删除底层集合的元素,但是不可以直接调用集合的 remove(Object Obj)删除，可以通过迭代器的 remove()方法删除</li>
+</ul>
+<ol start="21">
+<li>Iterator 和 ListIterator 的区别是什么？</li>
+</ol>
+<ul>
+<li>Iterator 可以遍历 List 和 Set / ListIterator 只能遍历 List</li>
+<li>Iterator 对集合只能是前向遍历 / ListIterator 既可以前向也可以后向</li>
+<li>ListIterator 实现了 Iterator 接口，并包含其他的功能，比如：增加元素，替换元素，获取前一个和后一个元素的索引等等</li>
+</ul>
+<ol start="22">
+<li>快速失败（fail-fast）和安全失败（fail-safe）区别</li>
+</ol>
+<ul>
+<li>Iterator 的安全失败是基于对底层集合进行拷贝，所以不受源集合上修改的影响</li>
+<li>java.util 包下面的所有集合类都是快速失败</li>
+<li>java.util.concurrent 包下面的所有的类都是安全失败的</li>
+<li>快速失败的迭代器会抛出 ConcurrentModificationException 异常，而安全失败的迭代器永远不会抛出这样的异常</li>
+</ul>
+<ol start="23">
+<li>Java 中的 HashMap 的工作原理是什么？</li>
+</ol>
+<ul>
+<li>Java 中 HashMap 是以键值对（key-value）的形式存储元素</li>
+<li>HashMap 需要一个 hash 函数，它使用 hashCode()和 equals()方法来向集合添加元素/从集合中检索元素</li>
+<li>当调用 put()方法的时候，HashMap 会计算 key 的 hash 值，然后把键值对存储在集合中合适的索引上。如果 key 已经存在了，value 会被更新成新值</li>
+<li>HashMap 的一些重要的特性是它的容量(capacity)，负载因子(load factor)和扩容极限(threshold resizing)</li>
+</ul>
+<ol start="24">
+<li>hashCode()和 equals()方法的重要性体现在什么地方？</li>
+</ol>
+<ul>
+<li>Java 中的 HashMap 使用 hashCode()和 equals()方法来确定键值对的索引，当根据键获取值的时候也会用到这两个方法</li>
+<li>如果没有正确的实现这两个方法，两个不同的键可能会有相同的 hash 值，因此，可能会被集合认为是相等的</li>
+<li>这两个方法也用来发现重复元素。所以这两个方法的实现对 HashMap 的精确性和正确性是至关重要的</li>
+</ul>
+<ol start="25">
+<li>HashMap 和 Hashtable 有什么区别？</li>
+</ol>
+<ul>
+<li>HashMap 和 Hashtable 都实现了 Map 的接口，因此很多特性非常相似。他们不同之处在于：</li>
+<li>HashMap 运行键和值是 null，而 Hashtable 不允许键值为 null</li>
+<li>Hashtable 是同步的，而 HashMap 不是；所以 HashMap 更适合单线程环境，Hashtable 更适合多线程环境</li>
+<li>HashMap 提供了可以供应用迭代的键的集合，因此 HashMap 是快速失败的；另一方，Hashtable 提供了对键的列举(Enumeration)。一般认为 Hashtable 是一个遗留的类</li>
+</ul>
+<ol start="26">
+<li>数组(Array)和列表(ArrayList)有什么区别？什么时候应该使用 Array 而不是 ArrayList？</li>
+</ol>
+<ul>
+<li>Array 可以包含基本类型和对象类型 / ArrayList 只能包含对象类型</li>
+<li>Array 的大小是固定的 / ArrayList 的大小是动态变化的</li>
+<li>ArrayList 提供更多的方法和特性，例如：addAll(),removeAll(),iterator()</li>
+<li>对于基本数据类型，集合使用自动装箱来减少编码工作量；但是当处理固定大小固定大小的基本数据类型的时候，这种方式相对比较慢</li>
+</ul>
+<ol start="27">
+<li>ArrayList 和 LinkedList 有什么区别？</li>
+</ol>
+<ul>
+<li>ArrayList 和 LinkedList 都实现了 List 接口，不同之处在于：</li>
+<li>ArrayList 是基于索引的数据接口，它的底层是数组，它可以以 O(1)时间复杂度对元素进行随机访问 / 与此对应，LinkedList 是以元素列表的形式存储它的数据，每一个元素都和它的前一个元素和后一个元素链接在一起，查找某个元素的时间复杂度是 O(N)</li>
+<li>相对于 ArrayList，LinkedList 的插入，添加，删除操作速度更快，因为当元素被添加到集合任意位置的时候，不需要像数组那样重新计算大小或者是更新索引</li>
+<li>LinkedList 比 ArrayList 更占内存，因为 LinkedList 为每一个节点存储了两个引用，一个指向前一个元素，一个指向下一个元素</li>
+</ul>
+<ol start="28">
+<li>Comparable 和 Comparator 接口是干什么的？列出它们的区别</li>
+</ol>
+<ul>
+<li>Java 提供了只包含一个 compareTo()方法的 Comparable 接口。这个方法可以个给两个对象排序。具体来说，它返回负数，0，正数来表明输入对象小于，等于，大于已经存在的对象</li>
+<li>Java 提供了包含 compare()和 equals()两个方法的 Comparator 接口。compare()方法用来给两个输入参数排序，返回负数，0，正数表明第一个参数是小于，等于，大于第二个参数。equals()方法需要一个对象作为参数，它用来决定输入参数是否和 comparator 相等。只有当输入参数也是一个 comparator 并且输入参数和当前 comparator 的排序结果是相同的时候，这个方法才返回 true</li>
+</ul>
+<ol start="29">
+<li>什么是 Java 优先级队列(Priority Queue)？</li>
+</ol>
+<ul>
+<li>Priority Queue 一个基于优先级堆得无线队列，它的元素是按照自然顺序排序的</li>
+<li>在创建的时候，我们可以给它提供一个负责给元素排序的比较器</li>
+<li>PriorityQueue 不允许 null 值，因为他们没有自然顺序，或者说他们没有任何的相关联的比较器</li>
+<li>PriorityQueue 不是线程安全的，入队和出队的时间复杂度是 O(log(n))</li>
+</ul>
+<ol start="30">
+<li>你了解大 O 符号(big-O notation)么？你能给出不同数据结构的例子么？</li>
+</ol>
+<ul>
+<li>大 O 符号描述了当数据结构里面的元素增加的时候，算法的规模或者是性能在最坏的场景下有多么好。</li>
+<li>大 O 符号也可用来描述其他的行为，比如：内存消耗。因为集合类实际上是数据结构，我们一般使用大 O 符号基于时间，内存和性能来选择最好的实现。大 O 符号可以对大量数据的性能给出一个很好的说明</li>
+</ul>
+<ol>
+<li><p>如何权衡是使用无序的数组还是有序的数组？</p>
+<ul>
+<li>有序数组最大的好处在于查找的时间复杂度是 O(log n)，而无序数组是 O(n)。有序数组的缺点是插入操作的时间复杂度是 O(n)，因为值大的元素需要往后移动来给新元素腾位置。相反，无序数组的插入时间复杂度是常量 O(1)</li>
+</ul>
+</li>
+<li><p>Java 集合类框架的最佳实践</p>
+<ul>
+<li>根据应用的需要正确选择要使用的集合的类型对性能非常重要，比如：假如元素的大小是固定的，而且能事先知道，我们就应该用 Array 而不是 ArrayList</li>
+<li>有些集合类允许指定初始容量。因此，如果我们能估计出存储的元素的数目，我们可以设置初始容量来避免重新计算 hash 值或者是扩容</li>
+<li>为了类型安全，可读性和健壮性的原因总是要使用泛型。同时，使用泛型还可以避免运行时的 ClassCastException</li>
+<li>使用 JDK 提供的不变类(immutable class)作为 Map 的键可以避免为我们自己的类实现 hashCode()和 equals()方法</li>
+<li>编程的时候接口优于实现</li>
+<li>底层的集合实际上是空的情况下，返回长度是 0 的集合或者是数组，不要返回 null</li>
+</ul>
+</li>
+<li><p>Enumeration 接口和 Iterator 接口的区别</p>
+<ul>
+<li>Enumeration 速度是 Iterator 的 2 倍，同时占用更少的内存</li>
+<li>但是，Iterator 远远比 Enumeration 安全，因为其他线程不能够修改正在被 iterator 遍历的集合里面的对象</li>
+<li>同时，Iterator 允许调用者删除底层集合里面的元素，这对 Enumeration 来说是不可能的</li>
+</ul>
+</li>
+<li><p>HashSet 和 TreeSet 有区别</p>
+<ul>
+<li>HashSet 是由一个 hash 表来实现的，因此，它的元素是无序的。add()，remove()，contains()方法的时间复杂度是 O(1)</li>
+<li>TreeSet 是由一个树形的结构来实现的，它里面的元素是有序的。因此，add()，remove()，contains()方法的时间复杂度是 O(logn)</li>
+</ul>
+</li>
+<li><p>Java 垃圾回收目的</p>
+<ul>
+<li>垃圾回收的目的是识别并且丢弃应用不再使用的对象来释放和重用资源</li>
+</ul>
+</li>
+<li><p>System.gc()和 Runtime.gc()会做什么事情</p>
+<ul>
+<li>用来提示 JVM 要进行垃圾回收。但是，立即开始还是延迟进行垃圾回收是取决于 JVM 的</li>
+</ul>
+</li>
+<li><p>finalize()方法什么时候被调用？析构函数(finalization)的目的是什么？</p>
+<ul>
+<li>垃圾回收器(garbage colector)决定回收某对象时，就会运行该对象的 finalize()方法 但是在 Java 中很不幸，如果内存总是充足的，那么垃圾回收可能永远不会进行，也就是说 filalize()可能永远不被执行，显然指望它做收尾工作是靠不住的，它最主要的用途是回收特殊渠道申请的内存。</li>
+<li>析构 finalization，比如你在调用了一些 native 的方法，可以要在 finaliztion 里去调用释放函数</li>
+</ul>
+</li>
+<li><p>如果对象的引用被置为 null，垃圾收集器是否会立即释放对象占用的内存？</p>
+<ul>
+<li>不会，在下一个垃圾回收周期中，这个对象将是可被回收的</li>
+</ul>
+</li>
+<li><p>Java 堆的结构是什么样子的？什么是堆中的永久代(Perm Gen space)?</p>
+<ul>
+<li>JVM 的堆是运行时数据区，所有类的实例和数组都是在堆上分配内存。它在 JVM 启动的时候被创建。对象所占的堆内存是由自动内存管理系统也就是垃圾收集器回收</li>
+<li>堆内存是由存活和死亡的对象组成的。存活的对象是应用可以访问的，不会被垃圾回收。死亡的对象是应用不可访问尚且还没有被垃圾收集器回收掉的对象。一直到垃圾收集器把这些对象回收掉之前，他们会一直占据堆内存空间</li>
+</ul>
+</li>
+<li><p>串行(serial)收集器和吞吐量(throughput)收集器的区别</p>
+<ul>
+<li>串行收集器对大多数的小应用(在现代处理器上需要大概 100M 左右的内存)就足够了</li>
+<li>吞吐量收集器使用并行版本的新生代垃圾收集器，它用于中等规模和大规模数据的应用程序</li>
+</ul>
+</li>
+<li><p>在 Java 中，对象什么时候可以被垃圾回收</p>
+<ul>
+<li>当没有任何对象的引用指向对象时在一个不可预期的时间内对象才会被回收(对于那些循环应用的时候，也要被回收)</li>
+<li>当对象对当前使用这个对象的应用程序变得不可触及的时候，这个对象就可以被回收了</li>
+</ul>
+</li>
+<li><p>JVM 的永久代中会发生垃圾回收么？</p>
+<ul>
+<li>垃圾回收不会发生在永久代，如果永久代满了或者是超过了临界值，会触发完全垃圾回收(Full GC)</li>
+<li>如果你仔细查看垃圾收集器的输出信息，就会发现永久代也是被回收的</li>
+</ul>
+</li>
+<li><p>Java 中的两种异常类型是什么？他们有什么区别？</p>
+<ul>
+<li>Java 中有两种异常：受检查的(checked)异常和不受检查的(unchecked)异常</li>
+<li>不受检查的异常不需要在方法或者是构造函数上声明，就算方法或者是构造函数的执行可能会抛出这样的异常，并且不受检查的异常可以传播到方法或者是构造函数的外面</li>
+<li>受检查的异常必须要用 throws 语句在方法或者是构造函数上声明</li>
+</ul>
+</li>
+<li><p>Java 中 Exception 和 Error 有什么区别？</p>
+<ul>
+<li>Exception 和 Error 都是 Throwable 的子类</li>
+<li>Exception 用于用户程序可以捕获的异常情况</li>
+<li>Error 定义了不期望被用户程序捕获的异常</li>
+</ul>
+</li>
+<li><p>throw 和 throws 有什么区别？</p>
+<ul>
+<li>throw 关键字用来在程序中明确的抛出异常，相反，throws 语句用来表明方法不能处理的异常</li>
+<li>Throw 用于方法内部，Throws 用于方法声明上;Throw 后跟异常对象，Throws 后跟异常类型;Throw 后只能跟一个异常对象，Throws 后可以一次声明多种异常类型</li>
+<li>每一个方法都必须要指定哪些异常不能处理，所以方法的调用者才能够确保处理可能发生的异常，多个异常是用逗号分隔的(语法：修饰符 返回值类型 方法名 参数类型 throws 异常类<br>public void test throws Exception1,Exception2(){})</li>
+</ul>
+</li>
+<li><p>异常处理完成以后，Exception 对象会发生什么变化？</p>
+<ul>
+<li>Exception 对象会在下一个垃圾回收过程中被回收掉</li>
+</ul>
+</li>
+<li><p>finally 代码块和 finalize()方法有什么区别？</p>
+<ul>
+<li>无论 try catch 语句块中的代码块是否抛出异常，finally 代码块都会执行，它主要是用来释放应用占用的资源</li>
+<li>finalize()方法是 Object 类的一个 protected 方法，它是在对象被垃圾回收之前由 Java 虚拟机来调用的</li>
+</ul>
+</li>
+<li><p>什么是 Applet？</p>
+<ul>
+<li>java applet 是能够被包含在 HTML 页面中并且能被启用了 java 的客户端浏览器执行的程序。Applet 主要用来创建动态交互的 web 应用程序</li>
+</ul>
+</li>
+<li><p>Applet 的生命周期:</p>
+<ul>
+<li>Init：每次被载入的时候都会被初始化</li>
+<li>Start：开始执行 applet</li>
+<li>Stop：结束执行 applet</li>
+<li>Destroy：卸载 applet 之前，做最后的清理工作</li>
+</ul>
+</li>
+<li><p>当 applet 被载入的时候会发生什么？</p>
+<ul>
+<li>首先创建 applet 控制类的实例;然后初始化 applet;最后开始运行</li>
+</ul>
+</li>
+<li><p>Applet 和普通的 Java 应用程序有什么区别？</p>
+<ul>
+<li>applet 是运行在启用了 java 的浏览器中，Java 应用程序是可以在浏览器之外运行的独立的 Java 程序</li>
+<li>Java 应用程序需要一个有特定方法签名的 main 函数来开始执行。Java applet 不需要这样的函数来开始执行</li>
+<li>Java applet 一般会使用很严格的安全策略，Java 应用一般使用比较宽松的安全策略</li>
+</ul>
+</li>
+<li><p>Java applet 有哪些限制条件？</p>
+<ul>
+<li>applet 不能够载入类库或者定义本地方法</li>
+<li>applet 不能在宿主机上读写文件</li>
+<li>applet 不能读取特定的系统属性</li>
+<li>applet 不能发起网络连接，除非是跟宿主机</li>
+<li>applet 不能够开启宿主机上其他任何的程序</li>
+</ul>
+</li>
+<li><p>什么是不受信任的 applet？</p>
+<ul>
+<li>不受信任的 applet 是不能访问或是执行本地系统文件的 Java applet，默认情况下，所有下载的 applet 都是不受信任的</li>
+</ul>
+</li>
+<li><p>从网络上加载的 applet 和从本地文件系统加载的 applet 有什么区别？</p>
+<ul>
+<li>当 applet 是从网络上加载的时候，applet 是由 applet 类加载器载入的，它受 applet 安全管理器的限制</li>
+<li>当 applet 是从客户端的本地磁盘载入的时候，applet 是由文件系统加载器载入的</li>
+<li>从文件系统载入的 applet 允许在客户端读文件，写文件，加载类库，并且也允许执行其他程序，但是，却通不过字节码校验</li>
+</ul>
+</li>
+<li><p>applet 类加载器是什么？它会做哪些工作？</p>
+<ul>
+<li>当 applet 是从网络上加载的时候，它是由 applet 类加载器载入的。类加载器有自己的 java 名称空间等级结构。类加载器会保证来自文件系统的类有唯一的名称空间，来自网络资源的类有唯一的名称空间</li>
+<li>当浏览器通过网络载入 applet 的时候，applet 的类被放置于和 applet 的源相关联的私有的名称空间中。然后，那些被类加载器载入进来的类都是通过了验证器验证的。验证器会检查类文件格式是否遵守 Java 语言规范，确保不会出现堆栈溢出(stack overflow)或者下溢(underflow)，传递给字节码指令的参数是正确的</li>
+</ul>
+</li>
+<li><p>applet 安全管理器是什么？它会做哪些工作？</p>
+<ul>
+<li>applet 安全管理器是给 applet 施加限制条件的一种机制。浏览器可以只有一个安全管理器。安全管理器在启动的时候被创建，之后不能被替换覆盖或者是扩展</li>
+</ul>
+</li>
+<li><p>弹出式选择菜单(Choice)和列表(List)有什么区别</p>
+<ul>
+<li>Choice 是以一种紧凑的形式展示的，需要下拉才能看到所有的选项。Choice 中一次只能选中一个选项</li>
+<li>List 同时可以有多个元素可见，支持选中一个或者多个元素</li>
+</ul>
+</li>
+<li><p>布局管理器</p>
+<ul>
+<li>布局管理器用来在容器中组织组件</li>
+</ul>
+</li>
+<li><p>滚动条(Scrollbar)和滚动面板(JScrollPane)区别</p>
+<ul>
+<li>Scrollbar 是一个组件，不是容器。而 JScrollPane 是容器。JScrollPane 自己处理滚动事件</li>
+<li>在设置界面时，可能会遇到在一个较小的容器窗体中显示一个较大部分的内容，这时可以使用 JScrollPane 面板，JscrollPane 面板是带滚动条的面板，也是一种容器，但是常用于布置单个控件，并且不可以使用布局管理器。如果需要在 JScrollPane 面板中放置多个控件，需要将多个控件放置到 JPanel 面板上，然后将 JPanel 面板作为一个整体控件添加到 JScrollPane 控件上</li>
+</ul>
+</li>
+<li><p>哪些 Swing 的方法是线程安全的？</p>
+<ul>
+<li>只有 3 个线程安全的方法： repaint(), revalidate(), and invalidate()</li>
+</ul>
+</li>
+<li><p>支持重绘(painting)的组件</p>
+<ul>
+<li>Canvas, Frame, Panel,和 Applet 支持重绘</li>
+</ul>
+</li>
+<li><p>什么是裁剪(clipping)？</p>
+<ul>
+<li>限制在一个给定的区域或者形状的绘图操作就做裁剪</li>
+</ul>
+</li>
+<li><p>MenuItem 和 CheckboxMenuItem 的区别是什么？</p>
+<ul>
+<li>CheckboxMenuItem 类继承自 MenuItem 类，支持菜单选项可以选中或者不选中</li>
+</ul>
+</li>
+<li><p>边缘布局(BorderLayout)里面的元素是如何布局的？</p>
+<ul>
+<li>BorderLayout 里面的元素是按照容器的东西南北中进行布局的</li>
+</ul>
+</li>
+<li><p>网格包布局(GridBagLayout)里面的元素是如何布局的？</p>
+<ul>
+<li>GridBagLayout 里面的元素是按照网格进行布局的。不同大小的元素可能会占据网格的多于 1 行或一列。因此，行数和列数可以有不同的大小</li>
+</ul>
+</li>
+<li><p>Windows 和 Frame 区别</p>
+<ul>
+<li>Frame 类继承了 Window 类，它定义了一个可以有菜单栏的主应用窗口</li>
+</ul>
+</li>
+<li><p>裁剪(clipping)和重绘(repainting)有什么联系？</p>
+<ul>
+<li>当窗口被 AWT 重绘线程重绘的时候，它会把裁剪区域设置成重绘的窗口区域</li>
+</ul>
+</li>
+<li><p>事件监听器接口(event-listener interface)和事件适配器(event-adapter)的关系</p>
+<ul>
+<li>事件监听器接口定义了对特定的事件，事件处理器必须要实现的方法</li>
+<li>事件适配器给事件监听器接口提供了默认的实现（适配器是一种设计模式，就是我写一个抽象方法，实现接口所有方法，但是都没有语句，你要实现哪个方法，就重写哪个方法）</li>
+</ul>
+</li>
+<li><p>GUI 组件如何来处理它自己的事件？</p>
+<ul>
+<li>GUI 组件可以处理它自己的事件，只要它实现相对应的事件监听器接口，并且把自己作为事件监听器</li>
+</ul>
+</li>
+<li><p>Java 的布局管理器比传统的窗口系统有哪些优势？</p>
+<ul>
+<li>Java 使用布局管理器以一种一致的方式在所有的窗口平台上摆放组件。</li>
+<li>因为布局管理器不会和组件的绝对大小和位置相绑定，所以他们能够适应跨窗口系统的特定平台的不同</li>
+</ul>
+</li>
+<li><p>Java 的 Swing 组件的种设计模式</p>
+<ul>
+<li>Java 中的 Swing 组件使用了 MVC(视图-模型-控制器)设计模式</li>
+</ul>
+</li>
+<li><p>JDBC 是允许用户在不同数据库之间做选择的一个抽象层。JDBC 允许开发者用 JAVA 写数据库应用程序，而不需要关心底层特定数据库的细节</p>
+</li>
+<li><p>驱动(Driver)在 JDBC 中的角色</p>
+<ul>
+<li>JDBC 驱动提供了特定厂商对 JDBC API 接口类的实现</li>
+<li>驱动必须要提供 java.sql 包下面这些类的实现：Connection, Statement, PreparedStatement,CallableStatement, ResultSet 和 Driver</li>
+</ul>
+</li>
+<li><p>Class.forName()方法作用</p>
+<ul>
+<li>初始化参数指定的类，并且返回此类对应的 Class 对象</li>
+<li>在初始化一个类，生成一个实例的时候，newInstance()方法使用类加载机制，new 关键字是创建一个新类；从 JVM 的角度看，我们使用关键字 new 创建一个类的时候，这个类可以没有被加载。但是使用 newInstance()方法的时候就要求： 1、这个类已经加载； 2、这个类已经连接了；完成上面两个步骤的正是 Class 的静态方法 forName()所完成的，这个静态方法调用了启动类加载器，即加载 java API 的那个加载器</li>
+</ul>
+</li>
+<li><p>PreparedStatement 比 Statement 有什么优势？</p>
+<ul>
+<li>PreparedStatements 是预编译的，PreparedStatements 实例包涵已编译的 sql 语句，所以其执行速度要快于 statement 对象，性能会更好</li>
+<li>PreparedStatements 作为 statement 的子类，继承了 statement 的所有方法，三种方法，excute,excuteQuery 和 excuteUpdate 已被更改以使之不再需要参数</li>
+<li>PreparedStatements 的代码可读性，可维护性强于 statement.</li>
+<li>极大的提高了安全性</li>
+</ul>
+</li>
+<li><p>什么时候使用 CallableStatement？用来准备 CallableStatement 的方法是什么？</p>
+<ul>
+<li>CallableStatement 用来执行存储过程。存储过程是由数据库存储和提供的，它还提供了安全性和模块化</li>
+<li>存储过程可以接受输入参数，也可以有返回结果</li>
+<li>准备一个 CallableStatement 的方法是：CallableStament.prepareCall();</li>
+</ul>
+</li>
+<li><p>RMI:Java 远程方法调用(Java RMI)是 Java API 对远程过程调用(RPC)提供的面向对象的等价形式，支持直接传输序列化的 Java 对象和分布式垃圾回收。远程方法调用可以看做是激活远程正在运行的对象上的方法的步骤。RMI 对调用者是位置透明的，因为调用者感觉方法是执行在本地运行的对象上的。看下 RMI 的一些注意事项</p>
+</li>
+<li><p>RMI 体系结构的基本原则</p>
+<ul>
+<li>RMI 体系结构是基于一个非常重要的行为定义和行为实现相分离的原则。RMI 允许定义行为的代码和实现行为的代码相分离，并且运行在不同的 JVM 上</li>
+</ul>
+</li>
+<li><p>RMI 体系结构分层</p>
+<ul>
+<li>存根和骨架层(Stub and Skeleton layer)：这一层对程序员是透明的，它主要负责拦截客户端发出的方法调用请求，然后把请求重定向给远程的 RMI 服务</li>
+<li>远程引用层(Remote Reference Layer)：RMI 体系结构的第二层用来解析客户端对服务端远程对象的引用。这一层解析并管理客户端对服务端远程对象的引用。连接是点到点的</li>
+<li>传输层(Transport layer)：这一层负责连接参与服务的两个 JVM。这一层是建立在网络上机器间的 TCP/IP 连接之上的。它提供了基本的连接服务，还有一些防火墙穿透策略</li>
+</ul>
+</li>
+<li><p>RMI 中的远程接口(Remote Interface)扮演了什么样的角色？</p>
+<ul>
+<li>远程接口用来标识哪些方法是可以被非本地虚拟机调用的接口。远程对象必须要直接或者是间接实现远程接口。实现了远程接口的类应该声明被实现的远程接口，给每一个远程对象定义构造函数，给所有远程接口的方法提供实现</li>
+</ul>
+</li>
+<li><p>RMI 中的远程接口(Remote Interface)扮演了什么样的角色？</p>
+<ul>
+<li>远程接口用来标识哪些方法是可以被非本地虚拟机调用的接口。远程对象必须要直接或者是间接实现远程接口。实现了远程接口的类应该声明被实现的远程接口，给每一个远程对象定义构造函数，给所有远程接口的方法提供实现。</li>
+</ul>
+</li>
+<li><p>java.rmi.Naming 类扮演了什么样的角色？</p>
+<ul>
+<li>java.rmi.Naming 类用来存储和获取在远程对象注册表里面的远程对象的引用。Naming 类的每一个方法接收一个 URL 格式的 String 对象作为它的参数</li>
+</ul>
+</li>
+<li><p>RMI 的绑定(Binding)</p>
+<ul>
+<li>绑定是为了查询找远程对象而给远程对象关联或者是注册以后会用到的名称的过程。远程对象可以使用 Naming 类的 bind()或者 rebind()方法跟名称相关联</li>
+</ul>
+</li>
+<li><p>Naming 类的 bind()和 rebind()方法有什么区别？</p>
+<ul>
+<li>bind()方法负责把指定名称绑定给远程对象，rebind()方法负责把指定名称重新绑定到一个新的远程对象。如果那个名称已经绑定过了，先前的绑定会被替换掉</li>
+</ul>
+</li>
+<li><p>让 RMI 程序能正确运行有哪些步骤？</p>
+<ul>
+<li>编译所有的源文件</li>
+<li>使用 rmic 生成 stub</li>
+<li>启动 rmiregistry</li>
+<li>启动 RMI 服务器</li>
+<li>运行客户端程序</li>
+</ul>
+</li>
+<li><p>RMI 的 stub 扮演了什么样的角色？</p>
+<ul>
+<li>远程对象的 stub 扮演了远程对象的代表或者代理的角色。调用者在本地 stub 上调用方法，它负责在远程对象上执行方法。当 stub 的方法被调用的时候，会经历以下几个步骤：</li>
+<li>初始化到包含了远程对象的 JVM 的连接</li>
+<li>序列化参数到远程的 JVM</li>
+<li>等待方法调用和执行的结果</li>
+<li>反序列化返回的值或者是方法没有执行成功情况下的异常</li>
+<li>把值返回给调用者</li>
+</ul>
+</li>
+<li><p>什么是分布式垃圾回收(DGC)？它是如何工作的？</p>
+<ul>
+<li>DGC 叫做分布式垃圾回收。RMI 使用 DGC 来做自动垃圾回收。因为 RMI 包含了跨虚拟机的远程对象的引用，垃圾回收是很困难的。DGC 使用引用计数算法来给远程对象提供自动内存管理</li>
+</ul>
+</li>
+<li><p>RMI 中使用 RMI 安全管理器(RMISecurityManager)的目的是什么？</p>
+<ul>
+<li>RMISecurityManager 使用下载好的代码提供可被 RMI 应用程序使用的安全管理器。如果没有设置安全管理器，RMI 的类加载器就不会从远程下载任何的类。</li>
+</ul>
+</li>
+<li><p>解释下 Marshalling 和 demarshalling</p>
+<ul>
+<li>当应用程序希望把内存对象跨网络传递到另一台主机或者是持久化到存储的时候，就必须要把对象在内存里面的表示转化成合适的格式。这个过程就叫做 Marshalling，反之就是 demarshalling</li>
+</ul>
+</li>
+<li><p>解释下 Serialization 和 Deserialization</p>
+<ul>
+<li><p>Java 提供了一种叫做对象序列化的机制，他把对象表示成一连串的字节，里面包含了对象的数据，对象的类型信息，对象内部的数据的类型信息等等</p>
+</li>
+<li><p>序列化可以看成是为了把对象存储在磁盘上或者是从磁盘上读出来并重建对象而把对象扁平化的一种方式。反序列化是把对象从扁平状态转化成活动对象的相反的步骤</p>
+</li>
+<li><p>Servlet 是用来处理客户端请求并产生动态网页内容的 Java 类。</p>
+</li>
+<li><p>Servlet 主要是用来处理或者是存储 HTML 表单提交的数据，产生动态内容，在无状态的 HTTP 协议下管理状态信息</p>
+</li>
+</ul>
+</li>
+<li><p>Servlet 的体系结构</p>
+<ul>
+<li>所有的 Servlet 都必须要实现的核心的接口是 javax.servlet.Servlet</li>
+<li>每一个 Servlet 都必须要直接或者是间接实现这个接口，或者是继承 javax.servlet.GenericServlet 或者 javax.servlet.http.HTTPServlet</li>
+<li>最后，Servlet 使用多线程可以并行的为多个请求服务</li>
+</ul>
+</li>
+<li><p>Applet 和 Servlet 有什么区别？</p>
+<ul>
+<li>Applet 是运行在客户端主机的浏览器上的客户端 Java 程序。而 Servlet 是运行在 web 服务器上的服务端的组件</li>
+<li>applet 可以使用用户界面类，而 Servlet 没有用户界面，相反，Servlet 是等待客户端的 HTTP 请求，然后为请求产生响应</li>
+</ul>
+</li>
+<li><p>GenericServlet 和 HttpServlet 区别</p>
+<ul>
+<li>GenericServlet 是一个通用的协议无关的 Servlet，它实现了 Servlet 和 ServletConfig 接口。继承自 GenericServlet 的 Servlet 应该要覆盖 service()方法</li>
+<li>若要开发一个能用在网页上服务于使用 HTTP 协议请求的 Servlet，你的 Servlet 必须要继承自 HttpServlet</li>
+</ul>
+</li>
+<li><p>Servlet 的生命周期</p>
+<ul>
+<li>1）对每一个客户端的请求，Servlet 引擎载入 Servlet，调用它的 init()方法，完成 Servlet 的初始化</li>
+<li>2）Servlet 对象通过为每一个请求单独调用 service()方法来处理所有随后来自客户端的请求</li>
+<li>3）最后，调用 Servlet 的 destroy()方法把 Servlet 删除掉</li>
+</ul>
+</li>
+<li><p>doGet()方法和 doPost()方法区别</p>
+<ul>
+<li>doGet：GET 方法会把名值对追加在请求的 URL 后面。因为 URL 对字符数目有限制，进而限制了用在客户端请求的参数值的数目。并且请求中的参数值是可见的，因此，敏感信息不能用这种方式传递</li>
+<li>doPOST：POST 方法通过把请求参数值放在请求体中来克服 GET 方法的限制，因此，可以发送的参数的数目是没有限制的。最后，通过 POST 请求传递的敏感信息对外部客户端是不可见的</li>
+</ul>
+</li>
+<li><p>Web 应用程序</p>
+<ul>
+<li>Web 应用程序是对 Web 或者是应用服务器的动态扩展</li>
+<li>有两种类型的 Web 应用：面向表现的和面向服务的。面向表现的 Web 应用程序会产生包含了很多种标记语言和动态内容的交互的 web 页面作为对请求的响应。而面向服务的 Web 应用实现了 Web 服务的端点(endpoint)</li>
+</ul>
+</li>
+<li><p>什么是服务端包含(Server Side Include)？</p>
+<ul>
+<li>服务端包含(SSI)是一种简单的解释型服务端脚本语言，大多数时候仅用在 Web 上，用 servlet 标签嵌入进来</li>
+<li>SSI 最常用的场景把一个或多个文件包含到 Web 服务器的一个 Web 页面中。当浏览器访问 Web 页面的时候，Web 服务器会用对应的 servlet 产生的文本来替换 Web 页面中的 servlet 标签</li>
+</ul>
+</li>
+<li><p>Servlet 链(Servlet Chaining)</p>
+<ul>
+<li>Servlet 链是把一个 Servlet 的输出发送给另一个 Servlet 的方法。第二个 Servlet 的输出可以发送给第三个 Servlet，依次类推。链条上最后一个 Servlet 负责把响应发送给客户端</li>
+</ul>
+</li>
+<li><p>如何知道是哪一个客户端的机器正在请求你的 Servlet？</p>
+<ul>
+<li>ServletRequest 类可以找出客户端机器的 IP 地址或者是主机名</li>
+<li>etRemoteAddr()方法获取客户端主机的 IP 地址，getRemoteHost()可以获取主机名</li>
+</ul>
+</li>
+<li><p>HTTP 响应的结构是怎么样的？</p>
+<ul>
+<li>状态码(Status Code)：描述了响应的状态。可以用来检查是否成功的完成了请求。请求失败的情况下，状态码可用来找出失败的原因。如果 Servlet 没有返回状态码，默认会返回成功的状态码 HttpServletResponse.SC_OK</li>
+<li>HTTP 头部(HTTP Header)：它们包含了更多关于响应的信息。比如：头部可以指定认为响应过期的过期日期，或者是指定用来给用户安全的传输实体内容的编码格式</li>
+<li>主体(Body)：它包含了响应的内容。它可以包含 HTML 代码，图片，等等。主体是由传输在 HTTP 消息中紧跟在头部后面的数据字节组成的</li>
+</ul>
+</li>
+<li><p>什么是 cookie？session 和 cookie 有什么区别？</p>
+<ul>
+<li>cookie 是 Web 服务器发送给浏览器的一块信息。浏览器会在本地文件中给每一个 Web 服务器存储 cookie。以后浏览器在给特定的 Web 服务器发请求的时候，同时会发送所有为该服务器存储的 cookie</li>
+<li>无论客户端浏览器做怎么样的设置，session 都应该能正常工作。客户端可以选择禁用 cookie，但是，session 仍然是能够工作的，因为客户端无法禁用服务端的 session</li>
+<li>在存储的数据量方面 session 和 cookies 也是不一样的。session 能够存储任意的 Java 对象，cookie 只能存储 String 类型的对象</li>
+</ul>
+</li>
+<li><p>浏览器和 Servlet 通信使用的是 HTTP 协议</p>
+</li>
+<li><p>HTTP 隧道:HTTP 隧道是一种利用 HTTP 或者是 HTTPS 把多种网络协议封装起来进行通信的技术。因此，HTTP 协议扮演了一个打通用于通信的网络协议的管道的包装器的角色。把其他协议的请求掩盖成 HTTP 的请求就是 HTTP 隧道</p>
+</li>
+<li><p>sendRedirect()和 forward()方法有什么区别？</p>
+<ul>
+<li>sendRedirect()方法会创建一个新的请求，而 forward()方法只是把请求转发到一个新的目标上</li>
+<li>重定向(redirect)以后，之前请求作用域范围以内的对象就失效了，因为会产生一个新的请求，而转发(forwarding)以后，之前请求作用域范围以内的对象还是能访问的</li>
+<li>一般认为 sendRedirect()比 forward()要慢</li>
+</ul>
+</li>
+<li><p>什么是 URL 编码和 URL 解码？</p>
+<ul>
+<li>URL 编码是负责把 URL 里面的空格和其他的特殊字符替换成对应的十六进制表示，反之就是解码</li>
+</ul>
+</li>
+<li><p>什么是 JSP 页面？</p>
+<ul>
+<li>JSP 页面是一种包含了静态数据和 JSP 元素两种类型的文本的文本文档</li>
+<li>静态数据可以用任何基于文本的格式来表示，比如：HTML 或者 XML</li>
+<li>JSP 是一种混合了静态内容和动态产生的内容的技术</li>
+</ul>
+</li>
+<li><p>JSP 请求是如何被处理的？</p>
+<ul>
+<li>浏览器首先要请求一个以.jsp 扩展名结尾的页面，发起 JSP 请求，然后，Web 服务器读取这个请求，使用 JSP 编译器把 JSP 页面转化成一个 Servlet 类。</li>
+<li>需要注意的是，只有当第一次请求页面或者是 JSP 文件发生改变的时候 JSP 文件才会被编译，然后服务器调用 servlet 类，处理浏览器的请求。一旦请求执行结束，servlet 会把响应发送给客户端</li>
+</ul>
+</li>
+<li><p>JSP 优点</p>
+<ul>
+<li>JSP 页面是被动态编译成 Servlet 的，因此，开发者可以很容易的更新展现代码</li>
+<li>JSP 页面可以被预编译</li>
+<li>JSP 页面可以很容易的和静态模板结合，包括：HTML 或者 XML，也可以很容易的和产生动态内容的代码结合起来</li>
+<li>开发者可以提供让页面设计者以类 XML 格式来访问的自定义的 JSP 标签库</li>
+<li>开发者可以在组件层做逻辑上的改变，而不需要编辑单独使用了应用层逻辑的页面。</li>
+</ul>
+</li>
+<li><p>什么是 JSP 指令(Directive)？JSP 中有哪些不同类型的指令？</p>
+<ul>
+<li>Directive 是当 JSP 页面被编译成 Servlet 的时候，JSP 引擎要处理的指令。Directive 用来设置页面级别的指令，从外部文件插入数据，指定自定义的标签库。Directive 是定义在 &lt;%@ 和 %&gt;之间的。下面列出了不同类型的 Directive：</li>
+<li>包含指令(Include directive)：用来包含文件和合并文件内容到当前的页面。</li>
+<li>页面指令(Page directive)：用来定义 JSP 页面中特定的属性，比如错误页面和缓冲区。</li>
+<li>Taglib 指令： 用来声明页面中使用的自定义的标签库。</li>
+</ul>
+</li>
+<li><p>JSP 动作(JSP action)</p>
+<ul>
+<li>JSP 动作以 XML 语法的结构来控制 Servlet 引擎的行为。当 JSP 页面被请求的时候，JSP 动作会被执行。它们可以被动态的插入到文件中，重用 JavaBean 组件，转发用户到其他的页面，或者是给 Java 插件产生 HTML 代码。下面列出了可用的动作：</li>
+<li>jsp:include-当 JSP 页面被请求的时候包含一个文件</li>
+<li>jsp:useBean-找出或者是初始化 Javabean</li>
+<li>jsp:setProperty-设置 JavaBean 的属性</li>
+<li>jsp:getProperty-获取 JavaBean 的属性</li>
+<li>jsp:forward-把请求转发到新的页面</li>
+<li>jsp:plugin-产生特定浏览器的代码。</li>
+</ul>
+</li>
+<li><p>什么是 Scriptlets？</p>
+<ul>
+<li>JSP 技术中，scriptlet 是嵌入在 JSP 页面中的一段 Java 代码。scriptlet 是位于标签内部的所有的东西，在标签与标签之间，用户可以添加任意有效的 scriplet</li>
+</ul>
+</li>
+<li><p>声明(Decalaration)在哪里？</p>
+<ul>
+<li>声明跟 Java 中的变量声明很相似，它用来声明随后要被表达式或者 scriptlet 使用的变量。添加的声明必须要用开始和结束标签包起来</li>
+</ul>
+</li>
+<li><p>什么是表达式(Expression)？</p>
+<ul>
+<li>【列表很长，可以分上、中、下发布】</li>
+<li>JSP 表达式是 Web 服务器把脚本语言表达式的值转化成一个 String 对象，插入到返回给客户端的数据流中。表达式是在&lt;%=和%&gt;这两个标签之间定义的</li>
+</ul>
+</li>
+<li><p>隐含对象是什么意思？有哪些隐含对象？</p>
+<ul>
+<li>JSP 隐含对象是页面中的一些 Java 对象，JSP 容器让这些 Java 对象可以为开发者所使用。开发者不用明确的声明就可以直接使用他们。JSP 隐含对象也叫做预定义变量。下面列出了 JSP 页面中的隐含对象：application、page、request、response、session、exception、out、config、pageContext</li>
+</ul>
+</li>
+<li><p>面向对象软件开发的优点有哪些？</p>
+<ul>
+<li>代码开发模块化，更易维护和修改</li>
+<li>代码复用</li>
+<li>增强代码的可靠性和灵活性</li>
+<li>增加代码的可理解性</li>
+<li>面向对象编程有很多重要的特性，比如：封装，继承，多态和抽象</li>
+</ul>
+</li>
+<li><p>封装的定义和好处有哪些？</p>
+<ul>
+<li>封装给对象提供了隐藏内部特性和行为的能力。对象提供一些能被其他对象访问的方法来改变它内部的数据。在 Java 当中，有 3 种修饰符：public，private 和 protected。每一种修饰符给其他的位于同一个包或者不同包下面对象赋予了不同的访问权限。下面列出了使用封装的一些好处：</li>
+<li>通过隐藏对象的属性来保护对象内部的状态</li>
+<li>提高了代码的可用性和可维护性，因为对象的行为可以被单独的改变或者是扩展</li>
+<li>禁止对象之间的不良交互提高模块化</li>
+<li>参考这个文档获取更多关于封装的细节和示例</li>
+</ul>
+</li>
+<li><p>多态的定义？</p>
+<ul>
+<li>多态是编程语言给不同的底层数据类型做相同的接口展示的一种能力</li>
+<li>一个多态类型上的操作可以应用到其他类型的值上面</li>
+</ul>
+</li>
+<li><p>继承的定义？</p>
+<ul>
+<li>继承给对象提供了从基类获取字段和方法的能力。继承提供了代码的重用行，也可以在不修改类的情况下给现存的类添加新特性</li>
+</ul>
+</li>
+<li><p>抽象的定义？抽象和封装的不同点？</p>
+<ul>
+<li>抽象是把想法从具体的实例中分离出来的步骤，因此，要根据他们的功能而不是实现细节来创建类。Java 支持创建只暴漏接口而不包含方法实现的抽象的类。这种抽象技术的主要目的是把类的行为和实现细节分离开</li>
+<li>抽象和封装是互补的概念。一方面，抽象关注对象的行为。另一方面，封装关注对象行为的细节。一般是通过隐藏对象内部状态信息做到封装，因此，封装可以看成是用来提供抽象的一种策略</li>
+</ul>
+</li>
+</ol>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Weicools</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://www.weicools.com/20160828/interview-java-summary/">https://www.weicools.com/20160828/interview-java-summary/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Weicools</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/Interview/">
+                                    <span class="chip bg-color">Interview</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'orsSeN9tLirrMORe4CklaXEN-gzGzoHsz',
+        appKey: 'wOCnGVsLjb2wsCTDhhMvAPCr',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/20161012/java-base/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6327914_64702477.jpg" class="responsive-img" alt="Java基础知识">
+                        
+                        <span class="card-title">Java基础知识</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Java 基础知识4.1 基本概念
+ Java 语言优点： - 1).Java 语言为纯面向对象语言，编写程序更为容易 - 2).平台无关性，可以做到一次编译，到处运行（Java 是解释型语言编译器把 Java 代码变成中间代码，然后在 J
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2016-10-12
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Weicools
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/Interview/">
+                        <span class="chip bg-color">Interview</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/20160724/designpattern-uml/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2642047_72684073.png" class="responsive-img" alt="设计模式之学习UML类图和时序图">
+                        
+                        <span class="card-title">设计模式之学习UML类图和时序图</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            学习 UML 类图和时序图类图中各个类之间的关系； 能看懂类图中各个类之间的线条、箭头代表什么意思后，也就足够应对 日常的工作和交流； 同时，我们应该能将类图所表达的含义和最终的代码对应起来
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2016-07-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Weicools
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/DesignPattern/">
+                        <span class="chip bg-color">DesignPattern</span>
+                    </a>
+                    
+                    <a href="/tags/UML/">
+                        <span class="chip bg-color">UML</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2015-2021</span>
+            
+            <span id="year">2015</span>
+            <a href="/about" target="_blank">Weicools</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2015";
+                    var startMonth = "11";
+                    var startDate = "24";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lecymeng" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:lecymeng@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1570682285" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1570682285" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

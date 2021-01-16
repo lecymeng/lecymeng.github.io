@@ -1,0 +1,1917 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Git使用手册, Weicools">
+    <meta name="description" content="降りしきる強い雨, 描いた夢の果て">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-85513822-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-85513822-1');
+</script>
+
+
+    <title>Git使用手册 | Weicools</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Weicools" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Weicools</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Weicools</div>
+        <div class="logo-desc">
+            
+            降りしきる強い雨, 描いた夢の果て
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7210261_42427235.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Git使用手册</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/GitHub/">
+                                <span class="chip bg-color">GitHub</span>
+                            </a>
+                        
+                            <a href="/tags/Git/">
+                                <span class="chip bg-color">Git</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2018-01-12
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2019-11-25
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    14 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Git-使用手册"><a href="#Git-使用手册" class="headerlink" title="Git 使用手册"></a>Git 使用手册</h1><h2 id="Git-配置"><a href="#Git-配置" class="headerlink" title="Git 配置"></a>Git 配置</h2><h3 id="配置-Git-Config"><a href="#配置-Git-Config" class="headerlink" title="配置 Git Config"></a>配置 Git Config</h3><p>可以直接使用 https，方便代理，无需使用 ssh</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 配置UserName 和 Email
+$ git config --global user.name "lecymeng"
+$ git config --global user.email "1570682285@qq.com"
+
+$ mkdir .ssh
+$ cd ~/.ssh
+
+# 生成 RSA Key
+$ ssh-keygen -t rsa -C "1570682285@qq.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/weicools/.ssh/id_rsa): WeicoolsGitHub
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in WeicoolsGitHub.
+Your public key has been saved in WeicoolsGitHub.pub.
+
+weicools$ cat ~/.ssh/WeicoolsGitHub.pub
+xxx...xxx 1570682285@qq.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>复制 WeicoolsGitHub.pub 内容到 Git 上的 SSH key 配置中</p>
+<h3 id="检查-Git-Config"><a href="#检查-Git-Config" class="headerlink" title="检查 Git Config"></a>检查 Git Config</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ git config --list
+$ git config user.name<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="Git-项目创建和提交"><a href="#Git-项目创建和提交" class="headerlink" title="Git 项目创建和提交"></a>Git 项目创建和提交</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 创建一个项目hello-world
+$ mkdir ~/hello-world
+
+# 进入这个项目
+$ cd ~/hello-world
+
+# 初始化Git
+$ git init
+
+# new README文件
+$ touch README
+
+# add README文件
+$ git add README
+
+# 提交更新，并注释信息“first commit”
+$ git commit -m 'first commit'
+
+# 连接远程GitHub项目
+$ git remote add origin git@github.com:xxx/yyyy.git
+
+# 将本地项目更新到GitHub
+$ git push -u origin master
+
+# 后续提交 git push 即可
+$ git push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html">https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html</a></p>
+<h2 id="Git-配置-Q-amp-A"><a href="#Git-配置-Q-amp-A" class="headerlink" title="Git 配置 Q &amp; A"></a>Git 配置 Q &amp; A</h2><h3 id="为仓库设置-Git-用户名"><a href="#为仓库设置-Git-用户名" class="headerlink" title="为仓库设置 Git 用户名"></a>为仓库设置 Git 用户名</h3><pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh">$ git config user.name "name"
+$ git config user.email "email"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="绑定-Remote-Repository"><a href="#绑定-Remote-Repository" class="headerlink" title="绑定 Remote Repository"></a>绑定 Remote Repository</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ git remote set-url origin https://github.com/user/repository.git
+
+$ git branch --set-upstream-to origin/master master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="添加-Remote-Repository"><a href="#添加-Remote-Repository" class="headerlink" title="添加 Remote Repository"></a>添加 Remote Repository</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ git remote add origin https://github.com/user/repository.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="git-删除本地和远程文件"><a href="#git-删除本地和远程文件" class="headerlink" title="git 删除本地和远程文件"></a>git 删除本地和远程文件</h3><pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh"># 删除文件：
+git rm 文件名
+
+# 删除文件夹：
+git rm -r 文件夹名
+
+# 注意
+# 要删除文件必须先添加到仓库才可以进行上述操作命令，因为git基于仓库进行操作
+# 删除文件夹时，文件夹不能为空，否则不能找到文件夹从而无法删除<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>工作过程中若误提交了文件到仓库上，比如<code>node_modules</code>,此时想只删除远程仓库文件，不删除本地文件，可使用下面命令</p>
+<pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh"># 只删除了仓库中的缓存，实际文件不会删除
+git rm --cached 文件(夹)
+git commit -m '备注'
+git push origin 分支<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Permission-denied-手动-add-RSA-密钥"><a href="#Permission-denied-手动-add-RSA-密钥" class="headerlink" title="Permission denied (手动 add RSA 密钥)"></a>Permission denied (手动 add RSA 密钥)</h3><p>如果输入 <code>$ ssh -T git@github.com</code> 出现错误提示：Permission denied (publickey). 因为新生成的 key 不能加入 ssh 就会导致连接不上 github。<br>解决办法：输入<code>$ ssh-add ~/.ssh/id_rsa</code>，再输入对应 SSH 密码即可</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ ls -ah
+.      WeicoolsGitHub  config WeicoolsGitHub.pub  known_hosts
+
+$ ssh-add ~/.ssh/WeicoolsGitHub
+
+$ ssh -T git@github.com
+Hi lecymeng! You've successfully authenticated, but GitHub does not provide shell access.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="恢复删除分支"><a href="#恢复删除分支" class="headerlink" title="恢复删除分支"></a>恢复删除分支</h3><p>当我们使用 git branch -D 删除一个本地分支后，怎样才能恢复呢？</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ 显示历史提交，找到分支对应的最后一笔提交的commit-id
+git log -g
+
+# 以指定commit为基础创建分支
+$ git checkout -b {branch-name} {commit-id}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="ssh-add-相关问题"><a href="#ssh-add-相关问题" class="headerlink" title="ssh-add 相关问题"></a>ssh-add 相关问题</h3><p><a target="_blank" rel="noopener" href="https://help.github.com/cn/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">生成新 SSH 密钥并添加到 ssh-agent</a><br><a target="_blank" rel="noopener" href="https://help.github.com/cn/github/authenticating-to-github/error-permission-denied-publickey">错误：权限被拒绝（公钥）</a><br><a target="_blank" rel="noopener" href="https://segmentfault.com/q/1010000000835302">Git 是否必须每次添加 ssh-add</a><br><a target="_blank" rel="noopener" href="https://www.yangyanxing.com/article/config-local-ssh.html">配置多个 ssh 密钥对并且永久多 ssh 管理</a></p>
+<h2 id="Fork-项目"><a href="#Fork-项目" class="headerlink" title="Fork 项目"></a>Fork 项目</h2><h3 id="在-GitHub-上-Fork"><a href="#在-GitHub-上-Fork" class="headerlink" title="在 GitHub 上 Fork"></a>在 GitHub 上 Fork</h3><p>参考 <a target="_blank" rel="noopener" href="https://github.com/selfteaching/the-craft-of-selfteaching/issues/67">https://github.com/selfteaching/the-craft-of-selfteaching/issues/67</a></p>
+<h3 id="GitHub-Fork-实践"><a href="#GitHub-Fork-实践" class="headerlink" title="GitHub Fork 实践"></a>GitHub Fork 实践</h3><p>以 <a target="_blank" rel="noopener" href="https://github.com/material-components/material-components-android">material-components-android</a> 项目为例：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># Clone远程仓库
+$ git clone git@github.com:lecymeng/material-components-android.git
+
+# 查看远程仓库的路径
+$ git remote -v
+origin	git@github.com:lecymeng/material-components-android.git (fetch)
+origin	git@github.com:lecymeng/material-components-android.git (push)
+
+# 设置Repository upstream
+$ git remote add upstream git@github.com:material-components/material-components-android.git
+
+# 查看远程仓库的路径
+$ git remote -v
+origin	git@github.com:lecymeng/material-components-android.git (fetch)
+origin	git@github.com:lecymeng/material-components-android.git (push)
+upstream	git@github.com:material-components/material-components-android.git (fetch)
+upstream	git@github.com:material-components/material-components-android.git (push)
+
+# 抓取原仓库的更新
+git fetch upstream
+
+# 执行命令 git checkout master 切换到 master 分支
+git checkout master
+
+# 合并远程的master分支
+git merge upstream/master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="使用-SubModule"><a href="#使用-SubModule" class="headerlink" title="使用 SubModule"></a>使用 SubModule</h2><blockquote>
+<p>参考：<br>imtianx: <a target="_blank" rel="noopener" href="https://juejin.im/post/5aa11f486fb9a028e0140e34">Git 子模块</a><br>官方文档：<a target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97">Git 工具 - 子模块</a></p>
+</blockquote>
+<p>工作中，可能会遇到<strong>在一个 Git 仓库 中添加 其他 Git 仓库的场景</strong>。比如，在项目中引用第三方库。或者在模块化开发中，某些公共的模块是需要单独维护的，使用单独的仓库比较方便，但是在项目中需要引用，就会出现这样的场景。这里使用 Git 的 <code>git submodule</code> 命令为一个 <code>git 项目</code> 添加 <code>子git项目</code></p>
+<p>可以使用 <code>git submodule --help</code> 查看所有相关命令。 为了方便说明，这里在主项目 <code>MainProject</code> 中加两个子模块 <code>liba</code> 和 <code>libb</code> .</p>
+<h3 id="1-添加子模块"><a href="#1-添加子模块" class="headerlink" title="1. 添加子模块"></a>1. 添加子模块</h3><p>进入 <code>MainProject</code> 使用 <strong>git submodule add</strong> 进行添加,操作命令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ git clone https://github.com/imtianx/MainProject.git
+cd MainProject/
+$ git submodule add https://github.com/imtianx/liba.git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>如下图：<br><img src="https://blog-1251678165.cos.ap-chengdu.myqcloud.com/2019-03-14-071321.jpg"></p>
+<p>使用 <code>git submodule add https://github.com/imtianx/libb.git</code> 添加 <code>libb</code> 子模块。 对于上图: 文件夹 <code>liba</code> 为新增加的子模块目录, <code>.gitmodules</code> 中存放的为子模块的信息，使用 <code>cat</code> 或 <code>vim</code> 查看内容为：</p>
+<pre class="line-numbers language-none"><code class="language-none">[submodule "liba"]
+	path = liba
+	url = https://github.com/imtianx/liba.git
+[submodule "libb"]
+	path = libb
+	url = https://github.com/imtianx/libb.git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p><strong>.gitmodules 文件</strong>：保存项目 URL 与已经拉取的本地目录之间的映射，有多个子模块则含有多条记录，会随着版本控制一起被拉去和推送的。</p>
+</blockquote>
+<p>此时文件目录树如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">.
+├── README.md
+├── liba
+│   ├── README.md
+│   ├── a.txt
+│   └── a2.txt
+├── libb
+│   ├── README.md
+│   ├── b.txt
+│   └── b2.txt
+└── test.text<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>最后，<strong>提交添加的子模块到主目录</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ git commit -m "add liba and libb submodules"
+[master 6b15e30] add liba and libb submodules
+ 3 files changed, 8 insertions(+)
+ create mode 100644 .gitmodules
+ create mode 160000 liba
+ create mode 160000 libb<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-更新子模块"><a href="#2-更新子模块" class="headerlink" title="2. 更新子模块"></a>2. 更新子模块</h3><p>往往子模块是单独开发的，这里以更新 <code>liba</code> 为例（为了测试，这里先在 liba 仓库添加了一个文件）：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ cd liba
+$ git fetch
+$ git merge origin/master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>操作结果如下图，<strong>注意需要进入子模块目录</strong>：<br><img src="https://blog-1251678165.cos.ap-chengdu.myqcloud.com/2019-03-14-071321.jpg"></p>
+<p>此外，还可以在主目录下 直接用下面的命令更新 <code>libb</code>子模块：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">git submodule update --remote liba<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>使用下面的方式，更新 libb 的 dev 分支：</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ git config -f .gitmodules submodule.libb.branch dev
+$ git submodule update --remote<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>如下图：<br><img src="https://blog-1251678165.cos.ap-chengdu.myqcloud.com/2019-03-14-071531.jpg"></p>
+<blockquote>
+<p>这里对 <code>.gitmodules</code> 加了 <code>-f</code> 参数，修改提交后对所有用户有效。</p>
+</blockquote>
+<h3 id="3-删除子模块"><a href="#3-删除子模块" class="headerlink" title="3. 删除子模块"></a>3. 删除子模块</h3><p>在日常开发中，有添加，当然也会有删除 子模块的需求。 这里主项目包含两个子模块：<code>liba</code>、<code>libb</code>，以删除 <code>liba</code> 为例说明：</p>
+<ul>
+<li>使用 <code>git rm --cached liba</code> 将 liba 从版本控制中删除（本地仍保留有），若不需要可不带 <code>--cached</code>进行完全删除。</li>
+<li>使用 <code>vim .gitmodules</code> 可打开 vim 编辑,删除对应的内容</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">[submodule "liba"]
+   path = liba
+   url = https://github.com/imtianx/liba.git
+   branch = dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>使用 <code>vim .git/config</code> 可打开 vim 编辑,删除对应的内容</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">[submodule "liba"]
+    url = https://github.com/imtianx/liba.git
+    active = true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>使用 <code>rm -rf .git/modules/liba</code>, 删除.git 下的缓存模块，最后提交项目。</li>
+</ul>
+<p>经过上面的删除后还可以进行添加子模块。</p>
+<h3 id="4-克隆含子模块的仓库"><a href="#4-克隆含子模块的仓库" class="headerlink" title="4. 克隆含子模块的仓库"></a>4. 克隆含子模块的仓库</h3><p>若需要克隆含有子模块的仓库，直接 进行克隆是无法拉取之模块的代码，可加上 <strong>–recursive</strong> 参数，如下：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">git clone --recursive https://github.com/imtianx/MainProject.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>或者使用下面的三部操作：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">git clone  https://github.com/imtianx/MainProject.git
+git submodule init
+git submodule update<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Git-分支开发规范"><a href="#Git-分支开发规范" class="headerlink" title="Git 分支开发规范"></a>Git 分支开发规范</h2><blockquote>
+<p>参考内容<br><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2012/07/git.html">Git 分支管理策略</a> &gt; <a target="_blank" rel="noopener" href="https://juejin.im/post/5b4328bbf265da0fa21a6820">您必须知道的 Git 分支开发规范</a> &gt; <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/21209619">如何写好 Git commit messages</a> &gt; <a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000009048911">git commit 规范指南</a> &gt; <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/3651860/which-characters-are-illegal-within-a-branch-name">Which characters are illegal within a branch name?</a></p>
+</blockquote>
+<p>Git 是目前最流行的源代码管理工具。 为规范开发，保持代码提交记录以及 git 分支结构清晰，方便后续维护，现规范 git 的相关操作。</p>
+<p><img src="https://blog-1251678165.cos.ap-chengdu.myqcloud.com/PWAUoF.jpg"></p>
+<h3 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h3><h4 id="分支命名"><a href="#分支命名" class="headerlink" title="分支命名"></a>分支命名</h4><p><strong>master 分支</strong></p>
+<ul>
+<li>master 为主分支，也是用于部署生产环境的分支，确保 master 分支稳定性</li>
+<li>master 分支一般由 develop 以及 hotfix 分支合并，任何时间都不能直接修改代码</li>
+</ul>
+<p><strong>develop 分支</strong></p>
+<ul>
+<li>develop 为开发分支，始终保持最新完成以及 bug 修复后的代码</li>
+<li>一般开发的新功能时，feature 分支都是基于 develop 分支下创建的</li>
+</ul>
+<p><strong>feature 分支</strong></p>
+<ul>
+<li>开发新功能时，以 develop 为基础创建 feature 分支</li>
+<li>分支命名: feature/ 开头的为特性分支， 命名规则: feature/user_module、 feature/cart_module</li>
+</ul>
+<p><strong>release 分支</strong></p>
+<ul>
+<li>release 为预上线分支，发布提测阶段，会 release 分支代码为基准提测</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">当有一组feature开发完成，首先会合并到develop分支，进入提测时，会创建release分支。
+如果测试过程中若存在bug需要修复，则直接由开发者在release分支修复并提交。
+当测试完成之后，合并release分支到master和develop分支，此时master为最新代码，用作上线。
+复制代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>hotfix 分支</strong></p>
+<ul>
+<li>分支命名: hotfix/ 开头的为修复分支，它的命名规则与 feature 分支类似</li>
+<li>线上出现紧急问题时，需要及时修复，以 master 分支为基线，创建 hotfix 分支，修复完成后，需要合并到 master 分支和 develop 分支</li>
+</ul>
+<h4 id="常见任务"><a href="#常见任务" class="headerlink" title="常见任务"></a>常见任务</h4><p><strong>增加新功能</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">(dev)$: git checkout -b feature/xxx            # 从dev建立特性分支
+(feature/xxx)$: blabla                         # 开发
+(feature/xxx)$: git add xxx
+(feature/xxx)$: git commit -m 'commit comment'
+(dev)$: git merge feature/xxx --no-ff          # 把特性分支合并到dev
+复制代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>修复紧急 bug</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">(master)$: git checkout -b hotfix/xxx         # 从master建立hotfix分支
+(hotfix/xxx)$: blabla                         # 开发
+(hotfix/xxx)$: git add xxx
+(hotfix/xxx)$: git commit -m 'commit comment'
+(master)$: git merge hotfix/xxx --no-ff       # 把hotfix分支合并到master，并上线到生产环境
+(dev)$: git merge hotfix/xxx --no-ff          # 把hotfix分支合并到dev，同步代码
+复制代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>测试环境代码</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">(release)$: git merge dev --no-ff             # 把dev分支合并到release，然后在测试环境拉取并测试
+复制代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>生产环境上线</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">(master)$: git merge release --no-ff          # 把release测试好的代码合并到master，运维人员操作
+(master)$: git tag -a v0.1 -m '部署包版本名'  #给版本命名，打Tag
+复制代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://blog-1251678165.cos.ap-chengdu.myqcloud.com/9czDAj.jpg"></p>
+<h3 id="日志规范"><a href="#日志规范" class="headerlink" title="日志规范"></a>日志规范</h3><blockquote>
+<p>在一个团队协作的项目中，开发人员需要经常提交一些代码去修复 bug 或者实现新的 feature。而项目中的文件和实现什么功能、解决什么问题都会渐渐淡忘，最后需要浪费时间去阅读代码。但是好的日志规范 commit messages 编写有帮助到我们，它也反映了一个开发人员是否是良好的协作者。</p>
+</blockquote>
+<p><strong>编写良好的 Commit messages 可以达到 3 个重要的目的：</strong></p>
+<ul>
+<li>加快 review 的流程</li>
+<li>帮助我们编写良好的版本发布日志</li>
+<li>让之后的维护者了解代码里出现特定变化和 feature 被添加的原因</li>
+</ul>
+<p><strong>目前，社区有多种 Commit message 的写法规范。来自 Angular 规范是目前使用最广的写法，比较合理和系统化。如下图：</strong></p>
+<p><img src="https://blog-1251678165.cos.ap-chengdu.myqcloud.com/UlbImQ.jpg"></p>
+<h4 id="Commit-messages-的基本语法"><a href="#Commit-messages-的基本语法" class="headerlink" title="Commit messages 的基本语法"></a>Commit messages 的基本语法</h4><p>当前业界应用的比较广泛的是 <a target="_blank" rel="noopener" href="https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#heading=h.greljkmo14y0">Angular Git Commit Guidelines</a></p>
+<p>具体格式为:</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;type&gt;: &lt;subject&gt;
+&lt;BLANK LINE&gt;
+&lt;body&gt;
+&lt;BLANK LINE&gt;
+&lt;footer&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>type: 本次 commit 的类型，诸如 bugfix docs style 等</li>
+<li>scope: 本次 commit 波及的范围</li>
+<li>subject: 简明扼要的阐述下本次 commit 的主旨，在原文中特意强调了几点 1. 使用祈使句，是不是很熟悉又陌生的一个词，来传送门在此 祈使句 2. 首字母不要大写 3. 结尾无需添加标点</li>
+<li>body: 同样使用祈使句，在主体内容中我们需要把本次 commit 详细的描述一下，比如此次变更的动机，如需换行，则使用 |</li>
+<li>footer: 描述下与之关联的 issue 或 break change，详见案例</li>
+</ul>
+<p><strong>Type 的类别说明：</strong></p>
+<ul>
+<li>feature: 添加新特性/新功能</li>
+<li>upgrade: 功能升级或代码变更</li>
+<li>fix: 修复 bug</li>
+<li>docs: 仅仅修改了文档或 README</li>
+<li>style: 仅仅修改了空格、格式缩进、或者主题 UI 变更 等等，不改变代码逻辑</li>
+<li>refactor: 代码重构，没有加新功能或者修复 bug</li>
+<li>perf: 增加代码进行性能测试</li>
+<li>test: 增加测试用例</li>
+<li>chore: 改变构建流程、或者增加依赖库、工具等</li>
+</ul>
+<h4 id="Commit-messages-格式要求"><a href="#Commit-messages-格式要求" class="headerlink" title="Commit messages 格式要求"></a>Commit messages 格式要求</h4><p>对于 Git Commit Message 并明确的标准，但也有一些好的原则：</p>
+<ul>
+<li>使提交信息业务相关</li>
+<li>提交信息中写明类型</li>
+<li>必要时要写描述(Decription)</li>
+<li>提交主题尽量简短</li>
+<li>尽量使用英文</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># 标题行：50个字符以内，描述主要变更内容
+#
+# 主体内容：更详细的说明文本，建议72个字符以内。 需要描述的信息包括:
+#
+# * 为什么这个变更是必须的? 它可能是用来修复一个bug，增加一个feature，提升性能、可靠性、稳定性等等
+# * 他如何解决这个问题? 具体描述解决问题的步骤
+# * 是否存在副作用、风险?
+#
+# 如果需要的化可以添加一个链接到issue地址或者其它文档<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a target="_blank" rel="noopener" href="https://juejin.im/post/6847902225029660680">Git 如何写出优雅的 Commit Message</a><br><a target="_blank" rel="noopener" href="https://juejin.im/post/6844903721244033038">利用 emoji 让的 git commit 生动清晰起来</a><br><a target="_blank" rel="noopener" href="https://juejin.im/post/6844903606815064077">优雅的提交你的 Git Commit Message</a></p>
+<h3 id="利用-emoji-让的-git-commit-生动清晰起来"><a href="#利用-emoji-让的-git-commit-生动清晰起来" class="headerlink" title="利用 emoji 让的 git commit 生动清晰起来"></a>利用 emoji 让的 git commit 生动清晰起来</h3><p>有一些多人合作的项目同事提了 commit，你还需要花时间去看什么提交了什么，因为什么提交。<br>有了 emoji 之后，例如看到有条虫 🐛 就知道他这次版本就是改了 bug 了。<br>非常方便快捷，话不多说，开始吧。</p>
+<p>如何食用：commit 时填写以下图标对应代码即可，例如： <code>:bug:</code> 解决下单问题。</p>
+<p>🎨 <span class="github-emoji"><span>🎨</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3a8.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<pre class="line-numbers language-none"><code class="language-none">改进代码结构或者格式。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>⚡ <span class="github-emoji"><span>⚡</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/26a1.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<pre class="line-numbers language-none"><code class="language-none">提高效率。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>🔥 <span class="github-emoji"><span>🔥</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f525.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<pre class="line-numbers language-none"><code class="language-none">删除代码或文件。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>🐛 <span class="github-emoji"><span>🐛</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f41b.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<pre class="line-numbers language-none"><code class="language-none">修复bug。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>🚑 <span class="github-emoji"><span>🚑</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f691.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<pre class="line-numbers language-none"><code class="language-none">删除代码或文件。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>🔥 <span class="github-emoji"><span>🎨</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3a8.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<pre class="line-numbers language-none"><code class="language-none">删除代码或文件。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>✨ <span class="github-emoji"><span>✨</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<pre class="line-numbers language-none"><code class="language-none">增加新功能。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>📝 <span class="github-emoji"><span>📝</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dd.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<pre class="line-numbers language-none"><code class="language-none">书写文档，例如修改readme.md。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>🚀 <span class="github-emoji"><span>🚀</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f680.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<pre class="line-numbers language-none"><code class="language-none">部署项目。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>💄 <span class="github-emoji"><span>💄</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f484.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<pre class="line-numbers language-none"><code class="language-none">更新UI和样式文件，例如更新css（前端应该经常都要这个涂唇膏的）。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>🎉 <span class="github-emoji"><span>🎉</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<pre class="line-numbers language-none"><code class="language-none">首次提交 first commit。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>✅ <span class="github-emoji"><span>✅</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<pre class="line-numbers language-none"><code class="language-none">添加测试。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>🔒 <span class="github-emoji"><span>🔒</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f512.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<pre class="line-numbers language-none"><code class="language-none">解决安全问题。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>♻ <span class="github-emoji"><span>♻</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/267b.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<pre class="line-numbers language-none"><code class="language-none">重构代码。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>➕ <span class="github-emoji"><span>➕</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2795.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<pre class="line-numbers language-none"><code class="language-none">添加依赖。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>➖ <span class="github-emoji"><span>➖</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2796.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<pre class="line-numbers language-none"><code class="language-none">删除依赖。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>🔧 <span class="github-emoji"><span>🔧</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<pre class="line-numbers language-none"><code class="language-none">更改配置文件。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>💩 <span class="github-emoji"><span>💩</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a9.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<pre class="line-numbers language-none"><code class="language-none">编写需要改进的错误代码（这个emoji也太真实了吧）。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>➖ <span class="github-emoji"><span>➖</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2796.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<pre class="line-numbers language-none"><code class="language-none">删除依赖。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><a target="_blank" rel="noopener" href="http://emojihomepage.com/">http://emojihomepage.com/</a><br><a target="_blank" rel="noopener" href="https://gitmoji.carloscuesta.me/">https://gitmoji.carloscuesta.me/</a></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Weicools</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://www.weicools.com/20180112/git-manual/">https://www.weicools.com/20180112/git-manual/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Weicools</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/GitHub/">
+                                    <span class="chip bg-color">GitHub</span>
+                                </a>
+                            
+                                <a href="/tags/Git/">
+                                    <span class="chip bg-color">Git</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'orsSeN9tLirrMORe4CklaXEN-gzGzoHsz',
+        appKey: 'wOCnGVsLjb2wsCTDhhMvAPCr',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/20180514/telegram-proxy-method/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/418969_75554096_26.png" class="responsive-img" alt="Telegram 代理设置">
+                        
+                        <span class="card-title">Telegram 代理设置</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Telegram 代理设置本次测试的是 Mac ShadowsocksX-NG + Telegram
+Shadowsocks
+ShadowsocksX-NG
+打开偏好设置，高级选项，查看 SOCKS5 端口
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2018-05-14
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Weicools
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Network/">
+                        <span class="chip bg-color">Network</span>
+                    </a>
+                    
+                    <a href="/tags/Shadowsocks/">
+                        <span class="chip bg-color">Shadowsocks</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/20171210/designpattern-structure-adapter/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2642047_72684073.png" class="responsive-img" alt="《Android 源码设计模式解析与实战》读书笔记 - 适配器模式">
+                        
+                        <span class="card-title">《Android 源码设计模式解析与实战》读书笔记 - 适配器模式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            《Android 源码设计模式解析与实战》读书笔记 - 适配器模式
+适配器模式把一个类的接口变换成客户端所期待的另外一个接口，从而使原本因接口不匹配而无法一起工作的两个类能够在一起工作适配器分为类适配器和对象适配器两张
+
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2017-12-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Weicools
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Android/">
+                        <span class="chip bg-color">Android</span>
+                    </a>
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/DesignPattern/">
+                        <span class="chip bg-color">DesignPattern</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2015-2021</span>
+            
+            <span id="year">2015</span>
+            <a href="/about" target="_blank">Weicools</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2015";
+                    var startMonth = "11";
+                    var startDate = "24";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lecymeng" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:lecymeng@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1570682285" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1570682285" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

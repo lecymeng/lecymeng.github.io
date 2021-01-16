@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Weicools</title>
+  
+  <subtitle>Weicools&#39; blog</subtitle>
+  <link href="https://www.weicools.com/atom.xml" rel="self"/>
+  
+  <link href="https://www.weicools.com/"/>
+  <updated>2021-01-16T11:09:23.664Z</updated>
+  <id>https://www.weicools.com/</id>
+  
+  <author>
+    <name>Weicools</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>unRAID NAS Server Pro 6.8.1 快乐版</title>
+    <link href="https://www.weicools.com/20200406/unraid-nas-server-pro-6.8.1-readme/"/>
+    <id>https://www.weicools.com/20200406/unraid-nas-server-pro-6.8.1-readme/</id>
+    <published>2020-04-06T11:55:00.000Z</published>
+    <updated>2021-01-16T11:09:23.664Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;unRAID-NAS-Server-Pro-6-8-1-快乐版&quot;&gt;&lt;a href=&quot;#unRAID-NAS-Server-Pro-6-8-1-快乐版&quot; class=&quot;headerlink&quot; title=&quot;unRAID NAS Server Pro 6.8.1 快乐版&quot;&gt;&lt;/a&gt;unRAID NAS Server Pro 6.8.1 快乐版&lt;/h1&gt;&lt;!--[unRAID NAS Server Pro 6.8.2 开心版](http://www.hopol.cn/2020/01/1510/)--&gt;
+
+&lt;p&gt;下载地址：&lt;a href=&quot;https://mega.nz/folder/kv4w0YJA#YtT-Kr3lfa2zDPrEOpSEyw&quot;&gt;MEGA&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;解压后截图&quot;&gt;&lt;a href=&quot;#解压后截图&quot; class=&quot;headerlink&quot; title=&quot;解压后截图&quot;&gt;&lt;/a&gt;解压后截图&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://blog-1251678165.cos.ap-chengdu.myqcloud.com/Crms8X.jpg&quot; alt=&quot;Crms8X&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;食用方式&quot;&gt;&lt;a href=&quot;#食用方式&quot; class=&quot;headerlink&quot; title=&quot;食用方式&quot;&gt;&lt;/a&gt;食用方式&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;将 U 盘格式化为 FAT32 格式，名称为：UNRAID&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;将解压出来的所有文件拷贝到 U 盘根目录下&lt;br&gt;&lt;img src=&quot;https://blog-1251678165.cos.ap-chengdu.myqcloud.com/VQXhuT.jpg&quot; alt=&quot;VQXhuT&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;用管理员权限运行 make_bootable.bat&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;将 U 盘插入设备并启动，正常引导之后会看到当前获取到的 IP。&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="NAS" scheme="https://www.weicools.com/tags/NAS/"/>
+    
+    <category term="Unraid" scheme="https://www.weicools.com/tags/Unraid/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>unRAID NAS Server Pro 6.7.2 快乐版</title>
+    <link href="https://www.weicools.com/20200406/unraid-nas-server-pro-6.7.2-readme/"/>
+    <id>https://www.weicools.com/20200406/unraid-nas-server-pro-6.7.2-readme/</id>
+    <published>2020-04-06T11:50:00.000Z</published>
+    <updated>2021-01-16T11:09:23.664Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;unRAID-NAS-Server-Pro-6-7-2-快乐版&quot;&gt;&lt;a href=&quot;#unRAID-NAS-Server-Pro-6-7-2-快乐版&quot; class=&quot;headerlink&quot; title=&quot;unRAID NAS Server Pro 6.7.2 快乐版&quot;&gt;&lt;/a&gt;unRAID NAS Server Pro 6.7.2 快乐版&lt;/h1&gt;&lt;!--[unRAID NAS Server Pro 6.7.2 开心版](http://www.hopol.cn/2019/12/1475/)--&gt;
+
+&lt;p&gt;下载地址：&lt;a href=&quot;https://mega.nz/folder/M7gQTYzT#75R708IKqoFkbz3bV4e9DQ&quot;&gt;MEGA&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;快乐方式一&quot;&gt;&lt;a href=&quot;#快乐方式一&quot; class=&quot;headerlink&quot; title=&quot;快乐方式一&quot;&gt;&lt;/a&gt;快乐方式一&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;下载 unRAIDServer-6.7.2-x86_64_K_fu11.7z 并解压&lt;/li&gt;
+&lt;li&gt;使用 Unraid.USB.Creator.Win32-1.6.exe U 盘制作工具&lt;/li&gt;
+&lt;li&gt;用制作好的 U 盘启动，并记录下 Flash GUID 信息备用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;然后申请试用。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将 crack 目录下 的两个文件拷贝到 U 盘根目录下并覆盖&lt;/li&gt;
+&lt;li&gt;将 GUID 复制到 keymaker.exe 生成注册授权文件，保存到 U 盘 config 目录下&lt;/li&gt;
+&lt;li&gt;重新用 U 盘引导开机，查看右上角信息&lt;/li&gt;&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="NAS" scheme="https://www.weicools.com/tags/NAS/"/>
+    
+    <category term="Unraid" scheme="https://www.weicools.com/tags/Unraid/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用FRP进行内网穿透</title>
+    <link href="https://www.weicools.com/20200404/intranet-penetration-by-frp/"/>
+    <id>https://www.weicools.com/20200404/intranet-penetration-by-frp/</id>
+    <published>2020-04-04T15:12:27.000Z</published>
+    <updated>2021-01-16T11:09:23.664Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;使用frp进行内网穿透&quot;&gt;&lt;a href=&quot;#使用frp进行内网穿透&quot; class=&quot;headerlink&quot; title=&quot;使用frp进行内网穿透&quot;&gt;&lt;/a&gt;使用frp进行内网穿透&lt;/h1&gt;&lt;p&gt;FRP项目地址：&lt;a href=&quot;https://github.com/fatedier/frp&quot;&gt;https://github.com/fatedier/frp&lt;/a&gt;&lt;br&gt;FRP中文说明：&lt;a href=&quot;https://github.com/fatedier/frp/blob/master/README_zh.md&quot;&gt;https://github.com/fatedier/frp/blob/master/README_zh.md&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;frp是什么&quot;&gt;&lt;a href=&quot;#frp是什么&quot; class=&quot;headerlink&quot; title=&quot;frp是什么&quot;&gt;&lt;/a&gt;frp是什么&lt;/h2&gt;&lt;p&gt;简单地说:frp就是一个&lt;a href=&quot;https://www.zhihu.com/question/24723688&quot;&gt;反向代理软件&lt;/a&gt;，它体积轻量但功能很强大，可以&lt;strong&gt;使处于内网或防火墙后的设备对外界提供服务&lt;/strong&gt;，它支持 &lt;strong&gt;HTTP、TCP、UDP&lt;/strong&gt;等众多协议。&lt;/p&gt;
+&lt;h2 id=&quot;为什么需要内网穿透&quot;&gt;&lt;a href=&quot;#为什么需要内网穿透&quot; class=&quot;headerlink&quot; title=&quot;为什么需要内网穿透&quot;&gt;&lt;/a&gt;为什么需要内网穿透&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;从公网中访问自己的私有设备向来是一件难事儿。&lt;/strong&gt;&lt;br&gt;自己的主力台式机、NAS等等设备，它们可能处于路由器后，或者运营商因为IP地址短缺不给你分配公网IP地址。如果我们想直接访问到这些设备（远程桌面，远程文件，SSH等等），一般来说要通过一些转发或者P2P组网软件的帮助。&lt;br&gt;我有一台计算机位于一个很复杂的局域网中，我想要实现远程桌面和文件访问，目前来看其所处的网络环境很难通过简单的端口映射将其暴露在公网之中，我试过这么几种方法：&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="NAS" scheme="https://www.weicools.com/tags/NAS/"/>
+    
+    <category term="Network" scheme="https://www.weicools.com/tags/Network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用NPS进行内网穿透</title>
+    <link href="https://www.weicools.com/20200316/intranet-penetration-by-nps/"/>
+    <id>https://www.weicools.com/20200316/intranet-penetration-by-nps/</id>
+    <published>2020-03-16T13:12:27.000Z</published>
+    <updated>2021-01-16T11:09:23.664Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;服务端&quot;&gt;&lt;a href=&quot;#服务端&quot; class=&quot;headerlink&quot; title=&quot;服务端&quot;&gt;&lt;/a&gt;服务端&lt;/h3&gt;&lt;h4 id=&quot;下载-NPS-程序安装&quot;&gt;&lt;a href=&quot;#下载-NPS-程序安装&quot; class=&quot;headerlink&quot; title=&quot;下载 NPS 程序安装&quot;&gt;&lt;/a&gt;下载 NPS 程序安装&lt;/h4&gt;&lt;pre class=&quot;line-numbers language-bash&quot; data-language=&quot;bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;# 运行如下命令，根据CPU架构，选择相应版本并进行下载
+wget https://github.com/ehang-io/nps/releases/download/v0.26.6/linux_amd64_server.tar.gz
+
+# 解压
+tar -zxvf linux_amd64_server.tar.gz
+
+# 文件夹改个名，方便使用
+cp -r linux_amd64_server nps_server
+
+# 进入nps_server
+cd nps_server
+
+# 开启Nps
+./nps start&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;</summary>
+    
+    
+    
+    
+    <category term="NAS" scheme="https://www.weicools.com/tags/NAS/"/>
+    
+    <category term="Network" scheme="https://www.weicools.com/tags/Network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>端口号占用解决方法</title>
+    <link href="https://www.weicools.com/20200306/port-number-occupy-solution/"/>
+    <id>https://www.weicools.com/20200306/port-number-occupy-solution/</id>
+    <published>2020-03-06T22:25:00.000Z</published>
+    <updated>2021-01-16T11:09:23.664Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;端口号占用解决方法&quot;&gt;&lt;a href=&quot;#端口号占用解决方法&quot; class=&quot;headerlink&quot; title=&quot;端口号占用解决方法&quot;&gt;&lt;/a&gt;端口号占用解决方法&lt;/h1&gt;&lt;h2 id=&quot;Linux-端口号占用解决方法&quot;&gt;&lt;a href=&quot;#Linux-端口号占用解决方法&quot; class=&quot;headerlink&quot; title=&quot;Linux 端口号占用解决方法&quot;&gt;&lt;/a&gt;Linux 端口号占用解决方法&lt;/h2&gt;&lt;h3 id=&quot;查询端口号&quot;&gt;&lt;a href=&quot;#查询端口号&quot; class=&quot;headerlink&quot; title=&quot;查询端口号&quot;&gt;&lt;/a&gt;查询端口号&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;使用&lt;code&gt;netstat&lt;/code&gt;命令&lt;br&gt;netstat -tunlp 会显示所有端口和所有对应的程序，如果像得到自己关系的结果，可以使用 grep 对结果集进行过滤。例如：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;line-numbers language-bash&quot; data-language=&quot;bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;netstat -tunlp | grep java&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这样就能过滤出只带有 java 进程的所有端口被占用的情况。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Network" scheme="https://www.weicools.com/tags/Network/"/>
+    
+    <category term="Linux" scheme="https://www.weicools.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android TabLayout</title>
+    <link href="https://www.weicools.com/20200225/android-widget-tablayout/"/>
+    <id>https://www.weicools.com/20200225/android-widget-tablayout/</id>
+    <published>2020-02-25T12:27:20.000Z</published>
+    <updated>2020-05-10T13:20:20.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Android" scheme="https://www.weicools.com/tags/Android/"/>
+    
+    <category term="Widget" scheme="https://www.weicools.com/tags/Widget/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IADB 扩展</title>
+    <link href="https://www.weicools.com/20200106/iadb/"/>
+    <id>https://www.weicools.com/20200106/iadb/</id>
+    <published>2020-01-06T21:20:00.000Z</published>
+    <updated>2021-01-16T11:09:23.664Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;IADB-工具&quot;&gt;&lt;a href=&quot;#IADB-工具&quot; class=&quot;headerlink&quot; title=&quot;IADB 工具&quot;&gt;&lt;/a&gt;IADB 工具&lt;/h1&gt;&lt;p&gt;ADB 扩展工具&lt;/p&gt;
+&lt;p&gt;含义：i adb &amp;amp;&amp;amp; IA Debug Bridge&lt;br&gt;实现步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Shell 脚本：iadb.sh（调用 adb 命令）&lt;/li&gt;
+&lt;li&gt;二进制程序：iadb（使用 shc 封装成可执行程序）&lt;/li&gt;&lt;/ol&gt;</summary>
+    
+    
+    
+    
+    <category term="Android" scheme="https://www.weicools.com/tags/Android/"/>
+    
+    <category term="Script" scheme="https://www.weicools.com/tags/Script/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Talk-With-Moe</title>
+    <link href="https://www.weicools.com/20191222/talk-with-moe/"/>
+    <id>https://www.weicools.com/20191222/talk-with-moe/</id>
+    <published>2019-12-22T21:55:00.000Z</published>
+    <updated>2021-01-16T11:09:23.664Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;Talk-With-Me&quot;&gt;&lt;a href=&quot;#Talk-With-Me&quot; class=&quot;headerlink&quot; title=&quot;Talk With Me&quot;&gt;&lt;/a&gt;Talk With Me&lt;/h1&gt;&lt;p&gt;啦啦啦啦啦略略略略略啦啦啦啦啦略略略略略啦啦啦啦啦略略略略略啦啦啦啦啦略略略略略啦啦啦啦啦略略略略略，此处省略一万字……&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Interview" scheme="https://www.weicools.com/tags/Interview/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android TextView</title>
+    <link href="https://www.weicools.com/20181210/android-widget-textview/"/>
+    <id>https://www.weicools.com/20181210/android-widget-textview/</id>
+    <published>2018-12-10T11:28:27.000Z</published>
+    <updated>2020-05-10T13:20:20.000Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;Android-TextView&quot;&gt;&lt;a href=&quot;#Android-TextView&quot; class=&quot;headerlink&quot; title=&quot;Android TextView&quot;&gt;&lt;/a&gt;Android TextView&lt;/h1&gt;&lt;h2 id=&quot;Autosizing-TextView&quot;&gt;&lt;a href=&quot;#Autosizing-TextView&quot; class=&quot;headerlink&quot; title=&quot;Autosizing TextView&quot;&gt;&lt;/a&gt;Autosizing TextView&lt;/h2&gt;&lt;p&gt;使用 Android 8.0（API 级别 26）及更高版本，可以让 &lt;code&gt;TextView&lt;/code&gt;文本大小自动扩展或收缩，以根据其&lt;code&gt;TextView&lt;/code&gt;特征和边界填充其布局 。此设置可以更轻松地使用动态内容优化不同屏幕上的文本大小。&lt;/p&gt;
+&lt;p&gt;Support Library 26.0 完全支持 &lt;code&gt;TextView&lt;/code&gt;在 Android 8.0（API 级别 26）之前运行 Android 版本的设备上的自动调整功能。该库提供对 Android 4.0（API 级别 14）及更高版本的支持。该&lt;code&gt;android.support.v4.widget&lt;/code&gt; 软件包含&lt;code&gt;TextViewCompat&lt;/code&gt;以向后兼容方式访问功能的类&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Android" scheme="https://www.weicools.com/tags/Android/"/>
+    
+    <category term="Widget" scheme="https://www.weicools.com/tags/Widget/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>比较合适的Hexo多设备同步方法</title>
+    <link href="https://www.weicools.com/20181111/hexo-sync-onmultidevice/"/>
+    <id>https://www.weicools.com/20181111/hexo-sync-onmultidevice/</id>
+    <published>2018-11-11T13:30:10.000Z</published>
+    <updated>2021-01-16T11:09:23.664Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;比较合适的-Hexo-多设备同步方法&quot;&gt;&lt;a href=&quot;#比较合适的-Hexo-多设备同步方法&quot; class=&quot;headerlink&quot; title=&quot;比较合适的 Hexo 多设备同步方法&quot;&gt;&lt;/a&gt;比较合适的 Hexo 多设备同步方法&lt;/h1&gt;&lt;p&gt;经常我们有一个场景：需要在公司或者家庭多个电脑完成 Hexo 的博客撰写和发布工作。这就涉及到 Hexo 多电脑的同步问题。&lt;/p&gt;
+&lt;p&gt;网上的方案基本上都是多分支方案，也就是在同一个仓库创建两个分支：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Hexo 分支 – 用来保存所有 Hexo 的源文件&lt;/li&gt;
+&lt;li&gt;master 分支 – 用来保存 Hexo 生成的博客文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在创建 GitHub Pages 或者 Coding Pages 时，以 master 分支为 pages 分支。&lt;br&gt;Hexo 的 deploy 指向 master 分支部署 pages，git 的管理指向 Hexo 分支。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Hexo" scheme="https://www.weicools.com/tags/Hexo/"/>
+    
+    <category term="GitHub" scheme="https://www.weicools.com/tags/GitHub/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>EventBus 源码解析</title>
+    <link href="https://www.weicools.com/20180913/codeanalysis-eventbus/"/>
+    <id>https://www.weicools.com/20180913/codeanalysis-eventbus/</id>
+    <published>2018-09-13T23:18:12.000Z</published>
+    <updated>2021-01-16T11:09:23.664Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;EventBus-源码解析&quot;&gt;&lt;a href=&quot;#EventBus-源码解析&quot; class=&quot;headerlink&quot; title=&quot;EventBus 源码解析&quot;&gt;&lt;/a&gt;EventBus 源码解析&lt;/h1&gt;&lt;h2 id=&quot;EventBus-简介&quot;&gt;&lt;a href=&quot;#EventBus-简介&quot; class=&quot;headerlink&quot; title=&quot;EventBus 简介&quot;&gt;&lt;/a&gt;EventBus 简介&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://a.codekk.com/detail/Android/Trinea/EventBus%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;EventBus 是 Android 端优化的 publish/subscribe 消息总线，简化了应用程序内各组件间、组件与后台线程的通信，主要由三个部分组成:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;事件 Event: 可以是任意对象，通过事件的发布者将事件进行传递&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;事件订阅者 Subscriber: 接收特定事件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;事件发布者 Publisher: 用于通知 Subscriber 有事件发生，可以在任意线程任意位置发送事件&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="Android" scheme="https://www.weicools.com/tags/Android/"/>
+    
+    <category term="SourceCode Analysis" scheme="https://www.weicools.com/tags/SourceCode-Analysis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Telegram 代理设置</title>
+    <link href="https://www.weicools.com/20180514/telegram-proxy-method/"/>
+    <id>https://www.weicools.com/20180514/telegram-proxy-method/</id>
+    <published>2018-05-14T15:12:27.000Z</published>
+    <updated>2021-01-16T11:09:23.664Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;Telegram-代理设置&quot;&gt;&lt;a href=&quot;#Telegram-代理设置&quot; class=&quot;headerlink&quot; title=&quot;Telegram 代理设置&quot;&gt;&lt;/a&gt;Telegram 代理设置&lt;/h1&gt;&lt;p&gt;本次测试的是 Mac ShadowsocksX-NG + Telegram&lt;br&gt;&lt;img src=&quot;http://blog-1251678165.coscd.myqcloud.com/2018-05-14-064147.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Shadowsocks&quot;&gt;&lt;a href=&quot;#Shadowsocks&quot; class=&quot;headerlink&quot; title=&quot;Shadowsocks&quot;&gt;&lt;/a&gt;Shadowsocks&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/shadowsocks/ShadowsocksX-NG/releases&quot;&gt;ShadowsocksX-NG&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;打开偏好设置，高级选项，查看 SOCKS5 端口&lt;br&gt;&lt;img src=&quot;http://blog-1251678165.coscd.myqcloud.com/2018-05-14-064557.png&quot;&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
+    
+    
+    
+    
+    <category term="Network" scheme="https://www.weicools.com/tags/Network/"/>
+    
+    <category term="Shadowsocks" scheme="https://www.weicools.com/tags/Shadowsocks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git使用手册</title>
+    <link href="https://www.weicools.com/20180112/git-manual/"/>
+    <id>https://www.weicools.com/20180112/git-manual/</id>
+    <published>2018-01-12T14:16:27.000Z</published>
+    <updated>2019-11-25T16:40:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="GitHub" scheme="https://www.weicools.com/tags/GitHub/"/>
+    
+    <category term="Git" scheme="https://www.weicools.com/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《Android 源码设计模式解析与实战》读书笔记 - 适配器模式</title>
+    <link href="https://www.weicools.com/20171210/designpattern-structure-adapter/"/>
+    <id>https://www.weicools.com/20171210/designpattern-structure-adapter/</id>
+    <published>2017-12-10T11:18:27.000Z</published>
+    <updated>2021-01-16T11:09:23.664Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;《Android-源码设计模式解析与实战》读书笔记-适配器模式&quot;&gt;&lt;a href=&quot;#《Android-源码设计模式解析与实战》读书笔记-适配器模式&quot; class=&quot;headerlink&quot; title=&quot;《Android 源码设计模式解析与实战》读书笔记 - 适配器模式&quot;&gt;&lt;/a&gt;《Android 源码设计模式解析与实战》读书笔记 - 适配器模式&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;适配器模式把一个类的接口变换成客户端所期待的另外一个接口，从而使原本因接口不匹配而无法一起工作的两个类能够在一起工作&lt;br&gt;适配器分为类适配器和对象适配器两张&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="Android" scheme="https://www.weicools.com/tags/Android/"/>
+    
+    <category term="Java" scheme="https://www.weicools.com/tags/Java/"/>
+    
+    <category term="DesignPattern" scheme="https://www.weicools.com/tags/DesignPattern/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>制作多功能启动U盘, 轻松完成系统安装和维护</title>
+    <link href="https://www.weicools.com/20171202/make-multiboot-udisk/"/>
+    <id>https://www.weicools.com/20171202/make-multiboot-udisk/</id>
+    <published>2017-12-02T11:16:27.000Z</published>
+    <updated>2021-01-16T11:09:23.664Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;制作多功能启动-U-盘-轻松完成系统安装和维护&quot;&gt;&lt;a href=&quot;#制作多功能启动-U-盘-轻松完成系统安装和维护&quot; class=&quot;headerlink&quot; title=&quot;制作多功能启动 U 盘, 轻松完成系统安装和维护&quot;&gt;&lt;/a&gt;制作多功能启动 U 盘, 轻松完成系统安装和维护&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;本教程仅适用于 EFI 引导的电脑，安装的系统也需要支持 EFI 引导。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;平时给自己或者别人重装系统的频率还算挺高的，因为有时候要装 macOS 有时候要装 Windows，每次都要重新把安装包刷到我的 U 盘里，不但非常折腾，而且对寿命也不好。于是整理了一下把安装盘都塞到一个 U 盘里，这个 U 盘不仅可以选择启动多个系统，而且当某一个系统的安装盘需要更新的时候，并不需要抹掉整个盘，只要单独处理对应的分区就好，非常方便。启动的时候效果是这样的：&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="macOS" scheme="https://www.weicools.com/tags/macOS/"/>
+    
+    <category term="Linux" scheme="https://www.weicools.com/tags/Linux/"/>
+    
+    <category term="Windows" scheme="https://www.weicools.com/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>暗影精灵2Plus GTX1060独显亮度调节实现</title>
+    <link href="https://www.weicools.com/20170826/hp2plus-gtx1060-brightness/"/>
+    <id>https://www.weicools.com/20170826/hp2plus-gtx1060-brightness/</id>
+    <published>2017-08-26T01:47:53.000Z</published>
+    <updated>2021-01-16T11:09:23.664Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;暗影精灵-2Plus-GTX1060-独显亮度调节实现&quot;&gt;&lt;a href=&quot;#暗影精灵-2Plus-GTX1060-独显亮度调节实现&quot; class=&quot;headerlink&quot; title=&quot;暗影精灵 2Plus GTX1060 独显亮度调节实现&quot;&gt;&lt;/a&gt;暗影精灵 2Plus GTX1060 独显亮度调节实现&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;Foreword：本来打算毕业工作了再换本的，但是实在受不了之前那个低压 U 本 Yoga13 了，开个 IDE 和模拟器就快炸了，玩个 LOL 一打团就变 PPT 玩个蛇皮；然后然后看到**&lt;code&gt;暗影精灵2Plus&lt;/code&gt;&lt;strong&gt;七代 U 版本比首发价还低 1000 就忍不住剁手了 🤣，总体体验：性能不用说，i7+GTX1060 甜品显卡基本都可以玩，72％色域 IPS 屏幕也是很棒，缺点 17.3 寸比较重、台达电源 230W 好大一块砖、键盘方向键反人类 🙃&lt;br&gt;&lt;img src=&quot;https://blog-bak-1251678165.cos.ap-beijing.myqcloud.com/2017-08-27-023638.jpg&quot; alt=&quot;Order&quot;&gt;&lt;br&gt;回到主题：这本惠普自己把&lt;/strong&gt;&lt;code&gt;核显HD630屏蔽&lt;/code&gt;&lt;strong&gt;了，Windows 设备管理器都看不到（Windows 上不插电源没法玩游戏），Hackintosh 岂不是可以直接用 GTX1060 了 😉 美滋滋，虽然是用上了但是&lt;/strong&gt;&lt;code&gt;亮度调节&lt;/code&gt;**一直不行，直到昨天才搞定。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="macOS" scheme="https://www.weicools.com/tags/macOS/"/>
+    
+    <category term="Hackintosh" scheme="https://www.weicools.com/tags/Hackintosh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《Android 源码设计模式解析与实战》读书笔记 - 责任链模式</title>
+    <link href="https://www.weicools.com/20170318/designpattern-behavior-chain-of-responsibility/"/>
+    <id>https://www.weicools.com/20170318/designpattern-behavior-chain-of-responsibility/</id>
+    <published>2017-03-18T12:16:27.000Z</published>
+    <updated>2021-01-16T11:09:23.664Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;《Android-源码设计模式解析与实战》读书笔记-责任链模式&quot;&gt;&lt;a href=&quot;#《Android-源码设计模式解析与实战》读书笔记-责任链模式&quot; class=&quot;headerlink&quot; title=&quot;《Android 源码设计模式解析与实战》读书笔记 - 责任链模式&quot;&gt;&lt;/a&gt;《Android 源码设计模式解析与实战》读书笔记 - 责任链模式&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;锁链这种链式结构，每个节点都可以被拆开再连接，因此链式结构也具有很好的灵活性，在编程领域，将每一个节点看作一个对象，每个对象有不同的处理逻辑，将一个请求从链式的首端出发，沿着路径依次传递到每个节点对象，直到有对象处理这个请求为止。&lt;br&gt;定义: 责任链模式是行为型设计模式之一，它使多个对象都有机会处理请求，从而避免了请求的发送者和接受者之间的耦合关系。将这些对象连成一条链，并沿着这条链传递该请求，直到有对象处理它为止。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="Android" scheme="https://www.weicools.com/tags/Android/"/>
+    
+    <category term="Java" scheme="https://www.weicools.com/tags/Java/"/>
+    
+    <category term="DesignPattern" scheme="https://www.weicools.com/tags/DesignPattern/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《Android 源码设计模式解析与实战》读书笔记 - 命令模式</title>
+    <link href="https://www.weicools.com/20170318/designpattern-behavior-command/"/>
+    <id>https://www.weicools.com/20170318/designpattern-behavior-command/</id>
+    <published>2017-03-18T12:16:27.000Z</published>
+    <updated>2021-01-16T11:09:23.664Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;《Android-源码设计模式解析与实战》读书笔记-命令模式&quot;&gt;&lt;a href=&quot;#《Android-源码设计模式解析与实战》读书笔记-命令模式&quot; class=&quot;headerlink&quot; title=&quot;《Android 源码设计模式解析与实战》读书笔记 - 命令模式&quot;&gt;&lt;/a&gt;《Android 源码设计模式解析与实战》读书笔记 - 命令模式&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;命令模式是行为型模式之一。总体来说并不难理解，只是比较繁琐，他会将简单的调用关系解耦成多个部分，增加类的复杂度，但是即便如此，命令模式的结构依然清晰。&lt;br&gt;定义: 将一个请求封装成一个对象，从而让用户使用不同的请求把客户端参数化；对请求排队或者记录请求日志，以及支持可撤销的操作。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="Android" scheme="https://www.weicools.com/tags/Android/"/>
+    
+    <category term="Java" scheme="https://www.weicools.com/tags/Java/"/>
+    
+    <category term="DesignPattern" scheme="https://www.weicools.com/tags/DesignPattern/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《Android 源码设计模式解析与实战》读书笔记 - 迭代器模式</title>
+    <link href="https://www.weicools.com/20170318/designpattern-behavior-iterator/"/>
+    <id>https://www.weicools.com/20170318/designpattern-behavior-iterator/</id>
+    <published>2017-03-18T12:16:27.000Z</published>
+    <updated>2021-01-16T11:09:23.664Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Ï&lt;/p&gt;
+&lt;h1 id=&quot;《Android-源码设计模式解析与实战》读书笔记-迭代器模式&quot;&gt;&lt;a href=&quot;#《Android-源码设计模式解析与实战》读书笔记-迭代器模式&quot; class=&quot;headerlink&quot; title=&quot;《Android 源码设计模式解析与实战》读书笔记 - 迭代器模式&quot;&gt;&lt;/a&gt;《Android 源码设计模式解析与实战》读书笔记 - 迭代器模式&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;迭代器模式，又叫做游标模式，是行为型设计模式之一。我们知道对容器对象的访问必然会涉及遍历算法，我们可以将遍历的方法封装在容器中，或者不提供遍历方法，让使用容器的人自己去实现去吧。这两种情况好像都能够解决问题。&lt;br&gt;然而在前一种情况，容器承受了过多的功能，它不仅要负责自己“容器”内的元素维护（添加、删除等等），而且还要提供遍历自身的接口；而且由于遍历状态保存的问题，不能对同一个容器对象同时进行多个遍历。第二种方式倒是省事，却又将容器的内部细节暴露无遗。&lt;br&gt;正因于此，迭代器模式应运而生，在客户访问类与容器体之间插入一个第三者–迭代器，很好的解决了上述弊端。&lt;br&gt;定义：提供一种方法顺序访问一个容器对象中的各个元素，而又不需要暴露该对象的内部表示。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="Android" scheme="https://www.weicools.com/tags/Android/"/>
+    
+    <category term="Java" scheme="https://www.weicools.com/tags/Java/"/>
+    
+    <category term="DesignPattern" scheme="https://www.weicools.com/tags/DesignPattern/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《Android 源码设计模式解析与实战》读书笔记 - 状态模式</title>
+    <link href="https://www.weicools.com/20170318/designpattern-behavior-state/"/>
+    <id>https://www.weicools.com/20170318/designpattern-behavior-state/</id>
+    <published>2017-03-18T12:16:27.000Z</published>
+    <updated>2021-01-16T11:09:23.664Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;《Android-源码设计模式解析与实战》读书笔记-状态模式&quot;&gt;&lt;a href=&quot;#《Android-源码设计模式解析与实战》读书笔记-状态模式&quot; class=&quot;headerlink&quot; title=&quot;《Android 源码设计模式解析与实战》读书笔记 - 状态模式&quot;&gt;&lt;/a&gt;《Android 源码设计模式解析与实战》读书笔记 - 状态模式&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;定义：状态模式中的行为是由状态来决定，不同的状态下有不同的行为。当一个对象的内在状态改变时允许改变其行为，这个对象看起来像是改变了其类。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="Android" scheme="https://www.weicools.com/tags/Android/"/>
+    
+    <category term="Java" scheme="https://www.weicools.com/tags/Java/"/>
+    
+    <category term="DesignPattern" scheme="https://www.weicools.com/tags/DesignPattern/"/>
+    
+  </entry>
+  
+</feed>
